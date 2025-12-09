@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+
+  <title>Math &amp; Stats Lounge</title>
+
+  <meta name="description" content="A curated collection of math and statistics problems.">
+  <meta name="author" content="">
+
+  <!-- Repo name -->
+  <link rel="canonical" href="https://honglizhaobob.github.io/math-problems/" />
+
+  <!-- IMPORTANT: make assets relative so they work on project pages -->
+  <link crossorigin="anonymous" href="assets/css/stylesheet.min.51b2420ff5ea1215cdf584af7ba59d5fea94201c33f25109d6448c7271631316.css" integrity="sha256-UbJCD/XqEhXN9YSve6WdX+qUIBwz8lEJ1kSMcnFjExY=" rel="preload stylesheet" as="style">
+
+  <!-- You can keep or remove these favicon links depending on which files you keep -->
+  <link rel="icon" href="favicon_wine.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="mask-icon" href="safari-pinned-tab.svg">
+
+  <meta name="theme-color" content="#2e2e33">
+  <meta name="msapplication-TileColor" content="#2e2e33">
+
+  <!-- You can remove RSS/JSON if you don't need them -->
+  <link rel="alternate" type="application/rss+xml" href="index.xml">
+  <link rel="alternate" type="application/json" href="index.json">
+  <link rel="alternate" hreflang="en" href="." />
+
+  <noscript>
+    <style>
+      #theme-toggle,
+      .top-link {
+        display: none;
+      }
+    </style>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --theme: rgb(29, 30, 32);
+          --entry: rgb(46, 46, 51);
+          --primary: rgb(218, 218, 219);
+          --secondary: rgb(155, 156, 157);
+          --tertiary: rgb(65, 66, 68);
+          --content: rgb(196, 196, 197);
+          --hljs-bg: rgb(46, 46, 51);
+          --code-bg: rgb(55, 56, 62);
+          --border: rgb(51, 51, 51);
+        }
+
+        .list {
+          background: var(--theme);
+        }
+
+        .list:not(.dark)::-webkit-scrollbar-track {
+          background: 0 0;
+        }
+
+        .list:not(.dark)::-webkit-scrollbar-thumb {
+          border-color: var(--theme);
+        }
+      }
+    </style>
+  </noscript>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT45VFBX6"></script>
+  <script>
+    var doNotTrack = false;
+    if (false) {
+      var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+      var doNotTrack = (dnt == "1" || dnt == "yes");
+    }
+    if (!doNotTrack) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HFT45VFBX6');
+    }
+  </script>
+
+  <meta property="og:title" content="Math &amp; Stats Lounge" />
+  <meta property="og:description" content="A curated collection of math and statistics problems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/REPO_NAME/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Math &amp; Stats Lounge" />
+  <meta name="twitter:description" content="A curated collection of math and statistics problems." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Math & Stats Lounge",
+    "url": "https://honglizhaobob.github.io/math-problems/",
+    "description": "A curated collection of math and statistics problems.",
+    "thumbnailUrl": "favicon_wine.ico",
+    "sameAs": [
+    ]
+  }
+  </script>
+
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+
+    window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function (x) {
+        x.parentElement.classList += 'has-jax'
+      })
+    });
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Custom styles for problem grid -->
+  <style>
+    .problem-section {
+      margin-top: 2rem;
+    }
+
+    .problem-section h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .problem-section p {
+      margin-bottom: 1.5rem;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr;  /* use single column */
+      gap: 1rem;
+    }
+
+
+    .problem-card {
+      display: block;
+      padding: 1rem 1.25rem;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      background: var(--entry);
+      color: var(--primary);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      border-color: var(--primary);
+    }
+
+    .problem-title {
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .problem-meta {
+      font-size: 0.9rem;
+      color: var(--secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .problem-tags {
+      font-size: 0.8rem;
+      color: var(--tertiary);
+    }
+
+    .tag-pill {
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      margin-right: 0.3rem;
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+
+<body class="list" id="top">
+  <script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+      document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+      document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    }
+  </script>
+
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">
+        <!-- Home link -->
+        <a href="." accesskey="h" title="Math &amp; Stats Lounge (Alt + H)">Math &amp; Stats Lounge</a>
+        <span class="logo-switches">
+          <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+            <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <ul class="lang-switch">
+            <li>|</li>
+          </ul>
+        </span>
+      </div>
+      <ul id="menu">
+        <!-- Add more problems here -->
+        <li>
+          <a href="." title="Problems">
+            <span class="active">Problems</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <!-- Intro card -->
+    <article class="first-entry home-info">
+      <header class="entry-header">
+        <h1>Math &amp; Stats Lounge</h1>
+      </header>
+      <section class="entry-content">
+        <p>
+          A relatively curated collection of problems in math and stats.
+        </p>
+      </section>
+      <!-- other links -->
+      <!--
+      <footer class="entry-footer">
+        <div class="social-icons">
+          <a href="https://github.com/honglizhaobob" target="_blank" rel="noopener noreferrer me" title="GitHub">
+            ...
+          </a>
+        </div>
+      </footer>
+      -->
+    </article>
+
+    <!-- Problem grid -->
+    <section class="problem-section">
+      <h2>Problem Collections</h2>
+      <p>Select a problem to view the full statement (PDF or HTML). You can organize these by topic, difficulty, or course.</p>
+
+      <div class="problem-grid">
+        <!-- Create problem cards here. -->
+
+        <a class="problem-card" href="problems/turnpike-lqr/">
+          <div class="problem-title">Turnpike Phenomenon in LQR</div>
+          <div class="problem-meta">Finite-horizon LQR · Riccati equation · turnpike</div>
+          <div class="problem-tags">
+            <span class="tag-pill">Optimal Control</span>
+            <span class="tag-pill">Theory</span>
+          </div>
+        </a>
+
+
+        <a class="problem-card" href="problems/analysis-functional-ineq.pdf">
+          <div class="problem-title">Functional Inequalities in Analysis</div>
+          <div class="problem-meta">Measure theory · Sobolev spaces · interpolation</div>
+          <div class="problem-tags">
+            <span class="tag-pill">Analysis</span>
+            <span class="tag-pill">Graduate</span>
+          </div>
+        </a>
+
+        <a class="problem-card" href="problems/pde-elliptic-schwarz.pdf">
+          <div class="problem-title">Elliptic PDE and Schwarz Decomposition</div>
+          <div class="problem-meta">Domain decomposition · maximum principle · energy estimates</div>
+          <div class="problem-tags">
+            <span class="tag-pill">PDE</span>
+            <span class="tag-pill">Numerics</span>
+          </div>
+        </a>
+
+        <a class="problem-card" href="problems/ocp-turnpike-lqr.pdf">
+          <div class="problem-title">Turnpike Phenomenon in LQR</div>
+          <div class="problem-meta">Riccati equation · exponential decay of sensitivity</div>
+          <div class="problem-tags">
+            <span class="tag-pill">Optimal Control</span>
+            <span class="tag-pill">Theory</span>
+          </div>
+        </a>
+
+        <a class="problem-card" href="problems/prob-markov-chains.pdf">
+          <div class="problem-title">Hitting Times of Markov Chains</div>
+          <div class="problem-meta">Reversibility · spectral gap · mixing time</div>
+          <div class="problem-tags">
+            <span class="tag-pill">Probability</span>
+            <span class="tag-pill">Stochastic</span>
+          </div>
+        </a>
+
+        <a class="problem-card" href="problems/quant-credit-spread-term-structure.pdf">
+          <div class="problem-title">Credit Spread Term Structure Modeling</div>
+          <div class="problem-meta">Intensity models · survival probabilities · calibration</div>
+          <div class="problem-tags">
+            <span class="tag-pill">Quant Finance</span>
+            <span class="tag-pill">Fixed Income</span>
+          </div>
+        </a>
+
+        <a class="problem-card" href="problems/pinn-klein-gordon.pdf">
+          <div class="problem-title">PINN for Klein–Gordon Equation</div>
+          <div class="problem-meta">Physics-informed loss · residual minimization</div>
+          <div class="problem-tags">
+            <span class="tag-pill">PINN</span>
+            <span class="tag-pill">PDE</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>&copy; 2025 Math &amp; Stats Lounge</span>
+    <span>
+      Powered by
+      <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+      <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+  </footer>
+
+  <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+      <path d="M12 6H0l6-6z" />
+    </svg>
+  </a>
+
+  <script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+            behavior: "smooth"
+          });
+        } else {
+          document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+        }
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  </script>
+
+  <script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+      if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+        mybutton.style.visibility = "visible";
+        mybutton.style.opacity = "1";
+      } else {
+        mybutton.style.visibility = "hidden";
+        mybutton.style.opacity = "0";
+      }
+    };
+  </script>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+      if (document.body.className.includes("dark")) {
+        document.body.classList.remove('dark');
+        localStorage.setItem("pref-theme", 'light');
+      } else {
+        document.body.classList.add('dark');
+        localStorage.setItem("pref-theme", 'dark');
+      }
+    })
+  </script>
+</body>
+
+</html>

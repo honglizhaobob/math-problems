@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+
+  <title>Turnpike Phenomenon in LQR · Math &amp; Stats Lounge</title>
+
+  <meta name="description" content="Problem on the turnpike phenomenon in finite-horizon linear–quadratic control.">
+  <meta name="author" content="">
+
+  <!-- adjust YOUR_USERNAME and REPO_NAME -->
+  <link rel="canonical" href="https://YOUR_USERNAME.github.io/REPO_NAME/problems/turnpike-lqr/" />
+
+  <!-- IMPORTANT: paths are relative from this subdirectory, so go up two levels -->
+  <link crossorigin="anonymous" href="../../assets/css/stylesheet.min.51b2420ff5ea1215cdf584af7ba59d5fea94201c33f25109d6448c7271631316.css"
+        integrity="sha256-UbJCD/XqEhXN9YSve6WdX+qUIBwz8lEJ1kSMcnFjExY="
+        rel="preload stylesheet" as="style">
+
+  <link rel="icon" href="../../favicon_wine.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg">
+
+  <meta name="theme-color" content="#2e2e33">
+  <meta name="msapplication-TileColor" content="#2e2e33">
+
+  <meta property="og:title" content="Turnpike Phenomenon in LQR" />
+  <meta property="og:description" content="Problem on turnpike behavior in finite-horizon linear–quadratic control." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/REPO_NAME/problems/turnpike-lqr/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Turnpike Phenomenon in LQR" />
+  <meta name="twitter:description" content="Problem on turnpike behavior in finite-horizon linear–quadratic control." />
+
+  <!-- MathJax (same setup as index.html) -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+
+    window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function (x) {
+        x.parentElement.classList += 'has-jax'
+      })
+    });
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body class="single" id="top">
+<script>
+  if (localStorage.getItem("pref-theme") === "dark") {
+    document.body.classList.add('dark');
+  } else if (localStorage.getItem("pref-theme") === "light") {
+    document.body.classList.remove('dark')
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark');
+  }
+</script>
+
+<header class="header">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../" accesskey="h" title="Math &amp; Stats Lounge (Alt + H)">Math &amp; Stats Lounge</a>
+      <span class="logo-switches">
+        <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+          <!-- same moon/sun SVGs as index.html -->
+          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <ul class="lang-switch"><li>|</li></ul>
+      </span>
+    </div>
+    <ul id="menu">
+      <li>
+        <a href="../../" title="Back to Problems">
+          <span>Problems</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main">
+  <article class="post-single">
+    <header class="post-header">
+      <h1 class="post-title">Turnpike Phenomenon in Finite-Horizon LQR</h1>
+      <div class="post-meta">
+        <span>Topic: Optimal Control</span> ·
+        <span>Difficulty: ★★★☆</span>
+      </div>
+    </header>
+
+    <div class="post-content">
+      <h2 id="problem">Problem</h2>
+
+      <p>Consider the finite-horizon linear–quadratic control problem
+      on $[0,T]$:</p>
+
+      <p>
+        $$
+        \dot{x}(t) = A x(t) + B u(t), \qquad x(0) = x_0,
+        $$
+      </p>
+
+      <p>
+        with cost functional
+      </p>
+
+      <p>
+        $$
+        J(u) = \int_0^T \bigl( x(t)^\top Q x(t) + u(t)^\top R u(t) \bigr)\,dt
+               + x(T)^\top S x(T),
+        $$
+      </p>
+
+      <p>
+        where $Q, R, S$ are symmetric positive definite matrices and $(A,B)$ is
+        stabilizable.
+      </p>
+
+      <ol>
+        <li>
+          <strong>(Riccati equation)</strong>
+          Show that the optimal control has the feedback form
+          $$
+          u^\star(t) = - R^{-1} B^\top P(t) x^\star(t),
+          $$
+          where $P(t)$ solves the Riccati differential equation
+          $$
+          -\dot P(t)
+          = A^\top P(t) + P(t) A - P(t) B R^{-1} B^\top P(t) + Q,
+          \qquad P(T) = S.
+          $$
+        </li>
+
+        <li>
+          <strong>(Steady-state limit)</strong>
+          Let $P_\infty$ denote the unique positive definite solution of the
+          algebraic Riccati equation
+          $$
+          0 = A^\top P_\infty + P_\infty A
+              - P_\infty B R^{-1} B^\top P_\infty + Q.
+          $$
+          Argue (formally is fine) that when $T$ is large, $P(t)$ stays close to
+          $P_\infty$ for most $t \in [0,T]$, except near the two endpoints.
+        </li>
+
+        <li>
+          <strong>(Turnpike behavior)</strong>
+          Consider the closed-loop system
+          $$
+          \dot{x}^\star(t)
+          = \bigl(A - B R^{-1} B^\top P(t)\bigr) x^\star(t).
+          $$
+          Assuming exponential stability of
+          $A - B R^{-1} B^\top P_\infty$, explain why the optimal trajectory
+          $x^\star(t)$ spends most of its time near the steady-state
+          $x = 0$, independently of the choice of $x_0$ and $T$,
+          except for boundary layers near $t = 0$ and $t = T$.
+        </li>
+      </ol>
+
+      <h2 id="remarks">Remarks</h2>
+      <ul>
+        <li>This is a prototype of the <em>turnpike phenomenon</em>:
+            for long horizons, optimal trajectories are attracted to a
+            time-independent steady state.</li>
+        <li>You can optionally try to make the above statements precise
+            using Grönwall-type estimates for the Riccati equation and the
+            closed-loop dynamics.</li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>&copy; 2025 Math &amp; Stats Lounge</span>
+  <span>
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+  </span>
+</footer>
+
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)"
+   class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+
+<script>
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+      document.body.classList.remove('dark');
+      localStorage.setItem("pref-theme", 'light');
+    } else {
+      document.body.classList.add('dark');
+      localStorage.setItem("pref-theme", 'dark');
+    }
+  })
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="index, follow">
+
+  <title>Turnpike Phenomenon in LQR · Math &amp; Stats Lounge</title>
+
+  <meta name="description" content="Problem on the turnpike phenomenon in finite-horizon linear–quadratic control.">
+  <meta name="author" content="">
+
+  <!-- adjust YOUR_USERNAME and REPO_NAME -->
+  <link rel="canonical" href="https://YOUR_USERNAME.github.io/REPO_NAME/problems/turnpike-lqr/" />
+
+  <!-- IMPORTANT: paths are relative from this subdirectory, so go up two levels -->
+  <link crossorigin="anonymous" href="../../assets/css/stylesheet.min.51b2420ff5ea1215cdf584af7ba59d5fea94201c33f25109d6448c7271631316.css"
+        integrity="sha256-UbJCD/XqEhXN9YSve6WdX+qUIBwz8lEJ1kSMcnFjExY="
+        rel="preload stylesheet" as="style">
+
+  <link rel="icon" href="../../favicon_wine.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <link rel="mask-icon" href="../../safari-pinned-tab.svg">
+
+  <meta name="theme-color" content="#2e2e33">
+  <meta name="msapplication-TileColor" content="#2e2e33">
+
+  <meta property="og:title" content="Turnpike Phenomenon in LQR" />
+  <meta property="og:description" content="Problem on turnpike behavior in finite-horizon linear–quadratic control." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/REPO_NAME/problems/turnpike-lqr/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Turnpike Phenomenon in LQR" />
+  <meta name="twitter:description" content="Problem on turnpike behavior in finite-horizon linear–quadratic control." />
+
+  <!-- MathJax (same setup as index.html) -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$','$$'], ['\\[','\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+
+    window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function (x) {
+        x.parentElement.classList += 'has-jax'
+      })
+    });
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body class="single" id="top">
+<script>
+  if (localStorage.getItem("pref-theme") === "dark") {
+    document.body.classList.add('dark');
+  } else if (localStorage.getItem("pref-theme") === "light") {
+    document.body.classList.remove('dark')
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark');
+  }
+</script>
+
+<header class="header">
+  <nav class="nav">
+    <div class="logo">
+      <a href="../../" accesskey="h" title="Math &amp; Stats Lounge (Alt + H)">Math &amp; Stats Lounge</a>
+      <span class="logo-switches">
+        <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+          <!-- same moon/sun SVGs as index.html -->
+          <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <ul class="lang-switch"><li>|</li></ul>
+      </span>
+    </div>
+    <ul id="menu">
+      <li>
+        <a href="../../" title="Back to Problems">
+          <span>Problems</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main">
+  <article class="post-single">
+    <header class="post-header">
+      <h1 class="post-title">Turnpike Phenomenon in Finite-Horizon LQR</h1>
+      <div class="post-meta">
+        <span>Topic: Optimal Control</span> ·
+        <span>Difficulty: ★★★☆</span>
+      </div>
+    </header>
+
+    <div class="post-content">
+      <h2 id="problem">Problem</h2>
+
+      <p>Consider the finite-horizon linear–quadratic control problem
+      on $[0,T]$:</p>
+
+      <p>
+        $$
+        \dot{x}(t) = A x(t) + B u(t), \qquad x(0) = x_0,
+        $$
+      </p>
+
+      <p>
+        with cost functional
+      </p>
+
+      <p>
+        $$
+        J(u) = \int_0^T \bigl( x(t)^\top Q x(t) + u(t)^\top R u(t) \bigr)\,dt
+               + x(T)^\top S x(T),
+        $$
+      </p>
+
+      <p>
+        where $Q, R, S$ are symmetric positive definite matrices and $(A,B)$ is
+        stabilizable.
+      </p>
+
+      <ol>
+        <li>
+          <strong>(Riccati equation)</strong>
+          Show that the optimal control has the feedback form
+          $$
+          u^\star(t) = - R^{-1} B^\top P(t) x^\star(t),
+          $$
+          where $P(t)$ solves the Riccati differential equation
+          $$
+          -\dot P(t)
+          = A^\top P(t) + P(t) A - P(t) B R^{-1} B^\top P(t) + Q,
+          \qquad P(T) = S.
+          $$
+        </li>
+
+        <li>
+          <strong>(Steady-state limit)</strong>
+          Let $P_\infty$ denote the unique positive definite solution of the
+          algebraic Riccati equation
+          $$
+          0 = A^\top P_\infty + P_\infty A
+              - P_\infty B R^{-1} B^\top P_\infty + Q.
+          $$
+          Argue (formally is fine) that when $T$ is large, $P(t)$ stays close to
+          $P_\infty$ for most $t \in [0,T]$, except near the two endpoints.
+        </li>
+
+        <li>
+          <strong>(Turnpike behavior)</strong>
+          Consider the closed-loop system
+          $$
+          \dot{x}^\star(t)
+          = \bigl(A - B R^{-1} B^\top P(t)\bigr) x^\star(t).
+          $$
+          Assuming exponential stability of
+          $A - B R^{-1} B^\top P_\infty$, explain why the optimal trajectory
+          $x^\star(t)$ spends most of its time near the steady-state
+          $x = 0$, independently of the choice of $x_0$ and $T$,
+          except for boundary layers near $t = 0$ and $t = T$.
+        </li>
+      </ol>
+
+      <h2 id="remarks">Remarks</h2>
+      <ul>
+        <li>This is a prototype of the <em>turnpike phenomenon</em>:
+            for long horizons, optimal trajectories are attracted to a
+            time-independent steady state.</li>
+        <li>You can optionally try to make the above statements precise
+            using Grönwall-type estimates for the Riccati equation and the
+            closed-loop dynamics.</li>
+      </ul>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <span>&copy; 2025 Math &amp; Stats Lounge</span>
+  <span>
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+  </span>
+</footer>
+
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)"
+   class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+
+<script>
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    if (document.body.className.includes("dark")) {
+      document.body.classList.remove('dark');
+      localStorage.setItem("pref-theme", 'light');
+    } else {
+      document.body.classList.add('dark');
+      localStorage.setItem("pref-theme", 'dark');
+    }
+  })
+</script>
+
+</body>
+</html>
