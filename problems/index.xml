@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Problems on Math &amp; Stats Lounge</title>
+    <link>https://honglizhaobob.github.io/math-problems/problems/</link>
+    <description>Recent content in Problems on Math &amp; Stats Lounge</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Dec 2025 12:02:34 -0600</lastBuildDate>
+    <atom:link href="https://honglizhaobob.github.io/math-problems/problems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turnpike Hello World</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/turnpike-hello-world/</link>
+      <pubDate>Tue, 09 Dec 2025 12:02:34 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/turnpike-hello-world/</guid>
+      <description>&lt;p&gt;Consider the finite-horizon LQR problem on $[0,T]$:
+$$
+\dot{x}(t) = A x(t) + B u(t), \qquad x(0) = x_0.
+$$&lt;/p&gt;
+&lt;p&gt;The cost functional is
+$$
+J(u) = \int_0^T \bigl( x(t)^\top Q x(t) + u(t)^\top R u(t) \bigr),dt
++ x(T)^\top S x(T).
+$$&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Show that the optimal control has the feedback form
+$$
+u^\star(t) = -R^{-1} B^\top P(t) x^\star(t),
+$$
+where $P(t)$ solves the Riccati equation with $P(T) = S$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add more subquestions here…&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
