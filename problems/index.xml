@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Problems on Math &amp; Stats Lounge</title>
-    <link>http://localhost:1313/problems/</link>
+    <link>https://honglizhaobob.github.io/math-problems/problems/</link>
     <description>Recent content in Problems on Math &amp; Stats Lounge</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Dec 2025 14:36:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/problems/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://honglizhaobob.github.io/math-problems/problems/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Range of regression coefficient</title>
-      <link>http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/</link>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/</link>
       <pubDate>Wed, 10 Dec 2025 14:36:00 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/</guid>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;

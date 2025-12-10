@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://honglizhaobob.github.io/math-problems/</loc>
     <lastmod>2025-12-10T14:36:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/problems/</loc>
+    <loc>https://honglizhaobob.github.io/math-problems/problems/</loc>
     <lastmod>2025-12-10T14:36:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/</loc>
+    <loc>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/</loc>
     <lastmod>2025-12-10T14:36:00-06:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://honglizhaobob.github.io/math-problems/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://honglizhaobob.github.io/math-problems/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://honglizhaobob.github.io/math-problems/tags/</loc>
   </url>
 </urlset>
