@@ -6,32 +6,39 @@
     <description>Recent content in Problems on Math &amp; Stats Lounge</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Dec 2025 12:02:34 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 10 Dec 2025 14:36:00 -0600</lastBuildDate>
     <atom:link href="http://localhost:1313/problems/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Turnpike Hello World</title>
-      <link>http://localhost:1313/problems/turnpike-hello-world/</link>
-      <pubDate>Tue, 09 Dec 2025 12:02:34 -0600</pubDate>
-      <guid>http://localhost:1313/problems/turnpike-hello-world/</guid>
-      <description>&lt;p&gt;Consider the finite-horizon LQR problem on $[0,T]$:
+      <title>Range of regression coefficient</title>
+      <link>http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/</link>
+      <pubDate>Wed, 10 Dec 2025 14:36:00 -0600</pubDate>
+      <guid>http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;We have
 $$
-\dot{x}(t) = A x(t) + B u(t), \qquad x(0) = x_0.
+\beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X}
+$$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.&lt;/p&gt;
+&lt;p&gt;This means
+$$
+\beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta}
 $$&lt;/p&gt;
-&lt;p&gt;The cost functional is
+&lt;p&gt;And because $0\le\rho^2\le 1$, we have
 $$
-J(u) = \int_0^T \bigl( x(t)^\top Q x(t) + u(t)^\top R u(t) \bigr),dt
-+ x(T)^\top S x(T).
+\beta_{\text{new}} \in [0, 1/\beta].
 $$&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Show that the optimal control has the feedback form
-$$
-u^\star(t) = -R^{-1} B^\top P(t) x^\star(t),
-$$
-where $P(t)$ solves the Riccati equation with $P(T) = S$.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Add more subquestions here…&lt;/p&gt;</description>
+
+  &lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Turnpike Hello World | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
-<meta name="description" content="Consider the finite-horizon LQR problem on $[0,T]$:
+<meta name="description" content="
+  Question
+  
+    Consider the finite-horizon LQR problem on $[0,T]$:
 $$
 \dot{x}(t) = A x(t) &#43; B u(t), \qquad x(0) = x_0.
 $$
@@ -17,7 +20,6 @@ J(u) = \int_0^T \bigl( x(t)^\top Q x(t) &#43; u(t)^\top R u(t) \bigr),dt
 &#43; x(T)^\top S x(T).
 $$
 
-
 Show that the optimal control has the feedback form
 $$
 u^\star(t) = -R^{-1} B^\top P(t) x^\star(t),
@@ -25,10 +27,21 @@ $$
 where $P(t)$ solves the Riccati equation with $P(T) = S$.
 
 
-Add more subquestions here…">
+  
+
+
+
+
+  Solution
+  
+    Sketch. Write down the Hamiltonian, derive the adjoint equation and
+optimality condition, and identify the Riccati equation for $P(t)$ so that
+$u^\star(t) = -R^{-1}B^\top P(t)x^\star(t)$.
+  
+">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/problems/turnpike-hello-world/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -115,90 +128,7 @@ Add more subquestions here…">
 </script>
 
 
-<meta property="og:url" content="http://localhost:1313/problems/turnpike-hello-world/">
-  <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Turnpike Hello World">
-  <meta property="og:description" content="Consider the finite-horizon LQR problem on $[0,T]$: $$ \dot{x}(t) = A x(t) &#43; B u(t), \qquad x(0) = x_0. $$
-The cost functional is $$ J(u) = \int_0^T \bigl( x(t)^\top Q x(t) &#43; u(t)^\top R u(t) \bigr),dt &#43; x(T)^\top S x(T). $$
-Show that the optimal control has the feedback form $$ u^\star(t) = -R^{-1} B^\top P(t) x^\star(t), $$ where $P(t)$ solves the Riccati equation with $P(T) = S$.
-Add more subquestions here…">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-09T12:02:34-06:00">
-    <meta property="article:modified_time" content="2025-12-09T12:02:34-06:00">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Turnpike Hello World">
-<meta name="twitter:description" content="Consider the finite-horizon LQR problem on $[0,T]$:
-$$
-\dot{x}(t) = A x(t) &#43; B u(t), \qquad x(0) = x_0.
-$$
-The cost functional is
-$$
-J(u) = \int_0^T \bigl( x(t)^\top Q x(t) &#43; u(t)^\top R u(t) \bigr),dt
-&#43; x(T)^\top S x(T).
-$$
 
-
-Show that the optimal control has the feedback form
-$$
-u^\star(t) = -R^{-1} B^\top P(t) x^\star(t),
-$$
-where $P(t)$ solves the Riccati equation with $P(T) = S$.
-
-
-Add more subquestions here…">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Problems",
-      "item": "http://localhost:1313/problems/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Turnpike Hello World",
-      "item": "http://localhost:1313/problems/turnpike-hello-world/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Turnpike Hello World",
-  "name": "Turnpike Hello World",
-  "description": "Consider the finite-horizon LQR problem on $[0,T]$: $$ \\dot{x}(t) = A x(t) + B u(t), \\qquad x(0) = x_0. $$\nThe cost functional is $$ J(u) = \\int_0^T \\bigl( x(t)^\\top Q x(t) + u(t)^\\top R u(t) \\bigr),dt + x(T)^\\top S x(T). $$\nShow that the optimal control has the feedback form $$ u^\\star(t) = -R^{-1} B^\\top P(t) x^\\star(t), $$ where $P(t)$ solves the Riccati equation with $P(T) = S$.\nAdd more subquestions here…\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "Consider the finite-horizon LQR problem on $[0,T]$: $$ \\dot{x}(t) = A x(t) + B u(t), \\qquad x(0) = x_0. $$\nThe cost functional is $$ J(u) = \\int_0^T \\bigl( x(t)^\\top Q x(t) + u(t)^\\top R u(t) \\bigr),dt + x(T)^\\top S x(T). $$\nShow that the optimal control has the feedback form $$ u^\\star(t) = -R^{-1} B^\\top P(t) x^\\star(t), $$ where $P(t)$ solves the Riccati equation with $P(T) = S$.\nAdd more subquestions here…\n",
-  "wordCount" : "73",
-  "inLanguage": "en",
-  "datePublished": "2025-12-09T12:02:34-06:00",
-  "dateModified": "2025-12-09T12:02:34-06:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/problems/turnpike-hello-world/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Math \u0026 Stats Lounge",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 <body id="top">
     <header class="header">
@@ -255,7 +185,10 @@ Add more subquestions here…">
 </div>
   </header> 
 
-  <div class="post-content"><p>Consider the finite-horizon LQR problem on $[0,T]$:
+  <div class="post-content"><div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <p>Consider the finite-horizon LQR problem on $[0,T]$:
 $$
 \dot{x}(t) = A x(t) + B u(t), \qquad x(0) = x_0.
 $$</p>
@@ -265,17 +198,27 @@ J(u) = \int_0^T \bigl( x(t)^\top Q x(t) + u(t)^\top R u(t) \bigr),dt
 + x(T)^\top S x(T).
 $$</p>
 <ol>
-<li>
-<p>Show that the optimal control has the feedback form
+<li>Show that the optimal control has the feedback form
 $$
 u^\star(t) = -R^{-1} B^\top P(t) x^\star(t),
 $$
-where $P(t)$ solves the Riccati equation with $P(T) = S$.</p>
-</li>
-<li>
-<p>Add more subquestions here…</p>
-</li>
+where $P(t)$ solves the Riccati equation with $P(T) = S$.</li>
 </ol>
+
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <em>Sketch.</em> Write down the Hamiltonian, derive the adjoint equation and
+optimality condition, and identify the Riccati equation for $P(t)$ so that
+$u^\star(t) = -R^{-1}B^\top P(t)x^\star(t)$.
+  </div>
+</div>
+
+
 
 
   </div>
@@ -283,6 +226,13 @@ where $P(t)$ solves the Riccati equation with $P(T) = S$.</p>
   <footer class="post-footer">
     <ul class="post-tags">
     </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/problems/turnpike-hello-world2/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Turnpike Hello World2</span>
+  </a>
+</nav>
 
   </footer>
 </article>
