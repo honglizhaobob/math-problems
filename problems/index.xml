@@ -35,11 +35,9 @@ $$&lt;/p&gt;
 &lt;p&gt;Then
 $$
 \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&amp;gt;0, Y&amp;gt;0) + \mathbb{P}(X&amp;lt;0, Y&amp;lt;0)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;\mathbb{P}(X&amp;gt;0, Y&amp;lt;0) - \mathbb{P}(X&amp;lt;0, Y&amp;gt;0).
-$$&lt;/li&gt;
-&lt;/ul&gt;
+= \mathbb{P}(X&amp;gt;0, Y&amp;gt;0) + \mathbb{P}(X&amp;lt;0, Y&amp;lt;0)
+- \mathbb{P}(X&amp;gt;0, Y&amp;lt;0) - \mathbb{P}(X&amp;lt;0, Y&amp;gt;0).
+$$&lt;/p&gt;
 &lt;p&gt;By symmetry,
 $$
 \mathbb{P}(X&amp;gt;0, Y&amp;gt;0) = \mathbb{P}(X&amp;lt;0, Y&amp;lt;0),
