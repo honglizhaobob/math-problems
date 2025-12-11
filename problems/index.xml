@@ -6,8 +6,168 @@
     <description>Recent content in Problems on Math &amp; Stats Lounge</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Dec 2025 14:36:00 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 10 Dec 2025 19:34:57 -0600</lastBuildDate>
     <atom:link href="https://honglizhaobob.github.io/math-problems/problems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/</link>
+      <pubDate>Wed, 10 Dec 2025 19:34:57 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute&lt;br&gt;
+$$
+\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
+$$
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+$$
+X = Z_1, \qquad
+Y = \rho Z_1 + \sqrt{1 - \rho^2}, Z_2.
+$$&lt;/p&gt;
+&lt;p&gt;Then
+$$
+\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
+= \mathbb{P}(X&amp;gt;0, Y&amp;gt;0) + \mathbb{P}(X&amp;lt;0, Y&amp;lt;0)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\mathbb{P}(X&amp;gt;0, Y&amp;lt;0) - \mathbb{P}(X&amp;lt;0, Y&amp;gt;0).
+$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By symmetry,
+$$
+\mathbb{P}(X&amp;gt;0, Y&amp;gt;0) = \mathbb{P}(X&amp;lt;0, Y&amp;lt;0),
+$$
+and
+$$
+\mathbb{P}(X&amp;gt;0, Y&amp;lt;0) = \mathbb{P}(X&amp;lt;0, Y&amp;gt;0).
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stopping time for 2D Wiener process</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/</link>
+      <pubDate>Wed, 10 Dec 2025 19:25:22 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&amp;gt;0$, $y&amp;gt;0$.&lt;br&gt;
+What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.&lt;br&gt;
+$\mathbb{P}[\tau_y &amp;lt; \tau_x]$, where
+$$
+\tau_x = \min\{t : Y_t = 0\}, \qquad
+\tau_y = \min\{t : X_t = 0\}?
+$$
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.&lt;/p&gt;
+&lt;p&gt;Itô&amp;rsquo;s formula gives&lt;/p&gt;
+&lt;p&gt;$$
+u(X_\tau, Y_\tau) - u(x,y)
+= \int_0^\tau u_x dX_t
++ \int_0^\tau u_y dY_t
++ \frac12 \int_0^\tau (u_{xx} + u_{yy}) dt.
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Correlation matrix with constant correlation</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-04-equicorrelation-matrix/</link>
+      <pubDate>Wed, 10 Dec 2025 19:12:44 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-04-equicorrelation-matrix/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Give the upper and lower bounds on the correlation parameter (\rho) for the matrix
+$$
+C=\begin{pmatrix}
+1 &amp;amp; \rho &amp;amp; \cdots &amp;amp; \rho \\
+\rho &amp;amp; 1 &amp;amp; \cdots &amp;amp; \rho \\
+\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots
+\\
+\rho &amp;amp; \rho &amp;amp; \cdots &amp;amp; 1
+\end{pmatrix}.
+$$
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;We write&lt;br&gt;
+$$
+C = (1-\rho) I + \rho M,
+$$
+where $M$ is the $n\times n$ matrix of all ones.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Expected value of exponential Wiener process</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/</link>
+      <pubDate>Wed, 10 Dec 2025 19:04:43 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Let $W_t$ be the standard Wiener process, what is $\mathbb{E}[e^{W_t}]$?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    We will use the moment generating function (MGF) for $W_t\sim\mathcal{N}(0,t)$. The MGF for Gaussian is $M(s) = \exp\left(\mu s+ (1/2)\sigma^2s^2\right)$, plug in $\mu=0, \sigma=\sqrt{t}$, we have $M(t) = e^{(1/2)s^2}$ and $M(1) = \mathbb{E}[e^{W_t}] = \exp((1/2)t)$.
+  &lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Expectation of Gaussian CDF</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/</link>
+      <pubDate>Wed, 10 Dec 2025 18:44:30 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then&lt;/p&gt;
+&lt;p&gt;$$
+\Phi(X) = P[Z \le X] = P[Z - X \le 0]
+$$&lt;/p&gt;
+&lt;p&gt;where $Z - X \sim \mathcal{N}(-\mu, 1+\sigma^2)$. Therefore&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+P[Z - X \le 0]
+&amp;amp;= P\!\left(
+\frac{Z - X + \mu}{\sqrt{1+\sigma^2}}
+\le \frac{\mu}{\sqrt{1+\sigma^2}}
+\right) \\
+&amp;amp;= P\!\left(
+\tilde{Z} \le \frac{\mu}{\sqrt{1+\sigma^2}}
+\right) \\
+&amp;amp;= \Phi\!\left(
+\frac{\mu}{\sqrt{1+\sigma^2}}
+\right).
+\end{aligned}
+$$&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Range of regression coefficient</title>
       <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/</link>

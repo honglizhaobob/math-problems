@@ -5,11 +5,41 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>404 Page not found | Math &amp; Stats Lounge</title>
+<title>Expectation of Gaussian CDF | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="
+  Question
+  
+    Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$?
+  
+
+
+
+
+  Solution
+  
+    By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then
+$$
+\Phi(X) = P[Z \le X] = P[Z - X \le 0]
+$$
+where $Z - X \sim \mathcal{N}(-\mu, 1&#43;\sigma^2)$. Therefore
+$$
+\begin{aligned}
+P[Z - X \le 0]
+&amp;= P\!\left(
+\frac{Z - X &#43; \mu}{\sqrt{1&#43;\sigma^2}}
+\le \frac{\mu}{\sqrt{1&#43;\sigma^2}}
+\right) \\
+&amp;= P\!\left(
+\tilde{Z} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}}
+\right) \\
+&amp;= \Phi\!\left(
+\frac{\mu}{\sqrt{1&#43;\sigma^2}}
+\right).
+\end{aligned}
+$$">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/404.html">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -18,7 +48,7 @@
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/404.html">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/">
 <noscript>
     <style>
         #theme-toggle,
@@ -97,17 +127,104 @@
 </script>
 
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/404.html">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="404 Page not found">
+  <meta property="og:title" content="Expectation of Gaussian CDF">
+  <meta property="og:description" content=" Question Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$? Solution By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then
+$$ \Phi(X) = P[Z \le X] = P[Z - X \le 0] $$
+where $Z - X \sim \mathcal{N}(-\mu, 1&#43;\sigma^2)$. Therefore
+$$ \begin{aligned} P[Z - X \le 0] &amp;= P\!\left( \frac{Z - X &#43; \mu}{\sqrt{1&#43;\sigma^2}} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= P\!\left( \tilde{Z} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= \Phi\!\left( \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right). \end{aligned} $$">
   <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="problems">
+    <meta property="article:published_time" content="2025-12-10T18:44:30-06:00">
+    <meta property="article:modified_time" content="2025-12-10T18:44:30-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="404 Page not found">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Expectation of Gaussian CDF">
+<meta name="twitter:description" content="
+  Question
+  
+    Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$?
+  
 
+
+
+
+  Solution
+  
+    By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then
+$$
+\Phi(X) = P[Z \le X] = P[Z - X \le 0]
+$$
+where $Z - X \sim \mathcal{N}(-\mu, 1&#43;\sigma^2)$. Therefore
+$$
+\begin{aligned}
+P[Z - X \le 0]
+&amp;= P\!\left(
+\frac{Z - X &#43; \mu}{\sqrt{1&#43;\sigma^2}}
+\le \frac{\mu}{\sqrt{1&#43;\sigma^2}}
+\right) \\
+&amp;= P\!\left(
+\tilde{Z} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}}
+\right) \\
+&amp;= \Phi\!\left(
+\frac{\mu}{\sqrt{1&#43;\sigma^2}}
+\right).
+\end{aligned}
+$$">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Problems",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Expectation of Gaussian CDF",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Expectation of Gaussian CDF",
+  "name": "Expectation of Gaussian CDF",
+  "description": " Question Let $X\\sim \\mathcal{N}(\\mu,\\sigma^2)$, $\\Phi$ denotes the standard Gaussian CDF. What is $\\mathbb{E}[\\Phi(X)]$? Solution By definition $\\Phi(X) = P[Z \\le X]$ where $Z$ is a standard Gaussian variable. Then\n$$ \\Phi(X) = P[Z \\le X] = P[Z - X \\le 0] $$\nwhere $Z - X \\sim \\mathcal{N}(-\\mu, 1+\\sigma^2)$. Therefore\n$$ \\begin{aligned} P[Z - X \\le 0] \u0026amp;= P\\!\\left( \\frac{Z - X + \\mu}{\\sqrt{1+\\sigma^2}} \\le \\frac{\\mu}{\\sqrt{1+\\sigma^2}} \\right) \\\\ \u0026amp;= P\\!\\left( \\tilde{Z} \\le \\frac{\\mu}{\\sqrt{1+\\sigma^2}} \\right) \\\\ \u0026amp;= \\Phi\\!\\left( \\frac{\\mu}{\\sqrt{1+\\sigma^2}} \\right). \\end{aligned} $$\n",
+  "keywords": [
+    
+  ],
+  "articleBody": " Question Let $X\\sim \\mathcal{N}(\\mu,\\sigma^2)$, $\\Phi$ denotes the standard Gaussian CDF. What is $\\mathbb{E}[\\Phi(X)]$? Solution By definition $\\Phi(X) = P[Z \\le X]$ where $Z$ is a standard Gaussian variable. Then\n$$ \\Phi(X) = P[Z \\le X] = P[Z - X \\le 0] $$\nwhere $Z - X \\sim \\mathcal{N}(-\\mu, 1+\\sigma^2)$. Therefore\n$$ \\begin{aligned} P[Z - X \\le 0] \u0026= P\\!\\left( \\frac{Z - X + \\mu}{\\sqrt{1+\\sigma^2}} \\le \\frac{\\mu}{\\sqrt{1+\\sigma^2}} \\right) \\\\ \u0026= P\\!\\left( \\tilde{Z} \\le \\frac{\\mu}{\\sqrt{1+\\sigma^2}} \\right) \\\\ \u0026= \\Phi\\!\\left( \\frac{\\mu}{\\sqrt{1+\\sigma^2}} \\right). \\end{aligned} $$\nA special case is when $X$ has zero mean, in which case $\\mathbb{E}[\\Phi(X)] = 1/2$.\n",
+  "wordCount" : "96",
+  "inLanguage": "en",
+  "datePublished": "2025-12-10T18:44:30-06:00",
+  "dateModified": "2025-12-10T18:44:30-06:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Math \u0026 Stats Lounge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://honglizhaobob.github.io/math-problems/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -150,7 +267,76 @@
     </nav>
 </header>
 <main class="main">
-<div class="not-found">404</div>
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Expectation of Gaussian CDF
+    </h1>
+    <div class="post-meta"><span title='2025-12-10 18:44:30 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span>
+
+</div>
+  </header> 
+
+  <div class="post-content"><div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then</p>
+<p>$$
+\Phi(X) = P[Z \le X] = P[Z - X \le 0]
+$$</p>
+<p>where $Z - X \sim \mathcal{N}(-\mu, 1+\sigma^2)$. Therefore</p>
+<p>$$
+\begin{aligned}
+P[Z - X \le 0]
+&amp;= P\!\left(
+\frac{Z - X + \mu}{\sqrt{1+\sigma^2}}
+\le \frac{\mu}{\sqrt{1+\sigma^2}}
+\right) \\
+&amp;= P\!\left(
+\tilde{Z} \le \frac{\mu}{\sqrt{1+\sigma^2}}
+\right) \\
+&amp;= \Phi\!\left(
+\frac{\mu}{\sqrt{1+\sigma^2}}
+\right).
+\end{aligned}
+$$</p>
+<p>A special case is when $X$ has zero mean, in which case $\mathbb{E}[\Phi(X)] = 1/2$.</p>
+
+  </div>
+</div>
+
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Expected value of exponential Wiener process</span>
+  </a>
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Range of regression coefficient</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
     </main>
     
 <footer class="footer">

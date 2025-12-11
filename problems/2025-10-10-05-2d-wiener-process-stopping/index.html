@@ -5,12 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Range of regression coefficient | Math &amp; Stats Lounge</title>
+<title>Stopping time for 2D Wiener process | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
 <meta name="description" content="
   Question
   
-    Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient?
+    Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.
+What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.
+$\mathbb{P}[\tau_y &lt; \tau_x]$, where
+$$
+\tau_x = \min\{t : Y_t = 0\}, \qquad
+\tau_y = \min\{t : X_t = 0\}?
+$$
   
 
 
@@ -18,23 +24,16 @@
 
   Solution
   
-    We have
+    Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.
+Itô&rsquo;s formula gives
 $$
-\beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X}
-$$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.
-This means
-$$
-\beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta}
-$$
-And because $0\le\rho^2\le 1$, we have
-$$
-\beta_{\text{new}} \in [0, 1/\beta].
-$$
-
-  
-">
+u(X_\tau, Y_\tau) - u(x,y)
+= \int_0^\tau u_x dX_t
+&#43; \int_0^\tau u_y dY_t
+&#43; \frac12 \int_0^\tau (u_{xx} &#43; u_{yy}) dt.
+$$">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -43,7 +42,7 @@ $$
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/">
 <noscript>
     <style>
         #theme-toggle,
@@ -122,23 +121,31 @@ $$
 </script>
 
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Range of regression coefficient">
-  <meta property="og:description" content=" Question Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient? Solution We have $$ \beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X} $$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.
-This means $$ \beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta} $$
-And because $0\le\rho^2\le 1$, we have $$ \beta_{\text{new}} \in [0, 1/\beta]. $$">
+  <meta property="og:title" content="Stopping time for 2D Wiener process">
+  <meta property="og:description" content=" Question Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.
+What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.
+$\mathbb{P}[\tau_y &lt; \tau_x]$, where $$ \tau_x = \min\{t : Y_t = 0\}, \qquad \tau_y = \min\{t : X_t = 0\}? $$ Solution Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.
+Itô’s formula gives
+$$ u(X_\tau, Y_\tau) - u(x,y) = \int_0^\tau u_x dX_t &#43; \int_0^\tau u_y dY_t &#43; \frac12 \int_0^\tau (u_{xx} &#43; u_{yy}) dt. $$">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-10T14:36:00-06:00">
-    <meta property="article:modified_time" content="2025-12-10T14:36:00-06:00">
+    <meta property="article:published_time" content="2025-12-10T19:25:22-06:00">
+    <meta property="article:modified_time" content="2025-12-10T19:25:22-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Range of regression coefficient">
+<meta name="twitter:title" content="Stopping time for 2D Wiener process">
 <meta name="twitter:description" content="
   Question
   
-    Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient?
+    Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.
+What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.
+$\mathbb{P}[\tau_y &lt; \tau_x]$, where
+$$
+\tau_x = \min\{t : Y_t = 0\}, \qquad
+\tau_y = \min\{t : X_t = 0\}?
+$$
   
 
 
@@ -146,21 +153,14 @@ And because $0\le\rho^2\le 1$, we have $$ \beta_{\text{new}} \in [0, 1/\beta]. $
 
   Solution
   
-    We have
+    Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.
+Itô&rsquo;s formula gives
 $$
-\beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X}
-$$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.
-This means
-$$
-\beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta}
-$$
-And because $0\le\rho^2\le 1$, we have
-$$
-\beta_{\text{new}} \in [0, 1/\beta].
-$$
-
-  
-">
+u(X_\tau, Y_\tau) - u(x,y)
+= \int_0^\tau u_x dX_t
+&#43; \int_0^\tau u_y dY_t
+&#43; \frac12 \int_0^\tau (u_{xx} &#43; u_{yy}) dt.
+$$">
 
 
 <script type="application/ld+json">
@@ -177,8 +177,8 @@ $$
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Range of regression coefficient",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/"
+      "name": "Stopping time for 2D Wiener process",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/"
     }
   ]
 }
@@ -187,20 +187,20 @@ $$
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Range of regression coefficient",
-  "name": "Range of regression coefficient",
-  "description": " Question Consider the regression $Y\\sim X$ which gives us coefficient $\\beta$, now if we do $X\\sim Y$, what is the range of the new coefficient? Solution We have $$ \\beta = \\frac{\\text{Cov}(X,Y)}{\\text{Var}(X)} = \\rho\\frac{\\sigma_Y}{\\sigma_X} $$ where $\\rho$ is the correlation; $\\sigma_X,\\sigma_Y$ are the standard deviations.\nThis means $$ \\beta_{\\text{new}} = \\frac{\\text{Cov(X,Y)}}{\\text{Var}(Y)} = \\rho\\cdot\\frac{\\sigma_X}{\\sigma_Y} = \\rho^2\\cdot\\frac{1}{\\beta} $$\nAnd because $0\\le\\rho^2\\le 1$, we have $$ \\beta_{\\text{new}} \\in [0, 1/\\beta]. $$\n",
+  "headline": "Stopping time for 2D Wiener process",
+  "name": "Stopping time for 2D Wiener process",
+  "description": " Question Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x\u0026gt;0$, $y\u0026gt;0$.\nWhat is the probability that the process hits the $y$-axis before the $x$-axis, i.e.\n$\\mathbb{P}[\\tau_y \u0026lt; \\tau_x]$, where $$ \\tau_x = \\min\\{t : Y_t = 0\\}, \\qquad \\tau_y = \\min\\{t : X_t = 0\\}? $$ Solution Define $\\tau = \\min\\{\\tau_x, \\tau_y\\}$ and let $u(x,y)$ be twice differentiable.\nItô\u0026rsquo;s formula gives\n$$ u(X_\\tau, Y_\\tau) - u(x,y) = \\int_0^\\tau u_x dX_t + \\int_0^\\tau u_y dY_t + \\frac12 \\int_0^\\tau (u_{xx} + u_{yy}) dt. $$\n",
   "keywords": [
     
   ],
-  "articleBody": " Question Consider the regression $Y\\sim X$ which gives us coefficient $\\beta$, now if we do $X\\sim Y$, what is the range of the new coefficient? Solution We have $$ \\beta = \\frac{\\text{Cov}(X,Y)}{\\text{Var}(X)} = \\rho\\frac{\\sigma_Y}{\\sigma_X} $$ where $\\rho$ is the correlation; $\\sigma_X,\\sigma_Y$ are the standard deviations.\nThis means $$ \\beta_{\\text{new}} = \\frac{\\text{Cov(X,Y)}}{\\text{Var}(Y)} = \\rho\\cdot\\frac{\\sigma_X}{\\sigma_Y} = \\rho^2\\cdot\\frac{1}{\\beta} $$\nAnd because $0\\le\\rho^2\\le 1$, we have $$ \\beta_{\\text{new}} \\in [0, 1/\\beta]. $$\n",
-  "wordCount" : "68",
+  "articleBody": " Question Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x\u003e0$, $y\u003e0$.\nWhat is the probability that the process hits the $y$-axis before the $x$-axis, i.e.\n$\\mathbb{P}[\\tau_y \u003c \\tau_x]$, where $$ \\tau_x = \\min\\{t : Y_t = 0\\}, \\qquad \\tau_y = \\min\\{t : X_t = 0\\}? $$ Solution Define $\\tau = \\min\\{\\tau_x, \\tau_y\\}$ and let $u(x,y)$ be twice differentiable.\nItô’s formula gives\n$$ u(X_\\tau, Y_\\tau) - u(x,y) = \\int_0^\\tau u_x dX_t + \\int_0^\\tau u_y dY_t + \\frac12 \\int_0^\\tau (u_{xx} + u_{yy}) dt. $$\nChoose $u$ to solve the boundary value problem $$ \\begin{cases} \\Delta u = 0, \u0026 x\u003e0,\\ y\u003e0 \\\\ u(0,y) = 1, \u0026 y\u003e0 \\\\ u(x,0) = 0, \u0026 x\u003e0. \\end{cases} $$\nSince $\\Delta u = 0$ and the stochastic integrals have mean zero, $$ u(x,y) = \\mathbb{E}[u(X_\\tau, Y_\\tau)]. $$ On the boundary, $u=1$ on the $y$-axis and $u=0$ on the $x$-axis, so $$ u(x,y) = 1 \\cdot \\mathbb{P}[\\tau_y \u003c \\tau_x] + 0 \\cdot \\mathbb{P}[\\tau_x \u003c \\tau_y] = \\mathbb{P}[\\tau_y \u003c \\tau_x]. $$\nThus we compute $u$ from Laplace’s equation with the stated boundary conditions.\nSwitch to polar coordinates $(r,\\theta)$ with $$ x = r\\cos\\theta,\\qquad y = r\\sin\\theta,\\qquad 0 \u003c \\theta \u003c \\frac{\\pi}{2}. $$ The angular boundary conditions become $$ u(r,0) = 0,\\qquad u\\left(r, \\frac{\\pi}{2} \\right) = 1. $$\nLook for solutions independent of $r$: $u(r,\\theta) = f(\\theta)$.\nThen $\\Delta u = 0$ reduces to $$ f’’(\\theta) = 0, $$ so $f(\\theta) = a + c\\theta$.\nUse the boundary values: $$ f(0) = 0 \\implies a = 0, \\ f\\left(\\frac{\\pi}{2}\\right) = 1 \\implies c\\frac{\\pi}{2} = 1 \\implies c = \\frac{2}{\\pi}. $$\nTherefore $$ u(r,\\theta) = \\frac{2}{\\pi}\\theta. $$\nSince $\\theta = \\arctan(y/x)$ for the starting point $(x,y)$, we obtain $$ \\mathbb{P}[\\tau_y \u003c \\tau_x] = u(x,y) = \\frac{2}{\\pi} \\arctan\\left(\\frac{y}{x}\\right). $$\n",
+  "wordCount" : "293",
   "inLanguage": "en",
-  "datePublished": "2025-12-10T14:36:00-06:00",
-  "dateModified": "2025-12-10T14:36:00-06:00",
+  "datePublished": "2025-12-10T19:25:22-06:00",
+  "dateModified": "2025-12-10T19:25:22-06:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/"
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/"
   },
   "publisher": {
     "@type": "Organization",
@@ -261,9 +261,9 @@ $$
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Range of regression coefficient
+      Stopping time for 2D Wiener process
     </h1>
-    <div class="post-meta"><span title='2025-12-10 14:36:00 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span>
+    <div class="post-meta"><span title='2025-12-10 19:25:22 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
 
 </div>
   </header> 
@@ -271,7 +271,13 @@ $$
   <div class="post-content"><div class="problem-box problem-question">
   <div class="problem-box-label">Question</div>
   <div class="problem-box-body">
-    Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient?
+    Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.<br>
+What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.<br>
+$\mathbb{P}[\tau_y &lt; \tau_x]$, where
+$$
+\tau_x = \min\{t : Y_t = 0\}, \qquad
+\tau_y = \min\{t : X_t = 0\}?
+$$
   </div>
 </div>
 
@@ -279,17 +285,62 @@ $$
 <div class="problem-box problem-solution">
   <div class="problem-box-label">Solution</div>
   <div class="problem-box-body">
-    <p>We have
-$$
-\beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X}
-$$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.</p>
-<p>This means
-$$
-\beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta}
+    <p>Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.</p>
+<p>Itô&rsquo;s formula gives</p>
+<p>$$
+u(X_\tau, Y_\tau) - u(x,y)
+= \int_0^\tau u_x dX_t
++ \int_0^\tau u_y dY_t
++ \frac12 \int_0^\tau (u_{xx} + u_{yy}) dt.
 $$</p>
-<p>And because $0\le\rho^2\le 1$, we have
+<p>Choose $u$ to solve the boundary value problem
 $$
-\beta_{\text{new}} \in [0, 1/\beta].
+\begin{cases}
+\Delta u = 0, &amp; x&gt;0,\ y&gt;0 \\
+u(0,y) = 1, &amp; y&gt;0 \\
+u(x,0) = 0, &amp; x&gt;0.
+\end{cases}
+$$</p>
+<p>Since $\Delta u = 0$ and the stochastic integrals have mean zero,
+$$
+u(x,y) = \mathbb{E}[u(X_\tau, Y_\tau)].
+$$
+On the boundary, $u=1$ on the $y$-axis and $u=0$ on the $x$-axis, so
+$$
+u(x,y)
+= 1 \cdot \mathbb{P}[\tau_y &lt; \tau_x] + 0 \cdot \mathbb{P}[\tau_x &lt; \tau_y]
+= \mathbb{P}[\tau_y &lt; \tau_x].
+$$</p>
+<p>Thus we compute $u$ from Laplace&rsquo;s equation with the stated boundary conditions.</p>
+<p>Switch to polar coordinates $(r,\theta)$ with
+$$
+x = r\cos\theta,\qquad y = r\sin\theta,\qquad 0 &lt; \theta &lt; \frac{\pi}{2}.
+$$
+The angular boundary conditions become
+$$
+u(r,0) = 0,\qquad
+u\left(r, \frac{\pi}{2} \right) = 1.
+$$</p>
+<p>Look for solutions independent of $r$: $u(r,\theta) = f(\theta)$.<br>
+Then $\Delta u = 0$ reduces to
+$$
+f&rsquo;&rsquo;(\theta) = 0,
+$$
+so $f(\theta) = a + c\theta$.</p>
+<p>Use the boundary values:
+$$
+f(0) = 0 \implies a = 0, \
+f\left(\frac{\pi}{2}\right) = 1 \implies c\frac{\pi}{2} = 1 \implies c = \frac{2}{\pi}.
+$$</p>
+<p>Therefore
+$$
+u(r,\theta) = \frac{2}{\pi}\theta.
+$$</p>
+<p>Since $\theta = \arctan(y/x)$ for the starting point $(x,y)$, we obtain
+$$
+\mathbb{P}[\tau_y &lt; \tau_x]
+= u(x,y)
+= \frac{2}{\pi} \arctan\left(\frac{y}{x}\right).
 $$</p>
 
   </div>
@@ -303,10 +354,15 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
     <span class="title">« Prev</span>
     <br>
-    <span>Expectation of Gaussian CDF</span>
+    <span>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$</span>
+  </a>
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-04-equicorrelation-matrix/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Correlation matrix with constant correlation</span>
   </a>
 </nav>
 

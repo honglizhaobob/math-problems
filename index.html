@@ -153,12 +153,12 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://honglizhaobob.github.io/" title="Problems">
-                    <span>Problems</span>
+                <a href="https://honglizhaobob.github.io/math-problems/" title="Problems">
+                    <span class="active">Problems</span>
                 </a>
             </li>
             <li>
-                <a href="https://honglizhaobob.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://honglizhaobob.github.io/math-problems/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -198,6 +198,81 @@
 </div>
 
     </footer>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
+$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
+Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
+\mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$ By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Stopping time for 2D Wiener process
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.
+What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.
+$\mathbb{P}[\tau_y &lt; \tau_x]$, where $$ \tau_x = \min\{t : Y_t = 0\}, \qquad \tau_y = \min\{t : X_t = 0\}? $$ Solution Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.
+Itô’s formula gives
+$$ u(X_\tau, Y_\tau) - u(x,y) = \int_0^\tau u_x dX_t &#43; \int_0^\tau u_y dY_t &#43; \frac12 \int_0^\tau (u_{xx} &#43; u_{yy}) dt. $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 19:25:22 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Stopping time for 2D Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Correlation matrix with constant correlation
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Give the upper and lower bounds on the correlation parameter (\rho) for the matrix $$ C=\begin{pmatrix} 1 &amp; \rho &amp; \cdots &amp; \rho \\ \rho &amp; 1 &amp; \cdots &amp; \rho \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \rho &amp; \rho &amp; \cdots &amp; 1 \end{pmatrix}. $$ Solution We write
+$$ C = (1-\rho) I &#43; \rho M, $$ where $M$ is the $n\times n$ matrix of all ones.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 19:12:44 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Correlation matrix with constant correlation" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-04-equicorrelation-matrix/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Expected value of exponential Wiener process
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Let $W_t$ be the standard Wiener process, what is $\mathbb{E}[e^{W_t}]$? Solution We will use the moment generating function (MGF) for $W_t\sim\mathcal{N}(0,t)$. The MGF for Gaussian is $M(s) = \exp\left(\mu s&#43; (1/2)\sigma^2s^2\right)$, plug in $\mu=0, \sigma=\sqrt{t}$, we have $M(t) = e^{(1/2)s^2}$ and $M(1) = \mathbb{E}[e^{W_t}] = \exp((1/2)t)$. </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 19:04:43 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Expected value of exponential Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Expectation of Gaussian CDF
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$? Solution By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then
+$$ \Phi(X) = P[Z \le X] = P[Z - X \le 0] $$
+where $Z - X \sim \mathcal{N}(-\mu, 1&#43;\sigma^2)$. Therefore
+$$ \begin{aligned} P[Z - X \le 0] &amp;= P\!\left( \frac{Z - X &#43; \mu}{\sqrt{1&#43;\sigma^2}} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= P\!\left( \tilde{Z} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= \Phi\!\left( \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right). \end{aligned} $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 18:44:30 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Expectation of Gaussian CDF" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/"></a>
 </article>
 
 <article class="post-entry"> 
