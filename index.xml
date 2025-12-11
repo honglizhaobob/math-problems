@@ -6,8 +6,371 @@
     <description>Recent content on Math &amp; Stats Lounge</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Dec 2025 19:34:57 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 10 Dec 2025 20:53:12 -0600</lastBuildDate>
     <atom:link href="https://honglizhaobob.github.io/math-problems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Useful identities</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/</link>
+      <pubDate>Wed, 10 Dec 2025 20:53:12 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/</guid>
+      <description>&lt;h1 id=&#34;probability-identities&#34;&gt;Probability Identities&lt;/h1&gt;
+&lt;h2 id=&#34;1-conditional-bayes-formula&#34;&gt;1. Conditional Bayes’ Formula&lt;/h2&gt;
+&lt;p&gt;Let $A, B, C$ be events. Then&lt;/p&gt;
+&lt;p&gt;$$
+\frac{P(A \mid B, C)}{1}
+=
+\frac{P(C \mid A, B) , P(A \mid B)}{P(C \mid B)}.
+$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Application.&lt;/strong&gt;&lt;br&gt;
+In estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$A =$ “the coin is biased”&lt;/li&gt;
+&lt;li&gt;$B =$ “first toss is $H$”&lt;/li&gt;
+&lt;li&gt;$C =$ “second toss is $H$”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then Bayes’ rule lets you update the posterior after observing the second toss &lt;em&gt;without recomputing from scratch&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conditional Expectation of Exponential Gaussian</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/</link>
+      <pubDate>Wed, 10 Dec 2025 20:50:39 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Suppose $X \sim \mathcal{N}(\mu_x, \sigma_x^2)$ and $Y \sim \mathcal{N}(\mu_y, \sigma_y^2)$ are jointly Gaussian with correlation $\rho$. Compute
+$$
+\mathbb{E}[e^Y \mid X].
+$$
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;The key step is to identify the conditional distribution of $Y$ given $X$.&lt;br&gt;
+For jointly Gaussian $(X,Y)$, the conditional distribution $Y \mid X$ is Gaussian.&lt;/p&gt;
+&lt;p&gt;We first compute the conditional mean by linear regression of $Y$ on $X$:
+$$
+\mathbb{E}[Y \mid X] = aX + b,
+$$
+where
+$$
+a = \frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)},
+\qquad
+b = \mathbb{E}[Y] - a,\mathbb{E}[X].
+$$
+Since $\mathrm{Cov}(X,Y) = \rho \sigma_x \sigma_y$ and $\mathrm{Var}(X) = \sigma_x^2$, we obtain
+$$
+\mathbb{E}[Y \mid X]
+= \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} X
++ \mu_y
+- \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} \mu_x
+= \mu_y + \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x).
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linear Regression Primer</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/</link>
+      <pubDate>Wed, 10 Dec 2025 20:41:27 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/</guid>
+      <description>&lt;p&gt;In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+&amp;amp;\text{for each } i=1,\ldots,n,\
+&amp;amp;\qquad y_i = f(x_i) + \epsilon_i,
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fake Brownian Motion</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/</link>
+      <pubDate>Wed, 10 Dec 2025 20:39:12 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/</guid>
+      <description>&lt;h2 id=&#34;definition-of-brownian-motion&#34;&gt;Definition of Brownian motion&lt;/h2&gt;
+&lt;p&gt;A Brownian motion $B_t$ is a stochastic process with the following properties:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Stationary increments.&lt;/strong&gt;&lt;br&gt;
+If $s&amp;lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Independent increments.&lt;/strong&gt;&lt;br&gt;
+If $s&amp;lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \le s$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Continuous paths.&lt;/strong&gt;&lt;br&gt;
+The function $t \mapsto B_t$ is almost surely continuous.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: The definition does &lt;em&gt;not&lt;/em&gt; assume Gaussian increments, but from these three properties it follows that&lt;br&gt;
+$$
+B_t \sim \mathcal{N}(0,t).
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Brownian Motion Intuition</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/</link>
+      <pubDate>Wed, 10 Dec 2025 20:36:29 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/</guid>
+      <description>&lt;h2 id=&#34;why-do-we-say-db_t2-approx-dt&#34;&gt;Why do we say $(dB_t)^2 \approx dt$&lt;/h2&gt;
+&lt;p&gt;Let $B_t$ be standard Brownian motion.&lt;br&gt;
+In Itô calculus we track contributions up to order $dt$.&lt;br&gt;
+Although ordinary calculus would ignore second-order terms, in stochastic calculus
+the term $(dB_t)^2$ is &lt;strong&gt;of order $dt$&lt;/strong&gt;, not negligible.&lt;/p&gt;
+&lt;p&gt;To see this:&lt;/p&gt;
+&lt;p&gt;$$
+dB_t \approx B_{t+\Delta t} - B_t \sim \mathcal{N}(0, \Delta t).
+$$&lt;/p&gt;
+&lt;p&gt;Let $Z_{\Delta t} \sim \mathcal{N}(0, \Delta t)$.&lt;br&gt;
+Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Identity for expectation of power of absolute value</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/</link>
+      <pubDate>Wed, 10 Dec 2025 20:35:21 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Suppose $\mathbb{E}[|X|^k]$ exists (is finite). Does $\mathbb{E}[|X|^m]$ exist for all $0 \le m \le k$?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;Yes, $\mathbb{E}[|X|^m]$ exists for all $0 \le m \le k$.&lt;/p&gt;
+&lt;p&gt;Assume $\mathbb{E}[|X|^k] &amp;lt; \infty$. Then
+$$
+\mathbb{E}[|X|^m]
+= \int_{-\infty}^{\infty} |x|^{m} f_X(x)\,dx
+= \int_{|x|\le 1} |x|^{m} f_X(x)\,dx
++ \int_{|x|&amp;gt;1} |x|^{m} f_X(x)\,dx.
+$$&lt;/p&gt;
+&lt;p&gt;On the set $|x| \le 1$, we have $|x|^m \le 1$, so
+$$
+\int_{|x|\le 1} |x|^{m} f_X(x)\,dx
+\le \int_{|x|\le 1} f_X(x)\,dx
+\le 1.
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Computing Pi with Monte Carlo</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/</link>
+      <pubDate>Wed, 10 Dec 2025 20:33:16 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;Correct estimator.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether
+$$
+X^2 + Y^2 &amp;lt; 1.
+$$&lt;/p&gt;
+&lt;p&gt;The probability of this event is the area of a quarter unit circle inside the unit square:
+$$
+\mathbb{P}(X^2 + Y^2 &amp;lt; 1) = \frac{\pi}{4}.
+$$&lt;/p&gt;
+&lt;p&gt;Let
+$$
+A_n = \sum_{i=1}^n X_i,
+$$
+where $X_i$ is the indicator of the event ${X_i^2 + Y_i^2 &amp;lt; 1}$.&lt;br&gt;
+Then
+$$
+\mathbb{E}[X_i] = \frac{\pi}{4},
+$$
+so the estimator
+$$
+\hat{\pi}_n = \frac{4 A_n}{n}
+$$
+is &lt;strong&gt;unbiased&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conditional probability of 2D Gaussian</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/</link>
+      <pubDate>Wed, 10 Dec 2025 20:30:56 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Let $X,Y$ be standard normal with $\operatorname{Cov}(X,Y)=\tfrac{1}{\sqrt{2}}$.&lt;br&gt;
+Compute $\mathbb{P}[X&amp;gt;0 \mid Y&amp;lt;0]$.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;We write
+$$
+\mathbb{P}[X&amp;gt;0 \mid Y&amp;lt;0]
+= \frac{\mathbb{P}(X&amp;gt;0,\, Y&amp;lt;0)}{\mathbb{P}(Y&amp;lt;0)}
+= 2,\mathbb{P}(X&amp;gt;0,\, Y&amp;lt;0),
+$$
+since $\mathbb{P}(Y&amp;lt;0)=\tfrac12$.&lt;/p&gt;
+&lt;p&gt;Because
+$$
+Y = \frac{1}{\sqrt{2}}\,X + \frac{1}{\sqrt{2}}\,Z,
+$$
+with $Z$ independent of $X$, the vector $(X,Z)$ is rotationally symmetric in $\mathbb{R}^2$.&lt;/p&gt;
+&lt;p&gt;The event&lt;br&gt;
+$$
+X&amp;gt;0,\qquad Y&amp;lt;0
+$$
+corresponds to the wedge where $X&amp;gt;0$ but $X+Z&amp;lt;0$.&lt;br&gt;
+Geometrically, the plane is divided into $8$ equal $45^\circ$ sectors, and exactly &lt;strong&gt;one&lt;/strong&gt; of these sectors corresponds to $(X&amp;gt;0, X+Z&amp;lt;0)$. Thus
+$$
+\mathbb{P}(X&amp;gt;0,\, Y&amp;lt;0)=\frac18.
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Distribution of Brownian integral</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-11-brownian-integral-distribution/</link>
+      <pubDate>Wed, 10 Dec 2025 20:28:57 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-11-brownian-integral-distribution/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Let $X_t = \int_0^t W_\tau , d\tau$, where $W_t$ is a standard Wiener process.&lt;br&gt;
+What is the distribution of $X_t$?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;Using integration by parts,
+$$
+X_t = \int_0^t W_s\, ds
+= t W_t - \int_0^t s\, dW_s
+= \int_0^t (t-s)\, dW_s.
+$$&lt;/p&gt;
+&lt;p&gt;For deterministic square-integrable $f(s)$,
+$$
+\int_0^t f(s), dW_s \sim \mathcal{N}\!\left( 0,\; \int_0^t f(s)^2\, ds \right).
+$$&lt;/p&gt;
+&lt;p&gt;Here $f(s) = t - s$, so
+$$
+\int_0^t (t-s)^2\, ds
+= \frac{t^3}{3}.
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lower bound of number of independent generations</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/</link>
+      <pubDate>Wed, 10 Dec 2025 20:27:52 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.&lt;br&gt;
+Each has probability
+$$
+\mathbb{P}(E_i) = 0.02.
+$$&lt;/p&gt;
+&lt;p&gt;We want
+$$
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
+$$&lt;/p&gt;
+&lt;p&gt;Since the $U_i$ are independent,
+$$
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
+= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
+= 1 - (0.98)^N.
+$$&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Simulating fair coin using unfair</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-09-simulating-fair-coin/</link>
+      <pubDate>Wed, 10 Dec 2025 20:26:54 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-09-simulating-fair-coin/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Given a biased coin with probability of heads $p \neq \tfrac12$, how can we simulate a fair coin?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;Naive method (Von Neumann trick).&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Consider pairs of tosses. The outcomes $TH$ and $HT$ have equal probability:
+$$
+\mathbb{P}[TH] = p(1-p), \qquad \mathbb{P}[HT] = p(1-p).
+$$&lt;/p&gt;
+&lt;p&gt;But
+$$
+\mathbb{P}[HH] = p^2, \qquad \mathbb{P}[TT] = (1-p)^2,
+$$
+which are not equal unless $p=\tfrac12$.&lt;/p&gt;
+&lt;p&gt;So we define:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$TH \mapsto H$&lt;/li&gt;
+&lt;li&gt;$HT \mapsto T$&lt;/li&gt;
+&lt;li&gt;discard $HH$ and $TT$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This produces a fair coin.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Correlation matrix sum of eigenvalues lower bound</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/</link>
+      <pubDate>Wed, 10 Dec 2025 20:23:02 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;For a correlation matrix of $n$ random variables:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;What is the sum of eigenvalues?&lt;/li&gt;
+&lt;li&gt;What is a lower bound for the sum of eigenvalues of the inverse of a nonsingular $n\times n$ correlation matrix?&lt;/li&gt;
+&lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;Sum of eigenvalues.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For any square matrix, the sum of eigenvalues equals the trace.&lt;br&gt;
+A correlation matrix has all diagonal entries equal to $1$, so
+$$
+\sum_{i=1}^n \lambda_i = \operatorname{tr}(C) = n.
+$$&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;&lt;strong&gt;Lower bound for the eigenvalue sum of the inverse.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$</title>
       <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/</link>

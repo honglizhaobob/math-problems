@@ -202,93 +202,178 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
+    <h2 class="entry-hint-parent">Useful identities
     </h2>
   </header>
   <div class="entry-content">
-    <p> Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
-$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
-Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0) - \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$
-By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$
+    <p>Probability Identities 1. Conditional Bayes’ Formula Let $A, B, C$ be events. Then
+$$ \frac{P(A \mid B, C)}{1} = \frac{P(C \mid A, B) , P(A \mid B)}{P(C \mid B)}. $$
+Application.
+In estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:
+$A =$ “the coin is biased” $B =$ “first toss is $H$” $C =$ “second toss is $H$” Then Bayes’ rule lets you update the posterior after observing the second toss without recomputing from scratch.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"></a>
+  <footer class="entry-footer"><span title='2025-12-10 20:53:12 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Useful identities" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Stopping time for 2D Wiener process
+    <h2 class="entry-hint-parent">Conditional Expectation of Exponential Gaussian
     </h2>
   </header>
   <div class="entry-content">
-    <p> Question Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.
-What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.
-$\mathbb{P}[\tau_y &lt; \tau_x]$, where $$ \tau_x = \min\{t : Y_t = 0\}, \qquad \tau_y = \min\{t : X_t = 0\}? $$ Solution Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.
-Itô’s formula gives
-$$ u(X_\tau, Y_\tau) - u(x,y) = \int_0^\tau u_x dX_t &#43; \int_0^\tau u_y dY_t &#43; \frac12 \int_0^\tau (u_{xx} &#43; u_{yy}) dt. $$
+    <p> Question Suppose $X \sim \mathcal{N}(\mu_x, \sigma_x^2)$ and $Y \sim \mathcal{N}(\mu_y, \sigma_y^2)$ are jointly Gaussian with correlation $\rho$. Compute $$ \mathbb{E}[e^Y \mid X]. $$ Solution The key step is to identify the conditional distribution of $Y$ given $X$.
+For jointly Gaussian $(X,Y)$, the conditional distribution $Y \mid X$ is Gaussian.
+We first compute the conditional mean by linear regression of $Y$ on $X$: $$ \mathbb{E}[Y \mid X] = aX &#43; b, $$ where $$ a = \frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)}, \qquad b = \mathbb{E}[Y] - a,\mathbb{E}[X]. $$ Since $\mathrm{Cov}(X,Y) = \rho \sigma_x \sigma_y$ and $\mathrm{Var}(X) = \sigma_x^2$, we obtain $$ \mathbb{E}[Y \mid X] = \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} X &#43; \mu_y - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} \mu_x = \mu_y &#43; \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x). $$
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:25:22 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Stopping time for 2D Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/"></a>
+  <footer class="entry-footer"><span title='2025-12-10 20:50:39 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Conditional Expectation of Exponential Gaussian" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Correlation matrix with constant correlation
+    <h2 class="entry-hint-parent">Linear Regression Primer
     </h2>
   </header>
   <div class="entry-content">
-    <p> Question Give the upper and lower bounds on the correlation parameter (\rho) for the matrix $$ C=\begin{pmatrix} 1 &amp; \rho &amp; \cdots &amp; \rho \\ \rho &amp; 1 &amp; \cdots &amp; \rho \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \rho &amp; \rho &amp; \cdots &amp; 1 \end{pmatrix}. $$ Solution We write
-$$ C = (1-\rho) I &#43; \rho M, $$ where $M$ is the $n\times n$ matrix of all ones.
+    <p>In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
+$$ \begin{aligned} &amp;\text{for each } i=1,\ldots,n,\ &amp;\qquad y_i = f(x_i) &#43; \epsilon_i, \end{aligned} $$
+where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:12:44 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Correlation matrix with constant correlation" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-04-equicorrelation-matrix/"></a>
+  <footer class="entry-footer"><span title='2025-12-10 20:41:27 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>4 min</span></footer>
+  <a class="entry-link" aria-label="post link to Linear Regression Primer" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Expected value of exponential Wiener process
+    <h2 class="entry-hint-parent">Fake Brownian Motion
     </h2>
   </header>
   <div class="entry-content">
-    <p> Question Let $W_t$ be the standard Wiener process, what is $\mathbb{E}[e^{W_t}]$? Solution We will use the moment generating function (MGF) for $W_t\sim\mathcal{N}(0,t)$. The MGF for Gaussian is $M(s) = \exp\left(\mu s&#43; (1/2)\sigma^2s^2\right)$, plug in $\mu=0, \sigma=\sqrt{t}$, we have $M(t) = e^{(1/2)s^2}$ and $M(1) = \mathbb{E}[e^{W_t}] = \exp((1/2)t)$. </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:04:43 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expected value of exponential Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Expectation of Gaussian CDF
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$? Solution By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then
-$$ \Phi(X) = P[Z \le X] = P[Z - X \le 0] $$
-where $Z - X \sim \mathcal{N}(-\mu, 1&#43;\sigma^2)$. Therefore
-$$ \begin{aligned} P[Z - X \le 0] &amp;= P\!\left( \frac{Z - X &#43; \mu}{\sqrt{1&#43;\sigma^2}} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= P\!\left( \tilde{Z} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= \Phi\!\left( \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right). \end{aligned} $$
+    <p>Definition of Brownian motion A Brownian motion $B_t$ is a stochastic process with the following properties:
+Stationary increments.
+If $s&lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.
+Independent increments.
+If $s&lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \le s$.
+Continuous paths.
+The function $t \mapsto B_t$ is almost surely continuous.
+Note: The definition does not assume Gaussian increments, but from these three properties it follows that
+$$ B_t \sim \mathcal{N}(0,t). $$
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-10 18:44:30 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expectation of Gaussian CDF" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/"></a>
+  <footer class="entry-footer"><span title='2025-12-10 20:39:12 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Fake Brownian Motion" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Range of regression coefficient
+    <h2 class="entry-hint-parent">Brownian Motion Intuition
     </h2>
   </header>
   <div class="entry-content">
-    <p> Question Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient? Solution We have $$ \beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X} $$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.
-This means $$ \beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta} $$
-And because $0\le\rho^2\le 1$, we have $$ \beta_{\text{new}} \in [0, 1/\beta]. $$
-</p>
+    <p>Why do we say $(dB_t)^2 \approx dt$ Let $B_t$ be standard Brownian motion.
+In Itô calculus we track contributions up to order $dt$.
+Although ordinary calculus would ignore second-order terms, in stochastic calculus the term $(dB_t)^2$ is of order $dt$, not negligible.
+To see this:
+$$ dB_t \approx B_{t&#43;\Delta t} - B_t \sim \mathcal{N}(0, \Delta t). $$
+Let $Z_{\Delta t} \sim \mathcal{N}(0, \Delta t)$.
+Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-10 14:36:00 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Range of regression coefficient" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/"></a>
+  <footer class="entry-footer"><span title='2025-12-10 20:36:29 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Brownian Motion Intuition" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/"></a>
 </article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Identity for expectation of power of absolute value
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Suppose $\mathbb{E}[|X|^k]$ exists (is finite). Does $\mathbb{E}[|X|^m]$ exist for all $0 \le m \le k$? Solution Yes, $\mathbb{E}[|X|^m]$ exists for all $0 \le m \le k$.
+Assume $\mathbb{E}[|X|^k] &lt; \infty$. Then $$ \mathbb{E}[|X|^m] = \int_{-\infty}^{\infty} |x|^{m} f_X(x)\,dx = \int_{|x|\le 1} |x|^{m} f_X(x)\,dx &#43; \int_{|x|&gt;1} |x|^{m} f_X(x)\,dx. $$
+On the set $|x| \le 1$, we have $|x|^m \le 1$, so $$ \int_{|x|\le 1} |x|^{m} f_X(x)\,dx \le \int_{|x|\le 1} f_X(x)\,dx \le 1. $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:35:21 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Identity for expectation of power of absolute value" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Computing Pi with Monte Carlo
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.
+Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether $$ X^2 &#43; Y^2 &lt; 1. $$
+The probability of this event is the area of a quarter unit circle inside the unit square: $$ \mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}. $$
+Let $$ A_n = \sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
+Then $$ \mathbb{E}[X_i] = \frac{\pi}{4}, $$ so the estimator $$ \hat{\pi}_n = \frac{4 A_n}{n} $$ is unbiased.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:33:16 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Computing Pi with Monte Carlo" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Conditional probability of 2D Gaussian
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Let $X,Y$ be standard normal with $\operatorname{Cov}(X,Y)=\tfrac{1}{\sqrt{2}}$.
+Compute $\mathbb{P}[X&gt;0 \mid Y&lt;0]$. Solution We write $$ \mathbb{P}[X&gt;0 \mid Y&lt;0] = \frac{\mathbb{P}(X&gt;0,\, Y&lt;0)}{\mathbb{P}(Y&lt;0)} = 2,\mathbb{P}(X&gt;0,\, Y&lt;0), $$ since $\mathbb{P}(Y&lt;0)=\tfrac12$.
+Because $$ Y = \frac{1}{\sqrt{2}}\,X &#43; \frac{1}{\sqrt{2}}\,Z, $$ with $Z$ independent of $X$, the vector $(X,Z)$ is rotationally symmetric in $\mathbb{R}^2$.
+The event
+$$ X&gt;0,\qquad Y&lt;0 $$ corresponds to the wedge where $X&gt;0$ but $X&#43;Z&lt;0$.
+Geometrically, the plane is divided into $8$ equal $45^\circ$ sectors, and exactly one of these sectors corresponds to $(X&gt;0, X&#43;Z&lt;0)$. Thus $$ \mathbb{P}(X&gt;0,\, Y&lt;0)=\frac18. $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:30:56 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Conditional probability of 2D Gaussian" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Distribution of Brownian integral
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Let $X_t = \int_0^t W_\tau , d\tau$, where $W_t$ is a standard Wiener process.
+What is the distribution of $X_t$? Solution Using integration by parts, $$ X_t = \int_0^t W_s\, ds = t W_t - \int_0^t s\, dW_s = \int_0^t (t-s)\, dW_s. $$
+For deterministic square-integrable $f(s)$, $$ \int_0^t f(s), dW_s \sim \mathcal{N}\!\left( 0,\; \int_0^t f(s)^2\, ds \right). $$
+Here $f(s) = t - s$, so $$ \int_0^t (t-s)^2\, ds = \frac{t^3}{3}. $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:28:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Distribution of Brownian integral" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-11-brownian-integral-distribution/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Lower bound of number of independent generations
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$? Solution Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
+Each has probability $$ \mathbb{P}(E_i) = 0.02. $$
+We want $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95. $$
+Since the $U_i$ are independent, $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) = 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right) = 1 - (0.98)^N. $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:27:52 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Lower bound of number of independent generations" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://honglizhaobob.github.io/page/2/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

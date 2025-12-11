@@ -5,43 +5,30 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$ | Math &amp; Stats Lounge</title>
+<title>Fake Brownian Motion | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
-<meta name="description" content="
-  Question
-  
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
-  
+<meta name="description" content="Definition of Brownian motion
+A Brownian motion $B_t$ is a stochastic process with the following properties:
 
 
+Stationary increments.
+If $s&lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.
 
 
-  Solution
-  
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+Independent increments.
+If $s&lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \le s$.
+
+
+Continuous paths.
+The function $t \mapsto B_t$ is almost surely continuous.
+
+
+Note: The definition does not assume Gaussian increments, but from these three properties it follows that
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
-$$
-Then
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
-$$
-By symmetry,
-$$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
+B_t \sim \mathcal{N}(0,t).
 $$">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -50,7 +37,7 @@ $$">
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/">
 <noscript>
     <style>
         #theme-toggle,
@@ -129,52 +116,44 @@ $$">
 </script>
 
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
-  <meta property="og:description" content=" Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
-$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
-Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0) - \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$
-By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$">
+  <meta property="og:title" content="Fake Brownian Motion">
+  <meta property="og:description" content="Definition of Brownian motion A Brownian motion $B_t$ is a stochastic process with the following properties:
+Stationary increments.
+If $s&lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.
+Independent increments.
+If $s&lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \le s$.
+Continuous paths.
+The function $t \mapsto B_t$ is almost surely continuous.
+Note: The definition does not assume Gaussian increments, but from these three properties it follows that
+$$ B_t \sim \mathcal{N}(0,t). $$">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-10T19:34:57-06:00">
-    <meta property="article:modified_time" content="2025-12-10T19:34:57-06:00">
+    <meta property="article:published_time" content="2025-12-10T20:39:12-06:00">
+    <meta property="article:modified_time" content="2025-12-10T20:39:12-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
-<meta name="twitter:description" content="
-  Question
-  
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
-  
+<meta name="twitter:title" content="Fake Brownian Motion">
+<meta name="twitter:description" content="Definition of Brownian motion
+A Brownian motion $B_t$ is a stochastic process with the following properties:
 
 
+Stationary increments.
+If $s&lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.
 
 
-  Solution
-  
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+Independent increments.
+If $s&lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \le s$.
+
+
+Continuous paths.
+The function $t \mapsto B_t$ is almost surely continuous.
+
+
+Note: The definition does not assume Gaussian increments, but from these three properties it follows that
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
-$$
-Then
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
-$$
-By symmetry,
-$$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
+B_t \sim \mathcal{N}(0,t).
 $$">
 
 
@@ -192,8 +171,8 @@ $$">
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+      "name": "Fake Brownian Motion",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/"
     }
   ]
 }
@@ -202,20 +181,20 @@ $$">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "description": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) + \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\nBy symmetry, $$ \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0), $$ and $$ \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\n",
+  "headline": "Fake Brownian Motion",
+  "name": "Fake Brownian Motion",
+  "description": "Definition of Brownian motion A Brownian motion $B_t$ is a stochastic process with the following properties:\nStationary increments.\nIf $s\u0026lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.\nIndependent increments.\nIf $s\u0026lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \\le s$.\nContinuous paths.\nThe function $t \\mapsto B_t$ is almost surely continuous.\nNote: The definition does not assume Gaussian increments, but from these three properties it follows that\n$$ B_t \\sim \\mathcal{N}(0,t). $$\n",
   "keywords": [
     
   ],
-  "articleBody": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u003e0, Y\u003e0) + \\mathbb{P}(X\u003c0, Y\u003c0) - \\mathbb{P}(X\u003e0, Y\u003c0) - \\mathbb{P}(X\u003c0, Y\u003e0). $$\nBy symmetry, $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}(X\u003c0, Y\u003c0), $$ and $$ \\mathbb{P}(X\u003e0, Y\u003c0) = \\mathbb{P}(X\u003c0, Y\u003e0). $$\nSince the four quadrants partition the plane, $$ 2,\\mathbb{P}(X\u003e0, Y\u003e0) + 2,\\mathbb{P}(X\u003e0, Y\u003c0) = 1. $$ Therefore $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1. $$\nThus we only need $\\mathbb{P}(X\u003e0, Y\u003e0)$.\nFrom the representation of $Y$, $$ Y\u003e0 \\quad\\Longleftrightarrow\\quad \\rho X + \\sqrt{1-\\rho^2}, Z_2 \u003e 0 \\quad\\Longleftrightarrow\\quad Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}!\\left( X\u003e0,; Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X \\right). $$\nLet $$ \\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}. $$\nWe need $$ \\mathbb{P}(x\u003e0,\\ z\u003e\\alpha x) = \\iint_{x\u003e0,\\ z\u003e\\alpha x} \\frac{1}{2\\pi} \\exp!\\left(-\\frac12(x^2 + z^2)\\right), dz, dx. $$\nSwitch to polar coordinates $x = r\\cos\\theta$, $z = r\\sin\\theta$.\nThe line $z = \\alpha x$ becomes $\\tan\\theta = \\alpha$, i.e. $\\theta = \\arctan(\\alpha)$.\nThus the region $x\u003e0$ and $z\u003e\\alpha x$ corresponds to $$ \\theta \\in [\\arctan(\\alpha),, \\tfrac{\\pi}{2}], \\qquad r\u003e0. $$\nCompute: $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi} \\int_{\\arctan(\\alpha)}^{\\pi/2} \\int_0^\\infty r, e^{-r^2/2}, dr, d\\theta. $$\nThe $r$–integral is $$ \\int_0^\\infty r, e^{-r^2/2}, dr = 1. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} - \\arctan(\\alpha) \\right). $$\nRecall $\\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}$, so $$ \\arctan(\\alpha) = -\\arctan!\\left(\\frac{\\rho}{\\sqrt{1-\\rho^2}}\\right) = -\\arcsin(\\rho). $$\nThus $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} + \\arcsin(\\rho) \\right). $$\nFinally, $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1 = \\frac{2}{\\pi}\\arcsin(\\rho). $$\n",
-  "wordCount" : "276",
+  "articleBody": "Definition of Brownian motion A Brownian motion $B_t$ is a stochastic process with the following properties:\nStationary increments.\nIf $s",
+  "wordCount" : "395",
   "inLanguage": "en",
-  "datePublished": "2025-12-10T19:34:57-06:00",
-  "dateModified": "2025-12-10T19:34:57-06:00",
+  "datePublished": "2025-12-10T20:39:12-06:00",
+  "dateModified": "2025-12-10T20:39:12-06:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/"
   },
   "publisher": {
     "@type": "Organization",
@@ -276,121 +255,134 @@ $$">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
+      Fake Brownian Motion
     </h1>
-    <div class="post-meta"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
+    <div class="post-meta"><span title='2025-12-10 20:39:12 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
-  <div class="post-content"><div class="problem-box problem-question">
-  <div class="problem-box-label">Question</div>
-  <div class="problem-box-body">
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute<br>
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
-  </div>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#definition-of-brownian-motion" aria-label="Definition of Brownian motion">Definition of Brownian motion</a></li>
+                <li>
+                    <a href="#a-gaussian-process-from-an-sde" aria-label="A Gaussian process from an SDE">A Gaussian process from an SDE</a></li>
+                <li>
+                    <a href="#forcing-the-variance-to-equal-t" aria-label="Forcing the variance to equal $t$">Forcing the variance to equal $t$</a></li>
+                <li>
+                    <a href="#but-x_t-is-not-brownian-motion" aria-label="But $X_t$ is not Brownian motion">But $X_t$ is not Brownian motion</a>
+                </li>
+            </ul>
+        </div>
+    </details>
 </div>
 
-
-<div class="problem-box problem-solution">
-  <div class="problem-box-label">Solution</div>
-  <div class="problem-box-body">
-    <p>Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+  <div class="post-content"><h2 id="definition-of-brownian-motion">Definition of Brownian motion<a hidden class="anchor" aria-hidden="true" href="#definition-of-brownian-motion">#</a></h2>
+<p>A Brownian motion $B_t$ is a stochastic process with the following properties:</p>
+<ol>
+<li>
+<p><strong>Stationary increments.</strong><br>
+If $s&lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.</p>
+</li>
+<li>
+<p><strong>Independent increments.</strong><br>
+If $s&lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \le s$.</p>
+</li>
+<li>
+<p><strong>Continuous paths.</strong><br>
+The function $t \mapsto B_t$ is almost surely continuous.</p>
+</li>
+</ol>
+<p>Note: The definition does <em>not</em> assume Gaussian increments, but from these three properties it follows that<br>
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 + \sqrt{1 - \rho^2}, Z_2.
+B_t \sim \mathcal{N}(0,t).
 $$</p>
-<p>Then
+<hr>
+<p>We now ask the natural question:</p>
+<blockquote>
+<p>If a process satisfies $X_t \sim \mathcal{N}(0,t)$ for all $t$, must it be Brownian motion?</p>
+</blockquote>
+<p>The answer is <strong>no</strong>, as we demonstrate below.</p>
+<hr>
+<h2 id="a-gaussian-process-from-an-sde">A Gaussian process from an SDE<a hidden class="anchor" aria-hidden="true" href="#a-gaussian-process-from-an-sde">#</a></h2>
+<p>Consider the stochastic differential equation
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) + \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
+\begin{align}
+dX_t &amp;= -\lambda X_t\, dt + \sigma(t)\, dB_t, \\
+X_0 &amp;= 0.
+\end{align}
 $$</p>
-<p>By symmetry,
+<p>Rewriting,
 $$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
+dX_t + \lambda X_t, dt = \sigma(t), dB_t.
 $$</p>
-<p>Since the four quadrants partition the plane,
+<p>Multiply both sides by the integrating factor $e^{\lambda t}$:
+\begin{align}
+e^{\lambda t} dX_t + \lambda X_t e^{\lambda t} dt
+&amp;= \sigma(t) e^{\lambda t} dB_t, \\
+d(X_t e^{\lambda t}) &amp;= \sigma(t) e^{\lambda t} dB_t.
+\end{align}</p>
+<p>Integrating from $0$ to $t$:
 $$
-2,\mathbb{P}(X&gt;0, Y&gt;0) + 2,\mathbb{P}(X&gt;0, Y&lt;0) = 1.
-$$
-Therefore
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1.
-$$</p>
-<p>Thus we only need $\mathbb{P}(X&gt;0, Y&gt;0)$.</p>
-<p>From the representation of $Y$,
-$$
-Y&gt;0 \quad\Longleftrightarrow\quad
-\rho X + \sqrt{1-\rho^2}, Z_2 &gt; 0
-\quad\Longleftrightarrow\quad
-Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X.
-$$</p>
-<p>Hence
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \mathbb{P}!\left( X&gt;0,; Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X \right).
-$$</p>
-<p>Let
-$$
-\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}.
-$$</p>
-<p>We need
-$$
-\mathbb{P}(x&gt;0,\ z&gt;\alpha x)
-= \iint_{x&gt;0,\ z&gt;\alpha x} \frac{1}{2\pi}
-\exp!\left(-\frac12(x^2 + z^2)\right), dz, dx.
-$$</p>
-<p>Switch to polar coordinates $x = r\cos\theta$, $z = r\sin\theta$.<br>
-The line $z = \alpha x$ becomes $\tan\theta = \alpha$, i.e. $\theta = \arctan(\alpha)$.</p>
-<p>Thus the region $x&gt;0$ and $z&gt;\alpha x$ corresponds to
-$$
-\theta \in [\arctan(\alpha),, \tfrac{\pi}{2}], \qquad r&gt;0.
-$$</p>
-<p>Compute:
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}
-\int_{\arctan(\alpha)}^{\pi/2}
-\int_0^\infty r, e^{-r^2/2}, dr, d\theta.
-$$</p>
-<p>The $r$–integral is
-$$
-\int_0^\infty r, e^{-r^2/2}, dr = 1.
-$$</p>
-<p>Hence
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} - \arctan(\alpha) \right).
-$$</p>
-<p>Recall $\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}$, so
-$$
-\arctan(\alpha)
-= -\arctan!\left(\frac{\rho}{\sqrt{1-\rho^2}}\right)
-= -\arcsin(\rho).
+X_t e^{\lambda t} - X_0
+= \int_0^t \sigma(s) e^{\lambda s} dB_s.
 $$</p>
 <p>Thus
 $$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} + \arcsin(\rho) \right).
+X_t = \int_0^t \sigma(s) e^{-\lambda (t-s)}, dB_s.
 $$</p>
-<p>Finally,
+<p>Since this is a stochastic integral with deterministic integrand, $X_t$ is Gaussian with<br>
+variance
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1
-= \frac{2}{\pi}\arcsin(\rho).
+\int_0^t |\sigma(s) e^{-\lambda (t-s)}|^2 ds.
 $$</p>
-
-  </div>
-</div>
-
+<hr>
+<h2 id="forcing-the-variance-to-equal-t">Forcing the variance to equal $t$<a hidden class="anchor" aria-hidden="true" href="#forcing-the-variance-to-equal-t">#</a></h2>
+<p>We ask whether we can choose $\sigma(t)$ such that
+$$
+\mathrm{Var}(X_t) = t.
+$$</p>
+<p>So impose
+$$
+\int_0^t \sigma(s)^2 e^{-2\lambda (t-s)} ds = t.
+$$</p>
+<p>Multiply both sides by $e^{2\lambda t}$:
+$$
+\int_0^t \sigma(s)^2 e^{2\lambda s} ds = t e^{2\lambda t}.
+$$</p>
+<p>Differentiate with respect to $t$:
+$$
+\sigma(t)^2 e^{2\lambda t}
+= e^{2\lambda t} + 2\lambda t e^{2\lambda t}.
+$$</p>
+<p>Therefore
+$$
+\sigma(t) = \sqrt{,1 + 2\lambda t,}.
+$$</p>
+<p>This choice ensures
+$$
+X_t \sim \mathcal{N}(0,t).
+$$</p>
+<hr>
+<h2 id="but-x_t-is-not-brownian-motion">But $X_t$ is <em>not</em> Brownian motion<a hidden class="anchor" aria-hidden="true" href="#but-x_t-is-not-brownian-motion">#</a></h2>
+<p>Even though $X_t$ has the correct marginal distribution, its increment structure is wrong:</p>
+<ul>
+<li>increments of $X_t$ <strong>depend on the past</strong>, because of the exponential factor $e^{-\lambda (t-s)}$</li>
+<li>increments are <strong>not independent</strong></li>
+<li>increments are <strong>not stationary</strong></li>
+</ul>
+<p>These can be verified directly from the covariance function:
+$$
+\mathbb{E}[X_t X_s]
+= \int_0^{\min(s,t)}
+\sigma(u)^2 e^{-\lambda(t-u)} e^{-\lambda(s-u)} du,
+$$
+which is incompatible with Brownian motion.</p>
+<p>Thus, $X_t$ is a <strong>Gaussian process</strong> with the correct variance, but <strong>not a Brownian motion</strong>.</p>
 
 
   </div>
@@ -399,15 +391,15 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/">
     <span class="title">« Prev</span>
     <br>
-    <span>Correlation matrix sum of eigenvalues lower bound</span>
+    <span>Linear Regression Primer</span>
   </a>
-  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/">
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/">
     <span class="title">Next »</span>
     <br>
-    <span>Stopping time for 2D Wiener process</span>
+    <span>Brownian Motion Intuition</span>
   </a>
 </nav>
 

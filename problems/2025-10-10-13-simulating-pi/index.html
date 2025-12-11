@@ -5,15 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$ | Math &amp; Stats Lounge</title>
+<title>Computing Pi with Monte Carlo | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
 <meta name="description" content="
   Question
   
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
+    How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator?
   
 
 
@@ -21,27 +18,31 @@ $$
 
   Solution
   
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+    Correct estimator.
+Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
+X^2 &#43; Y^2 &lt; 1.
 $$
+The probability of this event is the area of a quarter unit circle inside the unit square:
+$$
+\mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}.
+$$
+Let
+$$
+A_n = \sum_{i=1}^n X_i,
+$$
+where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
 Then
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{E}[X_i] = \frac{\pi}{4},
 $$
-By symmetry,
+so the estimator
 $$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
+\hat{\pi}_n = \frac{4 A_n}{n}
 $$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
-$$">
+is unbiased.">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -50,7 +51,7 @@ $$">
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/">
 <noscript>
     <style>
         #theme-toggle,
@@ -129,27 +130,25 @@ $$">
 </script>
 
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
-  <meta property="og:description" content=" Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
-$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
-Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0) - \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$
-By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$">
+  <meta property="og:title" content="Computing Pi with Monte Carlo">
+  <meta property="og:description" content=" Question How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.
+Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether $$ X^2 &#43; Y^2 &lt; 1. $$
+The probability of this event is the area of a quarter unit circle inside the unit square: $$ \mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}. $$
+Let $$ A_n = \sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
+Then $$ \mathbb{E}[X_i] = \frac{\pi}{4}, $$ so the estimator $$ \hat{\pi}_n = \frac{4 A_n}{n} $$ is unbiased.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-10T19:34:57-06:00">
-    <meta property="article:modified_time" content="2025-12-10T19:34:57-06:00">
+    <meta property="article:published_time" content="2025-12-10T20:33:16-06:00">
+    <meta property="article:modified_time" content="2025-12-10T20:33:16-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
+<meta name="twitter:title" content="Computing Pi with Monte Carlo">
 <meta name="twitter:description" content="
   Question
   
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
+    How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator?
   
 
 
@@ -157,25 +156,29 @@ $$
 
   Solution
   
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+    Correct estimator.
+Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
+X^2 &#43; Y^2 &lt; 1.
 $$
+The probability of this event is the area of a quarter unit circle inside the unit square:
+$$
+\mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}.
+$$
+Let
+$$
+A_n = \sum_{i=1}^n X_i,
+$$
+where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
 Then
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{E}[X_i] = \frac{\pi}{4},
 $$
-By symmetry,
+so the estimator
 $$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
+\hat{\pi}_n = \frac{4 A_n}{n}
 $$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
-$$">
+is unbiased.">
 
 
 <script type="application/ld+json">
@@ -192,8 +195,8 @@ $$">
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+      "name": "Computing Pi with Monte Carlo",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"
     }
   ]
 }
@@ -202,20 +205,20 @@ $$">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "description": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) + \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\nBy symmetry, $$ \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0), $$ and $$ \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\n",
+  "headline": "Computing Pi with Monte Carlo",
+  "name": "Computing Pi with Monte Carlo",
+  "description": " Question How can we compute $\\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.\nGenerate i.i.d. uniform random variables $X,Y \\sim \\mathrm{Uniform}(0,1)$ and check whether $$ X^2 + Y^2 \u0026lt; 1. $$\nThe probability of this event is the area of a quarter unit circle inside the unit square: $$ \\mathbb{P}(X^2 + Y^2 \u0026lt; 1) = \\frac{\\pi}{4}. $$\nLet $$ A_n = \\sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 + Y_i^2 \u0026lt; 1}$.\nThen $$ \\mathbb{E}[X_i] = \\frac{\\pi}{4}, $$ so the estimator $$ \\hat{\\pi}_n = \\frac{4 A_n}{n} $$ is unbiased.\n",
   "keywords": [
     
   ],
-  "articleBody": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u003e0, Y\u003e0) + \\mathbb{P}(X\u003c0, Y\u003c0) - \\mathbb{P}(X\u003e0, Y\u003c0) - \\mathbb{P}(X\u003c0, Y\u003e0). $$\nBy symmetry, $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}(X\u003c0, Y\u003c0), $$ and $$ \\mathbb{P}(X\u003e0, Y\u003c0) = \\mathbb{P}(X\u003c0, Y\u003e0). $$\nSince the four quadrants partition the plane, $$ 2,\\mathbb{P}(X\u003e0, Y\u003e0) + 2,\\mathbb{P}(X\u003e0, Y\u003c0) = 1. $$ Therefore $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1. $$\nThus we only need $\\mathbb{P}(X\u003e0, Y\u003e0)$.\nFrom the representation of $Y$, $$ Y\u003e0 \\quad\\Longleftrightarrow\\quad \\rho X + \\sqrt{1-\\rho^2}, Z_2 \u003e 0 \\quad\\Longleftrightarrow\\quad Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}!\\left( X\u003e0,; Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X \\right). $$\nLet $$ \\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}. $$\nWe need $$ \\mathbb{P}(x\u003e0,\\ z\u003e\\alpha x) = \\iint_{x\u003e0,\\ z\u003e\\alpha x} \\frac{1}{2\\pi} \\exp!\\left(-\\frac12(x^2 + z^2)\\right), dz, dx. $$\nSwitch to polar coordinates $x = r\\cos\\theta$, $z = r\\sin\\theta$.\nThe line $z = \\alpha x$ becomes $\\tan\\theta = \\alpha$, i.e. $\\theta = \\arctan(\\alpha)$.\nThus the region $x\u003e0$ and $z\u003e\\alpha x$ corresponds to $$ \\theta \\in [\\arctan(\\alpha),, \\tfrac{\\pi}{2}], \\qquad r\u003e0. $$\nCompute: $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi} \\int_{\\arctan(\\alpha)}^{\\pi/2} \\int_0^\\infty r, e^{-r^2/2}, dr, d\\theta. $$\nThe $r$–integral is $$ \\int_0^\\infty r, e^{-r^2/2}, dr = 1. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} - \\arctan(\\alpha) \\right). $$\nRecall $\\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}$, so $$ \\arctan(\\alpha) = -\\arctan!\\left(\\frac{\\rho}{\\sqrt{1-\\rho^2}}\\right) = -\\arcsin(\\rho). $$\nThus $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} + \\arcsin(\\rho) \\right). $$\nFinally, $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1 = \\frac{2}{\\pi}\\arcsin(\\rho). $$\n",
-  "wordCount" : "276",
+  "articleBody": " Question How can we compute $\\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.\nGenerate i.i.d. uniform random variables $X,Y \\sim \\mathrm{Uniform}(0,1)$ and check whether $$ X^2 + Y^2 \u003c 1. $$\nThe probability of this event is the area of a quarter unit circle inside the unit square: $$ \\mathbb{P}(X^2 + Y^2 \u003c 1) = \\frac{\\pi}{4}. $$\nLet $$ A_n = \\sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 + Y_i^2 \u003c 1}$.\nThen $$ \\mathbb{E}[X_i] = \\frac{\\pi}{4}, $$ so the estimator $$ \\hat{\\pi}_n = \\frac{4 A_n}{n} $$ is unbiased.\nSolution Standard deviation of the estimator.\nSince $X_i$ is Bernoulli, $$ \\mathrm{Var}(X_i) = \\mathbb{E}[X_i^2] - (\\mathbb{E}[X_i])^2 = \\frac{\\pi}{4} - \\frac{\\pi^2}{16}. $$\nThus, $$ \\mathrm{Var}(A_n) = n \\left( \\frac{\\pi}{4} - \\frac{\\pi^2}{16} \\right). $$\nFor the estimator, $$ \\hat{\\pi}_n = \\frac{4A_n}{n}, $$ we have $$ \\mathrm{Var}(\\hat{\\pi}_n) = \\frac{16}{n^2} \\mathrm{Var}(A_n) = \\frac{16}{n^2} \\cdot n \\left( \\frac{\\pi}{4} - \\frac{\\pi^2}{16} \\right) = \\frac{4\\pi - \\pi^2}{n}. $$\nTherefore, the standard deviation is $$ \\sqrt{\\frac{4\\pi - \\pi^2}{n}}. $$\n",
+  "wordCount" : "173",
   "inLanguage": "en",
-  "datePublished": "2025-12-10T19:34:57-06:00",
-  "dateModified": "2025-12-10T19:34:57-06:00",
+  "datePublished": "2025-12-10T20:33:16-06:00",
+  "dateModified": "2025-12-10T20:33:16-06:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"
   },
   "publisher": {
     "@type": "Organization",
@@ -276,9 +279,9 @@ $$">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
+      Computing Pi with Monte Carlo
     </h1>
-    <div class="post-meta"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
+    <div class="post-meta"><span title='2025-12-10 20:33:16 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span>
 
 </div>
   </header> 
@@ -286,10 +289,7 @@ $$">
   <div class="post-content"><div class="problem-box problem-question">
   <div class="problem-box-label">Question</div>
   <div class="problem-box-body">
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute<br>
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
+    How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator?
   </div>
 </div>
 
@@ -297,95 +297,62 @@ $$
 <div class="problem-box problem-solution">
   <div class="problem-box-label">Solution</div>
   <div class="problem-box-body">
-    <p>Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+    <p><strong>Correct estimator.</strong></p>
+<p>Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 + \sqrt{1 - \rho^2}, Z_2.
+X^2 + Y^2 &lt; 1.
 $$</p>
-<p>Then
+<p>The probability of this event is the area of a quarter unit circle inside the unit square:
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) + \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
-$$</p>
-<p>By symmetry,
-$$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
-$$</p>
-<p>Since the four quadrants partition the plane,
-$$
-2,\mathbb{P}(X&gt;0, Y&gt;0) + 2,\mathbb{P}(X&gt;0, Y&lt;0) = 1.
-$$
-Therefore
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1.
-$$</p>
-<p>Thus we only need $\mathbb{P}(X&gt;0, Y&gt;0)$.</p>
-<p>From the representation of $Y$,
-$$
-Y&gt;0 \quad\Longleftrightarrow\quad
-\rho X + \sqrt{1-\rho^2}, Z_2 &gt; 0
-\quad\Longleftrightarrow\quad
-Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X.
-$$</p>
-<p>Hence
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \mathbb{P}!\left( X&gt;0,; Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X \right).
+\mathbb{P}(X^2 + Y^2 &lt; 1) = \frac{\pi}{4}.
 $$</p>
 <p>Let
 $$
-\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}.
-$$</p>
-<p>We need
+A_n = \sum_{i=1}^n X_i,
 $$
-\mathbb{P}(x&gt;0,\ z&gt;\alpha x)
-= \iint_{x&gt;0,\ z&gt;\alpha x} \frac{1}{2\pi}
-\exp!\left(-\frac12(x^2 + z^2)\right), dz, dx.
-$$</p>
-<p>Switch to polar coordinates $x = r\cos\theta$, $z = r\sin\theta$.<br>
-The line $z = \alpha x$ becomes $\tan\theta = \alpha$, i.e. $\theta = \arctan(\alpha)$.</p>
-<p>Thus the region $x&gt;0$ and $z&gt;\alpha x$ corresponds to
+where $X_i$ is the indicator of the event ${X_i^2 + Y_i^2 &lt; 1}$.<br>
+Then
 $$
-\theta \in [\arctan(\alpha),, \tfrac{\pi}{2}], \qquad r&gt;0.
-$$</p>
-<p>Compute:
+\mathbb{E}[X_i] = \frac{\pi}{4},
 $$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}
-\int_{\arctan(\alpha)}^{\pi/2}
-\int_0^\infty r, e^{-r^2/2}, dr, d\theta.
-$$</p>
-<p>The $r$–integral is
+so the estimator
 $$
-\int_0^\infty r, e^{-r^2/2}, dr = 1.
-$$</p>
-<p>Hence
+\hat{\pi}_n = \frac{4 A_n}{n}
 $$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} - \arctan(\alpha) \right).
-$$</p>
-<p>Recall $\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}$, so
+is <strong>unbiased</strong>.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p><strong>Standard deviation of the estimator.</strong></p>
+<p>Since $X_i$ is Bernoulli,
 $$
-\arctan(\alpha)
-= -\arctan!\left(\frac{\rho}{\sqrt{1-\rho^2}}\right)
-= -\arcsin(\rho).
+\mathrm{Var}(X_i)
+= \mathbb{E}[X_i^2] - (\mathbb{E}[X_i])^2
+= \frac{\pi}{4} - \frac{\pi^2}{16}.
 $$</p>
-<p>Thus
+<p>Thus,
 $$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} + \arcsin(\rho) \right).
+\mathrm{Var}(A_n)
+= n \left( \frac{\pi}{4} - \frac{\pi^2}{16} \right).
 $$</p>
-<p>Finally,
+<p>For the estimator,
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1
-= \frac{2}{\pi}\arcsin(\rho).
+\hat{\pi}_n = \frac{4A_n}{n},
+$$
+we have
+$$
+\mathrm{Var}(\hat{\pi}_n)
+= \frac{16}{n^2} \mathrm{Var}(A_n)
+= \frac{16}{n^2} \cdot n \left( \frac{\pi}{4} - \frac{\pi^2}{16} \right)
+= \frac{4\pi - \pi^2}{n}.
+$$</p>
+<p>Therefore, the <strong>standard deviation</strong> is
+$$
+\sqrt{\frac{4\pi - \pi^2}{n}}.
 $$</p>
 
   </div>
@@ -399,15 +366,15 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/">
     <span class="title">« Prev</span>
     <br>
-    <span>Correlation matrix sum of eigenvalues lower bound</span>
+    <span>Identity for expectation of power of absolute value</span>
   </a>
-  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/">
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/">
     <span class="title">Next »</span>
     <br>
-    <span>Stopping time for 2D Wiener process</span>
+    <span>Conditional probability of 2D Gaussian</span>
   </a>
 </nav>
 

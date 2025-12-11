@@ -5,15 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$ | Math &amp; Stats Lounge</title>
+<title>Lower bound of number of independent generations | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
 <meta name="description" content="
   Question
   
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
+    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
   
 
 
@@ -21,27 +18,23 @@ $$
 
   Solution
   
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+    Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
+Each has probability
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
+\mathbb{P}(E_i) = 0.02.
 $$
-Then
+We want
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
 $$
-By symmetry,
+Since the $U_i$ are independent,
 $$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
+= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
+= 1 - (0.98)^N.
 $$">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -50,7 +43,7 @@ $$">
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/">
 <noscript>
     <style>
         #theme-toggle,
@@ -129,27 +122,24 @@ $$">
 </script>
 
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
-  <meta property="og:description" content=" Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
-$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
-Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0) - \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$
-By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$">
+  <meta property="og:title" content="Lower bound of number of independent generations">
+  <meta property="og:description" content=" Question How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$? Solution Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
+Each has probability $$ \mathbb{P}(E_i) = 0.02. $$
+We want $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95. $$
+Since the $U_i$ are independent, $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) = 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right) = 1 - (0.98)^N. $$">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-10T19:34:57-06:00">
-    <meta property="article:modified_time" content="2025-12-10T19:34:57-06:00">
+    <meta property="article:published_time" content="2025-12-10T20:27:52-06:00">
+    <meta property="article:modified_time" content="2025-12-10T20:27:52-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
+<meta name="twitter:title" content="Lower bound of number of independent generations">
 <meta name="twitter:description" content="
   Question
   
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
+    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
   
 
 
@@ -157,24 +147,20 @@ $$
 
   Solution
   
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+    Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
+Each has probability
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
+\mathbb{P}(E_i) = 0.02.
 $$
-Then
+We want
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
 $$
-By symmetry,
+Since the $U_i$ are independent,
 $$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
+= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
+= 1 - (0.98)^N.
 $$">
 
 
@@ -192,8 +178,8 @@ $$">
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+      "name": "Lower bound of number of independent generations",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/"
     }
   ]
 }
@@ -202,20 +188,20 @@ $$">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "description": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) + \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\nBy symmetry, $$ \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0), $$ and $$ \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\n",
+  "headline": "Lower bound of number of independent generations",
+  "name": "Lower bound of number of independent generations",
+  "description": " Question How many independent $\\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$? Solution Let $E_i$ denote the event $U_i \\in [0.7, 0.72]$.\nEach has probability $$ \\mathbb{P}(E_i) = 0.02. $$\nWe want $$ \\mathbb{P}!\\left( \\bigcup_{i=1}^N E_i \\right) \\ge 0.95. $$\nSince the $U_i$ are independent, $$ \\mathbb{P}!\\left( \\bigcup_{i=1}^N E_i \\right) = 1 - \\mathbb{P}!\\left( \\bigcap_{i=1}^N E_i^c \\right) = 1 - (0.98)^N. $$\n",
   "keywords": [
     
   ],
-  "articleBody": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u003e0, Y\u003e0) + \\mathbb{P}(X\u003c0, Y\u003c0) - \\mathbb{P}(X\u003e0, Y\u003c0) - \\mathbb{P}(X\u003c0, Y\u003e0). $$\nBy symmetry, $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}(X\u003c0, Y\u003c0), $$ and $$ \\mathbb{P}(X\u003e0, Y\u003c0) = \\mathbb{P}(X\u003c0, Y\u003e0). $$\nSince the four quadrants partition the plane, $$ 2,\\mathbb{P}(X\u003e0, Y\u003e0) + 2,\\mathbb{P}(X\u003e0, Y\u003c0) = 1. $$ Therefore $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1. $$\nThus we only need $\\mathbb{P}(X\u003e0, Y\u003e0)$.\nFrom the representation of $Y$, $$ Y\u003e0 \\quad\\Longleftrightarrow\\quad \\rho X + \\sqrt{1-\\rho^2}, Z_2 \u003e 0 \\quad\\Longleftrightarrow\\quad Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}!\\left( X\u003e0,; Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X \\right). $$\nLet $$ \\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}. $$\nWe need $$ \\mathbb{P}(x\u003e0,\\ z\u003e\\alpha x) = \\iint_{x\u003e0,\\ z\u003e\\alpha x} \\frac{1}{2\\pi} \\exp!\\left(-\\frac12(x^2 + z^2)\\right), dz, dx. $$\nSwitch to polar coordinates $x = r\\cos\\theta$, $z = r\\sin\\theta$.\nThe line $z = \\alpha x$ becomes $\\tan\\theta = \\alpha$, i.e. $\\theta = \\arctan(\\alpha)$.\nThus the region $x\u003e0$ and $z\u003e\\alpha x$ corresponds to $$ \\theta \\in [\\arctan(\\alpha),, \\tfrac{\\pi}{2}], \\qquad r\u003e0. $$\nCompute: $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi} \\int_{\\arctan(\\alpha)}^{\\pi/2} \\int_0^\\infty r, e^{-r^2/2}, dr, d\\theta. $$\nThe $r$–integral is $$ \\int_0^\\infty r, e^{-r^2/2}, dr = 1. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} - \\arctan(\\alpha) \\right). $$\nRecall $\\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}$, so $$ \\arctan(\\alpha) = -\\arctan!\\left(\\frac{\\rho}{\\sqrt{1-\\rho^2}}\\right) = -\\arcsin(\\rho). $$\nThus $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} + \\arcsin(\\rho) \\right). $$\nFinally, $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1 = \\frac{2}{\\pi}\\arcsin(\\rho). $$\n",
-  "wordCount" : "276",
+  "articleBody": " Question How many independent $\\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$? Solution Let $E_i$ denote the event $U_i \\in [0.7, 0.72]$.\nEach has probability $$ \\mathbb{P}(E_i) = 0.02. $$\nWe want $$ \\mathbb{P}!\\left( \\bigcup_{i=1}^N E_i \\right) \\ge 0.95. $$\nSince the $U_i$ are independent, $$ \\mathbb{P}!\\left( \\bigcup_{i=1}^N E_i \\right) = 1 - \\mathbb{P}!\\left( \\bigcap_{i=1}^N E_i^c \\right) = 1 - (0.98)^N. $$\nThus we need $$ 1 - 0.98^N \\ge 0.95 \\quad\\Longleftrightarrow\\quad 0.98^N \\le 0.05. $$\nTaking logarithms, $$ N \\log(0.98) \\le \\log(0.05) \\quad\\Longrightarrow\\quad N \\ge \\frac{\\log 0.05}{\\log 0.98}. $$\n",
+  "wordCount" : "107",
   "inLanguage": "en",
-  "datePublished": "2025-12-10T19:34:57-06:00",
-  "dateModified": "2025-12-10T19:34:57-06:00",
+  "datePublished": "2025-12-10T20:27:52-06:00",
+  "dateModified": "2025-12-10T20:27:52-06:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/"
   },
   "publisher": {
     "@type": "Organization",
@@ -276,9 +262,9 @@ $$">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
+      Lower bound of number of independent generations
     </h1>
-    <div class="post-meta"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
+    <div class="post-meta"><span title='2025-12-10 20:27:52 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span>
 
 </div>
   </header> 
@@ -286,10 +272,7 @@ $$">
   <div class="post-content"><div class="problem-box problem-question">
   <div class="problem-box-label">Question</div>
   <div class="problem-box-body">
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute<br>
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
+    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
   </div>
 </div>
 
@@ -297,95 +280,32 @@ $$
 <div class="problem-box problem-solution">
   <div class="problem-box-label">Solution</div>
   <div class="problem-box-body">
-    <p>Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
+    <p>Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.<br>
+Each has probability
 $$
-X = Z_1, \qquad
-Y = \rho Z_1 + \sqrt{1 - \rho^2}, Z_2.
+\mathbb{P}(E_i) = 0.02.
 $$</p>
-<p>Then
+<p>We want
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) + \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
 $$</p>
-<p>By symmetry,
+<p>Since the $U_i$ are independent,
 $$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
+\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
+= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
+= 1 - (0.98)^N.
 $$</p>
-<p>Since the four quadrants partition the plane,
+<p>Thus we need
 $$
-2,\mathbb{P}(X&gt;0, Y&gt;0) + 2,\mathbb{P}(X&gt;0, Y&lt;0) = 1.
-$$
-Therefore
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1.
-$$</p>
-<p>Thus we only need $\mathbb{P}(X&gt;0, Y&gt;0)$.</p>
-<p>From the representation of $Y$,
-$$
-Y&gt;0 \quad\Longleftrightarrow\quad
-\rho X + \sqrt{1-\rho^2}, Z_2 &gt; 0
+1 - 0.98^N \ge 0.95
 \quad\Longleftrightarrow\quad
-Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X.
+0.98^N \le 0.05.
 $$</p>
-<p>Hence
+<p>Taking logarithms,
 $$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \mathbb{P}!\left( X&gt;0,; Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X \right).
-$$</p>
-<p>Let
-$$
-\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}.
-$$</p>
-<p>We need
-$$
-\mathbb{P}(x&gt;0,\ z&gt;\alpha x)
-= \iint_{x&gt;0,\ z&gt;\alpha x} \frac{1}{2\pi}
-\exp!\left(-\frac12(x^2 + z^2)\right), dz, dx.
-$$</p>
-<p>Switch to polar coordinates $x = r\cos\theta$, $z = r\sin\theta$.<br>
-The line $z = \alpha x$ becomes $\tan\theta = \alpha$, i.e. $\theta = \arctan(\alpha)$.</p>
-<p>Thus the region $x&gt;0$ and $z&gt;\alpha x$ corresponds to
-$$
-\theta \in [\arctan(\alpha),, \tfrac{\pi}{2}], \qquad r&gt;0.
-$$</p>
-<p>Compute:
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}
-\int_{\arctan(\alpha)}^{\pi/2}
-\int_0^\infty r, e^{-r^2/2}, dr, d\theta.
-$$</p>
-<p>The $r$–integral is
-$$
-\int_0^\infty r, e^{-r^2/2}, dr = 1.
-$$</p>
-<p>Hence
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} - \arctan(\alpha) \right).
-$$</p>
-<p>Recall $\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}$, so
-$$
-\arctan(\alpha)
-= -\arctan!\left(\frac{\rho}{\sqrt{1-\rho^2}}\right)
-= -\arcsin(\rho).
-$$</p>
-<p>Thus
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} + \arcsin(\rho) \right).
-$$</p>
-<p>Finally,
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1
-= \frac{2}{\pi}\arcsin(\rho).
+N \log(0.98) \le \log(0.05)
+\quad\Longrightarrow\quad
+N \ge \frac{\log 0.05}{\log 0.98}.
 $$</p>
 
   </div>
@@ -399,15 +319,15 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-11-brownian-integral-distribution/">
     <span class="title">« Prev</span>
     <br>
-    <span>Correlation matrix sum of eigenvalues lower bound</span>
+    <span>Distribution of Brownian integral</span>
   </a>
-  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/">
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-09-simulating-fair-coin/">
     <span class="title">Next »</span>
     <br>
-    <span>Stopping time for 2D Wiener process</span>
+    <span>Simulating fair coin using unfair</span>
   </a>
 </nav>
 

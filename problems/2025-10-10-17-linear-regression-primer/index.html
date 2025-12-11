@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Linear Regression Primer | Math &amp; Stats Lounge</title>
+<meta name="keywords" content="">
+<meta name="description" content="In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
+$$
+\begin{aligned}
+&amp;\text{for each } i=1,\ldots,n,\
+&amp;\qquad y_i = f(x_i) &#43; \epsilon_i,
+\end{aligned}
+$$
+where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.">
+<meta name="author" content="">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/">
+<link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://honglizhaobob.github.io/math-problems/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://honglizhaobob.github.io/math-problems/apple-touch-icon.png">
+<link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+      integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+      crossorigin="anonymous">
+
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$",  right: "$",  display: false}
+      ]
+    });
+  });
+</script>
+
+
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/">
+  <meta property="og:site_name" content="Math & Stats Lounge">
+  <meta property="og:title" content="Linear Regression Primer">
+  <meta property="og:description" content="In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
+$$ \begin{aligned} &amp;\text{for each } i=1,\ldots,n,\ &amp;\qquad y_i = f(x_i) &#43; \epsilon_i, \end{aligned} $$
+where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="problems">
+    <meta property="article:published_time" content="2025-12-10T20:41:27-06:00">
+    <meta property="article:modified_time" content="2025-12-10T20:41:27-06:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linear Regression Primer">
+<meta name="twitter:description" content="In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
+$$
+\begin{aligned}
+&amp;\text{for each } i=1,\ldots,n,\
+&amp;\qquad y_i = f(x_i) &#43; \epsilon_i,
+\end{aligned}
+$$
+where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Problems",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linear Regression Primer",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linear Regression Primer",
+  "name": "Linear Regression Primer",
+  "description": "In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that\n$$ \\begin{aligned} \u0026amp;\\text{for each } i=1,\\ldots,n,\\ \u0026amp;\\qquad y_i = f(x_i) + \\epsilon_i, \\end{aligned} $$\nwhere $\\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that\n$$ \\begin{aligned} \u0026\\text{for each } i=1,\\ldots,n,\\ \u0026\\qquad y_i = f(x_i) + \\epsilon_i, \\end{aligned} $$\nwhere $\\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.\nIn simple linear regression, we assume a linear form:\n$$ y_i = \\beta_0 + \\beta_1 x_i + \\epsilon_i. $$\nThus the regression function is a parametrized model $f(x; \\beta_0, \\beta_1)$.\nFor multiple predictors $x_{1i}, x_{2i}, \\ldots, x_{pi}$, the multiple linear regression model becomes\n$$ y_i = \\beta_0 + \\beta_1 x_{1i} + \\beta_2 x_{2i} + \\cdots + \\beta_p x_{pi} + \\epsilon_i. $$\nIn vector form:\n$$ y = X\\beta + \\epsilon, \\qquad \\epsilon \\sim \\mathcal{N}(0, \\sigma^2 I), $$\nwhere $y \\in \\mathbb{R}^n$, $X \\in \\mathbb{R}^{n \\times (p+1)}$, and $\\beta \\in \\mathbb{R}^{p+1}$.\nThe intercept $\\beta_0$ corresponds to the first column of ones:\n$$ X = \\begin{bmatrix} \\mathbf{1} \u0026 x_1 \u0026 \\cdots \u0026 x_p \\end{bmatrix}. $$\nSimple linear regression is a special case of this model.\nAssumptions of Linear Regression Question The true relationship between $y$ and $x$ is linear.\nRun linear regression and plot fitted values vs.\\ residuals. The residuals should be randomly scattered around $0$. A visible pattern indicates nonlinearity.\nQuestion Errors are independent: $\\epsilon_i$ independent of $\\epsilon_j$ for $i \\ne j$.\nCheck the correlation matrix of residuals or scatterplots of residual components.\nQuestion Homoscedasticity: constant variance of errors.\nPlot fitted values vs.\\ residuals. The spread should be roughly constant — the “tube shape” pattern.\nQuestion Errors are Gaussian: $\\epsilon_i \\sim \\mathcal{N}(0,\\sigma^2)$.\nCheck histograms or QQ-plots of residuals.\nQuestion Errors are independent of predictors (no endogeneity).\nPlot residuals or fitted values vs.\\ columns of $X$.\nQuestion No perfect collinearity among predictors.\nCheck condition numbers or variance inflation factors (VIF).\nThese assumptions are implicitly conditioned on $X$.\nWith this, we now discuss solutions of linear regression.\nOrdinary Least Squares Regression seeks the “best” linear fit, commonly interpreted as minimizing the residual sum of squares:\n$$ \\mathrm{RSS}(\\beta) = | y - X\\beta |^2. $$\nThis yields the ordinary least squares (OLS) estimator.\nQuestion Show that the OLS solution is $\\hat{\\beta} = (X^\\top X)^{-1} X^\\top y$. Solution We minimize\n$$ \\min_{\\beta} | y - X\\beta |^2. $$\nAssuming no perfect collinearity, $X^\\top X$ is positive definite. Compute the gradient:\n$$ \\nabla_\\beta |y - X\\beta|^2 = -2X^\\top(y - X\\beta). $$\nSetting to zero:\n$$ X^\\top X \\beta = X^\\top y, $$\nso the unique minimizer is\n$$ \\hat{\\beta} = (X^\\top X)^{-1} X^\\top y. $$\nThe minimal RSS is\n$$ | (I - X(X^\\top X)^{-1}X^\\top )y |^2. $$\nSolution of Simple Linear Regression In the simple linear case $X = [\\mathbf{1} \\;\\; x]$, we compute:\n$$ X^\\top X = \\begin{bmatrix} n \u0026 n\\bar{x} \\ n\\bar{x} \u0026 \\sum_{i} x_i^2 \\end{bmatrix}, $$\nand its inverse:\n$$ (X^\\top X)^{-1} = \\frac{1}{n \\sum_i x_i^2 - n^2 \\bar{x}^2} \\begin{bmatrix} \\sum_i x_i^2 \u0026 -n\\bar{x} \\ -n\\bar{x} \u0026 n \\end{bmatrix}. $$\nCompute $X^\\top y$:\n$$ X^\\top y = \\begin{bmatrix} \\sum_i y_i \\ \\sum_i x_i y_i \\end{bmatrix}. $$\nThus, we have $$ \\hat{\\beta}_1 = \\frac{n\\sum_i x_i y_i - (\\sum_i x_i)(\\sum_i y_i)}{n\\sum_i x_i^2 - (\\sum_i x_i)^2} = \\frac{s_{xy}}{s_x^2} $$\nand\n$$ \\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1 \\bar{x}. $$\nSimple Linear Regression: Mean Centering Mean-centering defines $x' = x - \\bar{x}$.\nCenter $x$ only: $\\hat{\\beta}_0 = \\bar{y}$. Center $y$ only: $\\hat{\\beta}_0 = -\\hat{\\beta}_1 \\bar{x}$. Center both: $\\hat{\\beta}_0 = 0$. Also,\n$$ \\mathrm{Cov}(\\hat{\\beta}_0, \\hat{\\beta}_1) = 0. $$\nInfinite Data Case Linear regression solves\n$$ \\min_{a,b} ; \\mathbb{E}[(Y - (aX + b))^2]. $$\nThe solution is\n$$ \\begin{bmatrix} a \\ b \\end{bmatrix} = \\begin{bmatrix} \\dfrac{\\mathrm{Cov}(X,Y)}{\\mathrm{Var}(X)} \\ \\mathbb{E}[Y] - a \\mathbb{E}[X] \\end{bmatrix}. $$\nThis matches the finite-sample formulas when sample moments converge to population moments.\n",
+  "wordCount" : "652",
+  "inLanguage": "en",
+  "datePublished": "2025-12-10T20:41:27-06:00",
+  "dateModified": "2025-12-10T20:41:27-06:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Math \u0026 Stats Lounge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://honglizhaobob.github.io/math-problems/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://honglizhaobob.github.io/math-problems/" accesskey="h" title="Math &amp; Stats (Alt + H)">Math &amp; Stats</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://honglizhaobob.github.io/math-problems/" title="Problems">
+                    <span>Problems</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://honglizhaobob.github.io/math-problems/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Linear Regression Primer
+    </h1>
+    <div class="post-meta"><span title='2025-12-10 20:41:27 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>4 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#assumptions-of-linear-regression" aria-label="Assumptions of Linear Regression">Assumptions of Linear Regression</a></li>
+                <li>
+                    <a href="#ordinary-least-squares" aria-label="Ordinary Least Squares">Ordinary Least Squares</a></li>
+                <li>
+                    <a href="#solution-of-simple-linear-regression" aria-label="Solution of Simple Linear Regression">Solution of Simple Linear Regression</a></li>
+                <li>
+                    <a href="#simple-linear-regression-mean-centering" aria-label="Simple Linear Regression: Mean Centering">Simple Linear Regression: Mean Centering</a></li>
+                <li>
+                    <a href="#infinite-data-case" aria-label="Infinite Data Case">Infinite Data Case</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that</p>
+<p>$$
+\begin{aligned}
+&amp;\text{for each } i=1,\ldots,n,\
+&amp;\qquad y_i = f(x_i) + \epsilon_i,
+\end{aligned}
+$$</p>
+<p>where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.</p>
+<p>In simple linear regression, we assume a linear form:</p>
+<p>$$
+y_i = \beta_0 + \beta_1 x_i + \epsilon_i.
+$$</p>
+<p>Thus the regression function is a parametrized model $f(x; \beta_0, \beta_1)$.</p>
+<p>For multiple predictors $x_{1i}, x_{2i}, \ldots, x_{pi}$, the <strong>multiple linear regression</strong> model becomes</p>
+<p>$$
+y_i = \beta_0 + \beta_1 x_{1i} + \beta_2 x_{2i} + \cdots + \beta_p x_{pi} + \epsilon_i.
+$$</p>
+<p>In vector form:</p>
+<p>$$
+y = X\beta + \epsilon, \qquad \epsilon \sim \mathcal{N}(0, \sigma^2 I),
+$$</p>
+<p>where $y \in \mathbb{R}^n$, $X \in \mathbb{R}^{n \times (p+1)}$, and $\beta \in \mathbb{R}^{p+1}$.<br>
+The intercept $\beta_0$ corresponds to the first column of ones:</p>
+<p>$$
+X =
+\begin{bmatrix}
+\mathbf{1} &amp; x_1 &amp; \cdots &amp; x_p
+\end{bmatrix}.
+$$</p>
+<p>Simple linear regression is a special case of this model.</p>
+<hr>
+<h1 id="assumptions-of-linear-regression">Assumptions of Linear Regression<a hidden class="anchor" aria-hidden="true" href="#assumptions-of-linear-regression">#</a></h1>
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <p><strong>The true relationship between $y$ and $x$ is linear.</strong></p>
+<p>Run linear regression and plot fitted values vs.\ residuals. The residuals should be randomly scattered around $0$. A visible pattern indicates nonlinearity.</p>
+
+  </div>
+</div>
+
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <p><strong>Errors are independent: $\epsilon_i$ independent of $\epsilon_j$ for $i \ne j$.</strong></p>
+<p>Check the correlation matrix of residuals or scatterplots of residual components.</p>
+
+  </div>
+</div>
+
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <p><strong>Homoscedasticity: constant variance of errors.</strong></p>
+<p>Plot fitted values vs.\ residuals. The spread should be roughly constant — the “tube shape” pattern.</p>
+
+  </div>
+</div>
+
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <p><strong>Errors are Gaussian: $\epsilon_i \sim \mathcal{N}(0,\sigma^2)$.</strong></p>
+<p>Check histograms or QQ-plots of residuals.</p>
+
+  </div>
+</div>
+
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <p><strong>Errors are independent of predictors (no endogeneity).</strong></p>
+<p>Plot residuals or fitted values vs.\ columns of $X$.</p>
+
+  </div>
+</div>
+
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <p><strong>No perfect collinearity among predictors.</strong></p>
+<p>Check condition numbers or variance inflation factors (VIF).</p>
+
+  </div>
+</div>
+
+
+<p>These assumptions are implicitly conditioned on $X$.<br>
+With this, we now discuss solutions of linear regression.</p>
+<hr>
+<h1 id="ordinary-least-squares">Ordinary Least Squares<a hidden class="anchor" aria-hidden="true" href="#ordinary-least-squares">#</a></h1>
+<p>Regression seeks the “best” linear fit, commonly interpreted as minimizing the <strong>residual sum of squares</strong>:</p>
+<p>$$
+\mathrm{RSS}(\beta) = | y - X\beta |^2.
+$$</p>
+<p>This yields the <strong>ordinary least squares (OLS)</strong> estimator.</p>
+<hr>
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    <strong>Show that the OLS solution is $\hat{\beta} = (X^\top X)^{-1} X^\top y$.</strong>
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>We minimize</p>
+<p>$$
+\min_{\beta} | y - X\beta |^2.
+$$</p>
+<p>Assuming no perfect collinearity, $X^\top X$ is positive definite. Compute the gradient:</p>
+<p>$$
+\nabla_\beta |y - X\beta|^2
+= -2X^\top(y - X\beta).
+$$</p>
+<p>Setting to zero:</p>
+<p>$$
+X^\top X \beta = X^\top y,
+$$</p>
+<p>so the unique minimizer is</p>
+<p>$$
+\hat{\beta} = (X^\top X)^{-1} X^\top y.
+$$</p>
+<p>The minimal RSS is</p>
+<p>$$
+| (I - X(X^\top X)^{-1}X^\top )y |^2.
+$$</p>
+
+  </div>
+</div>
+
+<hr>
+<h1 id="solution-of-simple-linear-regression">Solution of Simple Linear Regression<a hidden class="anchor" aria-hidden="true" href="#solution-of-simple-linear-regression">#</a></h1>
+<p>In the simple linear case $X = [\mathbf{1} \;\; x]$, we compute:</p>
+<p>$$
+X^\top X =
+\begin{bmatrix}
+n &amp; n\bar{x} \
+n\bar{x} &amp; \sum_{i} x_i^2
+\end{bmatrix},
+$$</p>
+<p>and its inverse:</p>
+<p>$$
+(X^\top X)^{-1}
+=
+\frac{1}{n \sum_i x_i^2 - n^2 \bar{x}^2}
+\begin{bmatrix}
+\sum_i x_i^2 &amp; -n\bar{x} \
+-n\bar{x} &amp; n
+\end{bmatrix}.
+$$</p>
+<p>Compute $X^\top y$:</p>
+<p>$$
+X^\top y =
+\begin{bmatrix}
+\sum_i y_i \
+\sum_i x_i y_i
+\end{bmatrix}.
+$$</p>
+<p>Thus, we have
+$$
+\hat{\beta}_1 = \frac{n\sum_i x_i y_i - (\sum_i x_i)(\sum_i y_i)}{n\sum_i x_i^2 - (\sum_i x_i)^2} = \frac{s_{xy}}{s_x^2}
+$$</p>
+<p>and</p>
+<p>$$
+\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}.
+$$</p>
+<hr>
+<h1 id="simple-linear-regression-mean-centering">Simple Linear Regression: Mean Centering<a hidden class="anchor" aria-hidden="true" href="#simple-linear-regression-mean-centering">#</a></h1>
+<p>Mean-centering defines $x' = x - \bar{x}$.</p>
+<ul>
+<li>Center $x$ only: $\hat{\beta}_0 = \bar{y}$.</li>
+<li>Center $y$ only: $\hat{\beta}_0 = -\hat{\beta}_1 \bar{x}$.</li>
+<li>Center both: $\hat{\beta}_0 = 0$.</li>
+</ul>
+<p>Also,</p>
+<p>$$
+\mathrm{Cov}(\hat{\beta}_0, \hat{\beta}_1) = 0.
+$$</p>
+<hr>
+<h1 id="infinite-data-case">Infinite Data Case<a hidden class="anchor" aria-hidden="true" href="#infinite-data-case">#</a></h1>
+<p>Linear regression solves</p>
+<p>$$
+\min_{a,b} ; \mathbb{E}[(Y - (aX + b))^2].
+$$</p>
+<p>The solution is</p>
+<p>$$
+\begin{bmatrix}
+a \
+b
+\end{bmatrix}
+=
+\begin{bmatrix}
+\dfrac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)} \
+\mathbb{E}[Y] - a \mathbb{E}[X]
+\end{bmatrix}.
+$$</p>
+<p>This matches the finite-sample formulas when sample moments converge to population moments.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Conditional Expectation of Exponential Gaussian</span>
+  </a>
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Fake Brownian Motion</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://honglizhaobob.github.io/math-problems/">Math &amp; Stats Lounge</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Useful identities | Math &amp; Stats Lounge</title>
+<meta name="keywords" content="">
+<meta name="description" content="Probability Identities
+1. Conditional Bayes’ Formula
+Let $A, B, C$ be events. Then
+$$
+\frac{P(A \mid B, C)}{1}
+=
+\frac{P(C \mid A, B) , P(A \mid B)}{P(C \mid B)}.
+$$
+Application.
+In estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:
+
+$A =$ “the coin is biased”
+$B =$ “first toss is $H$”
+$C =$ “second toss is $H$”
+
+Then Bayes’ rule lets you update the posterior after observing the second toss without recomputing from scratch.">
+<meta name="author" content="">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/">
+<link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://honglizhaobob.github.io/math-problems/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://honglizhaobob.github.io/math-problems/apple-touch-icon.png">
+<link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+      integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+      crossorigin="anonymous">
+
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$",  right: "$",  display: false}
+      ]
+    });
+  });
+</script>
+
+
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/">
+  <meta property="og:site_name" content="Math & Stats Lounge">
+  <meta property="og:title" content="Useful identities">
+  <meta property="og:description" content="Probability Identities 1. Conditional Bayes’ Formula Let $A, B, C$ be events. Then
+$$ \frac{P(A \mid B, C)}{1} = \frac{P(C \mid A, B) , P(A \mid B)}{P(C \mid B)}. $$
+Application.
+In estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:
+$A =$ “the coin is biased” $B =$ “first toss is $H$” $C =$ “second toss is $H$” Then Bayes’ rule lets you update the posterior after observing the second toss without recomputing from scratch.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="problems">
+    <meta property="article:published_time" content="2025-12-10T20:53:12-06:00">
+    <meta property="article:modified_time" content="2025-12-10T20:53:12-06:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Useful identities">
+<meta name="twitter:description" content="Probability Identities
+1. Conditional Bayes’ Formula
+Let $A, B, C$ be events. Then
+$$
+\frac{P(A \mid B, C)}{1}
+=
+\frac{P(C \mid A, B) , P(A \mid B)}{P(C \mid B)}.
+$$
+Application.
+In estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:
+
+$A =$ “the coin is biased”
+$B =$ “first toss is $H$”
+$C =$ “second toss is $H$”
+
+Then Bayes’ rule lets you update the posterior after observing the second toss without recomputing from scratch.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Problems",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Useful identities",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Useful identities",
+  "name": "Useful identities",
+  "description": "Probability Identities 1. Conditional Bayes’ Formula Let $A, B, C$ be events. Then\n$$ \\frac{P(A \\mid B, C)}{1} = \\frac{P(C \\mid A, B) , P(A \\mid B)}{P(C \\mid B)}. $$\nApplication.\nIn estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:\n$A =$ “the coin is biased” $B =$ “first toss is $H$” $C =$ “second toss is $H$” Then Bayes’ rule lets you update the posterior after observing the second toss without recomputing from scratch.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Probability Identities 1. Conditional Bayes’ Formula Let $A, B, C$ be events. Then\n$$ \\frac{P(A \\mid B, C)}{1} = \\frac{P(C \\mid A, B) , P(A \\mid B)}{P(C \\mid B)}. $$\nApplication.\nIn estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:\n$A =$ “the coin is biased” $B =$ “first toss is $H$” $C =$ “second toss is $H$” Then Bayes’ rule lets you update the posterior after observing the second toss without recomputing from scratch.\nLinear Algebra Identities 1. Sylvester’s Criterion A matrix is positive semidefinite if and only if all principal minors have nonnegative determinant.\n2. Diagonal Dominance A matrix that is symmetric and diagonally dominant is positive definite.\n3. Lévy–Desplanques Theorem See:\nhttps://planetmath.org/levydesplanquestheorem\n4. Covariance vs.\\ Correlation Matrix Let $C$ be the covariance matrix and $\\tilde{C}$ the correlation matrix.\nLet $D$ be diagonal with entries equal to marginal standard deviations. Then\n$$ C = D \\tilde{C} D. $$\nArithmetic Identities 1. Geometric Series 1.1 Infinite geometric series ($|p|\u003c1$) $$ \\sum_{k=0}^{\\infty} p^k = \\frac{1}{1 - p}. $$\nProof. Let $S = \\sum_{k=0}^{\\infty} p^k$. Then\n$pS = p + p^2 + p^3 + \\cdots$ $S = 1 + p + p^2 + p^3 + \\cdots$ Subtract:\n$$ (1 - p) S = 1 ;\\Rightarrow; S = \\frac{1}{1 - p}. $$\n1.2 Finite geometric series $$ \\sum_{k=0}^{n - 1} p^k = \\frac{1 - p^n}{1 - p}. $$\n2. Geometric Series II (Derivative Trick) For $|p|\u003c1$,\n$$ \\frac{1}{(1 - p)^2} = \\sum_{k=1}^{\\infty} k p^{k - 1}. $$\n3. Summation I $$ \\sum_{k=1}^{n} k = \\frac{n(n + 1)}{2}. $$\n4. Summation II $$ \\sum_{k=1}^{n} k^2 = \\frac{n(n+1)(2n+1)}{6}. $$\nProof (Telescoping) Consider\n$$ \\sum_{k=1}^{n} \\big[ (k+1)^3 - k^3 \\big]. $$\nThe left side equals $(n+1)^3 - 1$.\nThe right side:\n$$ (k+1)^3 - k^3 = 3k^2 + 3k + 1. $$\nSo\n$$ (n+1)^3 - 1 = 3 \\sum_{k=1}^n k^2 + 3 \\sum_{k=1}^n k + n. $$\nSubstitute $\\sum k = \\frac{n(n+1)}{2}$ and solve for $\\sum k^2$:\n$$ \\sum_{k=1}^n k^2 = \\frac{1}{3} n^3 + \\frac{1}{2} n^2 + \\frac{1}{6} n. $$\n5. Cauchy–Schwarz Inequality (a) Summation Form $$ \\left( \\sum_{i=1}^n a_i b_i \\right)^2 \\le \\left( \\sum_{i=1}^n a_i^2 \\right) \\left( \\sum_{i=1}^n b_i^2 \\right). $$\n(b) Integral Form $$ \\left( \\int fg \\right)^2 \\le \\left( \\int f^2 \\right) \\left( \\int g^2 \\right). $$\n(c) Expectation Form $$ \\mathbb{E}[XY]^2 \\le \\mathbb{E}[X^2] , \\mathbb{E}[Y^2]. $$\n(d) Covariance Form $$ \\mathrm{Cov}(X,Y)^2 \\le \\mathrm{Var}(X) , \\mathrm{Var}(Y). $$\n",
+  "wordCount" : "407",
+  "inLanguage": "en",
+  "datePublished": "2025-12-10T20:53:12-06:00",
+  "dateModified": "2025-12-10T20:53:12-06:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Math \u0026 Stats Lounge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://honglizhaobob.github.io/math-problems/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://honglizhaobob.github.io/math-problems/" accesskey="h" title="Math &amp; Stats (Alt + H)">Math &amp; Stats</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://honglizhaobob.github.io/math-problems/" title="Problems">
+                    <span>Problems</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://honglizhaobob.github.io/math-problems/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Useful identities
+    </h1>
+    <div class="post-meta"><span title='2025-12-10 20:53:12 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#probability-identities" aria-label="Probability Identities">Probability Identities</a><ul>
+                        
+                <li>
+                    <a href="#1-conditional-bayes-formula" aria-label="1. Conditional Bayes’ Formula">1. Conditional Bayes’ Formula</a></li></ul>
+                </li>
+                <li>
+                    <a href="#linear-algebra-identities" aria-label="Linear Algebra Identities">Linear Algebra Identities</a><ul>
+                        
+                <li>
+                    <a href="#1-sylvesters-criterion" aria-label="1. Sylvester’s Criterion">1. Sylvester’s Criterion</a></li>
+                <li>
+                    <a href="#2-diagonal-dominance" aria-label="2. Diagonal Dominance">2. Diagonal Dominance</a></li>
+                <li>
+                    <a href="#3-l%c3%a9vydesplanques-theorem" aria-label="3. Lévy–Desplanques Theorem">3. Lévy–Desplanques Theorem</a></li>
+                <li>
+                    <a href="#4-covariance-vs-correlation-matrix" aria-label="4. Covariance vs.\ Correlation Matrix">4. Covariance vs.\ Correlation Matrix</a></li></ul>
+                </li>
+                <li>
+                    <a href="#arithmetic-identities" aria-label="Arithmetic Identities">Arithmetic Identities</a><ul>
+                        
+                <li>
+                    <a href="#1-geometric-series" aria-label="1. Geometric Series">1. Geometric Series</a><ul>
+                        
+                <li>
+                    <a href="#11-infinite-geometric-series-p1" aria-label="1.1 Infinite geometric series ($|p|&lt;1$)">1.1 Infinite geometric series ($|p|&lt;1$)</a></li>
+                <li>
+                    <a href="#12-finite-geometric-series" aria-label="1.2 Finite geometric series">1.2 Finite geometric series</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-geometric-series-ii-derivative-trick" aria-label="2. Geometric Series II (Derivative Trick)">2. Geometric Series II (Derivative Trick)</a></li>
+                <li>
+                    <a href="#3-summation-i" aria-label="3. Summation I">3. Summation I</a></li>
+                <li>
+                    <a href="#4-summation-ii" aria-label="4. Summation II">4. Summation II</a><ul>
+                        
+                <li>
+                    <a href="#proof-telescoping" aria-label="Proof (Telescoping)">Proof (Telescoping)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#5-cauchyschwarz-inequality" aria-label="5. Cauchy–Schwarz Inequality">5. Cauchy–Schwarz Inequality</a><ul>
+                        
+                <li>
+                    <a href="#a-summation-form" aria-label="(a) Summation Form">(a) Summation Form</a></li>
+                <li>
+                    <a href="#b-integral-form" aria-label="(b) Integral Form">(b) Integral Form</a></li>
+                <li>
+                    <a href="#c-expectation-form" aria-label="(c) Expectation Form">(c) Expectation Form</a></li>
+                <li>
+                    <a href="#d-covariance-form" aria-label="(d) Covariance Form">(d) Covariance Form</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="probability-identities">Probability Identities<a hidden class="anchor" aria-hidden="true" href="#probability-identities">#</a></h1>
+<h2 id="1-conditional-bayes-formula">1. Conditional Bayes’ Formula<a hidden class="anchor" aria-hidden="true" href="#1-conditional-bayes-formula">#</a></h2>
+<p>Let $A, B, C$ be events. Then</p>
+<p>$$
+\frac{P(A \mid B, C)}{1}
+=
+\frac{P(C \mid A, B) , P(A \mid B)}{P(C \mid B)}.
+$$</p>
+<p><strong>Application.</strong><br>
+In estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:</p>
+<ul>
+<li>$A =$ “the coin is biased”</li>
+<li>$B =$ “first toss is $H$”</li>
+<li>$C =$ “second toss is $H$”</li>
+</ul>
+<p>Then Bayes’ rule lets you update the posterior after observing the second toss <em>without recomputing from scratch</em>.</p>
+<hr>
+<h1 id="linear-algebra-identities">Linear Algebra Identities<a hidden class="anchor" aria-hidden="true" href="#linear-algebra-identities">#</a></h1>
+<h2 id="1-sylvesters-criterion">1. Sylvester’s Criterion<a hidden class="anchor" aria-hidden="true" href="#1-sylvesters-criterion">#</a></h2>
+<p>A matrix is <strong>positive semidefinite</strong> if and only if <strong>all principal minors</strong> have <strong>nonnegative</strong> determinant.</p>
+<h2 id="2-diagonal-dominance">2. Diagonal Dominance<a hidden class="anchor" aria-hidden="true" href="#2-diagonal-dominance">#</a></h2>
+<p>A matrix that is <strong>symmetric</strong> and <strong>diagonally dominant</strong> is <strong>positive definite</strong>.</p>
+<h2 id="3-lévydesplanques-theorem">3. Lévy–Desplanques Theorem<a hidden class="anchor" aria-hidden="true" href="#3-lévydesplanques-theorem">#</a></h2>
+<p>See:<br>
+<a href="https://planetmath.org/levydesplanquestheorem">https://planetmath.org/levydesplanquestheorem</a></p>
+<h2 id="4-covariance-vs-correlation-matrix">4. Covariance vs.\ Correlation Matrix<a hidden class="anchor" aria-hidden="true" href="#4-covariance-vs-correlation-matrix">#</a></h2>
+<p>Let $C$ be the covariance matrix and $\tilde{C}$ the correlation matrix.<br>
+Let $D$ be diagonal with entries equal to marginal standard deviations. Then</p>
+<p>$$
+C = D \tilde{C} D.
+$$</p>
+<hr>
+<h1 id="arithmetic-identities">Arithmetic Identities<a hidden class="anchor" aria-hidden="true" href="#arithmetic-identities">#</a></h1>
+<h2 id="1-geometric-series">1. Geometric Series<a hidden class="anchor" aria-hidden="true" href="#1-geometric-series">#</a></h2>
+<h3 id="11-infinite-geometric-series-p1">1.1 Infinite geometric series ($|p|&lt;1$)<a hidden class="anchor" aria-hidden="true" href="#11-infinite-geometric-series-p1">#</a></h3>
+<p>$$
+\sum_{k=0}^{\infty} p^k
+=
+\frac{1}{1 - p}.
+$$</p>
+<p><strong>Proof.</strong> Let $S = \sum_{k=0}^{\infty} p^k$. Then</p>
+<ul>
+<li>$pS = p + p^2 + p^3 + \cdots$</li>
+<li>$S = 1 + p + p^2 + p^3 + \cdots$</li>
+</ul>
+<p>Subtract:</p>
+<p>$$
+(1 - p) S = 1 ;\Rightarrow; S = \frac{1}{1 - p}.
+$$</p>
+<h3 id="12-finite-geometric-series">1.2 Finite geometric series<a hidden class="anchor" aria-hidden="true" href="#12-finite-geometric-series">#</a></h3>
+<p>$$
+\sum_{k=0}^{n - 1} p^k
+=
+\frac{1 - p^n}{1 - p}.
+$$</p>
+<hr>
+<h2 id="2-geometric-series-ii-derivative-trick">2. Geometric Series II (Derivative Trick)<a hidden class="anchor" aria-hidden="true" href="#2-geometric-series-ii-derivative-trick">#</a></h2>
+<p>For $|p|&lt;1$,</p>
+<p>$$
+\frac{1}{(1 - p)^2}
+=
+\sum_{k=1}^{\infty} k p^{k - 1}.
+$$</p>
+<hr>
+<h2 id="3-summation-i">3. Summation I<a hidden class="anchor" aria-hidden="true" href="#3-summation-i">#</a></h2>
+<p>$$
+\sum_{k=1}^{n} k = \frac{n(n + 1)}{2}.
+$$</p>
+<hr>
+<h2 id="4-summation-ii">4. Summation II<a hidden class="anchor" aria-hidden="true" href="#4-summation-ii">#</a></h2>
+<p>$$
+\sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}.
+$$</p>
+<h3 id="proof-telescoping">Proof (Telescoping)<a hidden class="anchor" aria-hidden="true" href="#proof-telescoping">#</a></h3>
+<p>Consider</p>
+<p>$$
+\sum_{k=1}^{n} \big[ (k+1)^3 - k^3 \big].
+$$</p>
+<p>The left side equals $(n+1)^3 - 1$.<br>
+The right side:</p>
+<p>$$
+(k+1)^3 - k^3 = 3k^2 + 3k + 1.
+$$</p>
+<p>So</p>
+<p>$$
+(n+1)^3 - 1
+=
+3 \sum_{k=1}^n k^2
++ 3 \sum_{k=1}^n k
++ n.
+$$</p>
+<p>Substitute $\sum k = \frac{n(n+1)}{2}$ and solve for $\sum k^2$:</p>
+<p>$$
+\sum_{k=1}^n k^2
+=
+\frac{1}{3} n^3 + \frac{1}{2} n^2 + \frac{1}{6} n.
+$$</p>
+<hr>
+<h2 id="5-cauchyschwarz-inequality">5. Cauchy–Schwarz Inequality<a hidden class="anchor" aria-hidden="true" href="#5-cauchyschwarz-inequality">#</a></h2>
+<h3 id="a-summation-form">(a) Summation Form<a hidden class="anchor" aria-hidden="true" href="#a-summation-form">#</a></h3>
+<p>$$
+\left( \sum_{i=1}^n a_i b_i \right)^2
+\le
+\left( \sum_{i=1}^n a_i^2 \right)
+\left( \sum_{i=1}^n b_i^2 \right).
+$$</p>
+<h3 id="b-integral-form">(b) Integral Form<a hidden class="anchor" aria-hidden="true" href="#b-integral-form">#</a></h3>
+<p>$$
+\left( \int fg \right)^2
+\le
+\left( \int f^2 \right)
+\left( \int g^2 \right).
+$$</p>
+<h3 id="c-expectation-form">(c) Expectation Form<a hidden class="anchor" aria-hidden="true" href="#c-expectation-form">#</a></h3>
+<p>$$
+\mathbb{E}[XY]^2
+\le
+\mathbb{E}[X^2] , \mathbb{E}[Y^2].
+$$</p>
+<h3 id="d-covariance-form">(d) Covariance Form<a hidden class="anchor" aria-hidden="true" href="#d-covariance-form">#</a></h3>
+<p>$$
+\mathrm{Cov}(X,Y)^2
+\le
+\mathrm{Var}(X) , \mathrm{Var}(Y).
+$$</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Conditional Expectation of Exponential Gaussian</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://honglizhaobob.github.io/math-problems/">Math &amp; Stats Lounge</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

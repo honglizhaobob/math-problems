@@ -5,43 +5,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$ | Math &amp; Stats Lounge</title>
+<title>Brownian Motion Intuition | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
-<meta name="description" content="
-  Question
-  
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
+<meta name="description" content="Why do we say $(dB_t)^2 \approx dt$
+Let $B_t$ be standard Brownian motion.
+In Itô calculus we track contributions up to order $dt$.
+Although ordinary calculus would ignore second-order terms, in stochastic calculus
+the term $(dB_t)^2$ is of order $dt$, not negligible.
+To see this:
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
+dB_t \approx B_{t&#43;\Delta t} - B_t \sim \mathcal{N}(0, \Delta t).
 $$
-  
-
-
-
-
-  Solution
-  
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
-$$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
-$$
-Then
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
-$$
-By symmetry,
-$$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
-$$">
+Let $Z_{\Delta t} \sim \mathcal{N}(0, \Delta t)$.
+Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -50,7 +28,7 @@ $$">
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/">
 <noscript>
     <style>
         #theme-toggle,
@@ -129,53 +107,34 @@ $$">
 </script>
 
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
-  <meta property="og:description" content=" Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
-$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
-Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0) - \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$
-By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$">
+  <meta property="og:title" content="Brownian Motion Intuition">
+  <meta property="og:description" content="Why do we say $(dB_t)^2 \approx dt$ Let $B_t$ be standard Brownian motion.
+In Itô calculus we track contributions up to order $dt$.
+Although ordinary calculus would ignore second-order terms, in stochastic calculus the term $(dB_t)^2$ is of order $dt$, not negligible.
+To see this:
+$$ dB_t \approx B_{t&#43;\Delta t} - B_t \sim \mathcal{N}(0, \Delta t). $$
+Let $Z_{\Delta t} \sim \mathcal{N}(0, \Delta t)$.
+Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-10T19:34:57-06:00">
-    <meta property="article:modified_time" content="2025-12-10T19:34:57-06:00">
+    <meta property="article:published_time" content="2025-12-10T20:36:29-06:00">
+    <meta property="article:modified_time" content="2025-12-10T20:36:29-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$">
-<meta name="twitter:description" content="
-  Question
-  
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute
+<meta name="twitter:title" content="Brownian Motion Intuition">
+<meta name="twitter:description" content="Why do we say $(dB_t)^2 \approx dt$
+Let $B_t$ be standard Brownian motion.
+In Itô calculus we track contributions up to order $dt$.
+Although ordinary calculus would ignore second-order terms, in stochastic calculus
+the term $(dB_t)^2$ is of order $dt$, not negligible.
+To see this:
 $$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
+dB_t \approx B_{t&#43;\Delta t} - B_t \sim \mathcal{N}(0, \Delta t).
 $$
-  
-
-
-
-
-  Solution
-  
-    Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
-$$
-X = Z_1, \qquad
-Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2.
-$$
-Then
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
-$$
-By symmetry,
-$$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
-$$">
+Let $Z_{\Delta t} \sim \mathcal{N}(0, \Delta t)$.
+Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and">
 
 
 <script type="application/ld+json">
@@ -192,8 +151,8 @@ $$">
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+      "name": "Brownian Motion Intuition",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/"
     }
   ]
 }
@@ -202,20 +161,20 @@ $$">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "name": "Expectation of $\\text{sgn}(X)\\cdot\\text{sgn}(Y)$",
-  "description": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) + \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) - \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\nBy symmetry, $$ \\mathbb{P}(X\u0026gt;0, Y\u0026gt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026lt;0), $$ and $$ \\mathbb{P}(X\u0026gt;0, Y\u0026lt;0) = \\mathbb{P}(X\u0026lt;0, Y\u0026gt;0). $$\n",
+  "headline": "Brownian Motion Intuition",
+  "name": "Brownian Motion Intuition",
+  "description": "Why do we say $(dB_t)^2 \\approx dt$ Let $B_t$ be standard Brownian motion.\nIn Itô calculus we track contributions up to order $dt$.\nAlthough ordinary calculus would ignore second-order terms, in stochastic calculus the term $(dB_t)^2$ is of order $dt$, not negligible.\nTo see this:\n$$ dB_t \\approx B_{t+\\Delta t} - B_t \\sim \\mathcal{N}(0, \\Delta t). $$\nLet $Z_{\\Delta t} \\sim \\mathcal{N}(0, \\Delta t)$.\nThen $(dB_t)^2$ behaves like $Z_{\\Delta t}^2$ and\n",
   "keywords": [
     
   ],
-  "articleBody": " Question Let $X, Y$ be jointly normal with correlation $\\rho$. Compute\n$$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \\qquad Y = \\rho Z_1 + \\sqrt{1 - \\rho^2}, Z_2. $$\nThen $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = \\mathbb{P}(X\u003e0, Y\u003e0) + \\mathbb{P}(X\u003c0, Y\u003c0) - \\mathbb{P}(X\u003e0, Y\u003c0) - \\mathbb{P}(X\u003c0, Y\u003e0). $$\nBy symmetry, $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}(X\u003c0, Y\u003c0), $$ and $$ \\mathbb{P}(X\u003e0, Y\u003c0) = \\mathbb{P}(X\u003c0, Y\u003e0). $$\nSince the four quadrants partition the plane, $$ 2,\\mathbb{P}(X\u003e0, Y\u003e0) + 2,\\mathbb{P}(X\u003e0, Y\u003c0) = 1. $$ Therefore $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1. $$\nThus we only need $\\mathbb{P}(X\u003e0, Y\u003e0)$.\nFrom the representation of $Y$, $$ Y\u003e0 \\quad\\Longleftrightarrow\\quad \\rho X + \\sqrt{1-\\rho^2}, Z_2 \u003e 0 \\quad\\Longleftrightarrow\\quad Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\mathbb{P}!\\left( X\u003e0,; Z_2 \u003e -\\frac{\\rho}{\\sqrt{1-\\rho^2}}, X \\right). $$\nLet $$ \\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}. $$\nWe need $$ \\mathbb{P}(x\u003e0,\\ z\u003e\\alpha x) = \\iint_{x\u003e0,\\ z\u003e\\alpha x} \\frac{1}{2\\pi} \\exp!\\left(-\\frac12(x^2 + z^2)\\right), dz, dx. $$\nSwitch to polar coordinates $x = r\\cos\\theta$, $z = r\\sin\\theta$.\nThe line $z = \\alpha x$ becomes $\\tan\\theta = \\alpha$, i.e. $\\theta = \\arctan(\\alpha)$.\nThus the region $x\u003e0$ and $z\u003e\\alpha x$ corresponds to $$ \\theta \\in [\\arctan(\\alpha),, \\tfrac{\\pi}{2}], \\qquad r\u003e0. $$\nCompute: $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi} \\int_{\\arctan(\\alpha)}^{\\pi/2} \\int_0^\\infty r, e^{-r^2/2}, dr, d\\theta. $$\nThe $r$–integral is $$ \\int_0^\\infty r, e^{-r^2/2}, dr = 1. $$\nHence $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} - \\arctan(\\alpha) \\right). $$\nRecall $\\alpha = -\\frac{\\rho}{\\sqrt{1-\\rho^2}}$, so $$ \\arctan(\\alpha) = -\\arctan!\\left(\\frac{\\rho}{\\sqrt{1-\\rho^2}}\\right) = -\\arcsin(\\rho). $$\nThus $$ \\mathbb{P}(X\u003e0, Y\u003e0) = \\frac{1}{2\\pi}\\left( \\frac{\\pi}{2} + \\arcsin(\\rho) \\right). $$\nFinally, $$ \\mathbb{E}[\\operatorname{sign}(X)\\operatorname{sign}(Y)] = 4,\\mathbb{P}(X\u003e0, Y\u003e0) - 1 = \\frac{2}{\\pi}\\arcsin(\\rho). $$\n",
-  "wordCount" : "276",
+  "articleBody": "Why do we say $(dB_t)^2 \\approx dt$ Let $B_t$ be standard Brownian motion.\nIn Itô calculus we track contributions up to order $dt$.\nAlthough ordinary calculus would ignore second-order terms, in stochastic calculus the term $(dB_t)^2$ is of order $dt$, not negligible.\nTo see this:\n$$ dB_t \\approx B_{t+\\Delta t} - B_t \\sim \\mathcal{N}(0, \\Delta t). $$\nLet $Z_{\\Delta t} \\sim \\mathcal{N}(0, \\Delta t)$.\nThen $(dB_t)^2$ behaves like $Z_{\\Delta t}^2$ and\n$$ \\mathbb{E}[Z_{\\Delta t}^2] = \\Delta t. $$\nNext compute the variance:\n$$ \\mathrm{Var}(Z_{\\Delta t}^2) = \\mathbb{E}[Z_{\\Delta t}^4] - (\\Delta t)^2. $$\nThe fourth moment of a normal is\n$$ \\mathbb{E}[Z_{\\Delta t}^4] = 3 (\\Delta t)^2, $$\nso\n$$ \\mathrm{Var}(Z_{\\Delta t}^2) = 3(\\Delta t)^2 - (\\Delta t)^2 = 2(\\Delta t)^2. $$\nAs $\\Delta t \\to 0$,\nthe mean is order $\\Delta t$, the standard deviation is order $(\\Delta t)$,\nso the fluctuation shrinks faster than the mean.\nThus $(dB_t)^2$ has a deterministic first-order contribution $\\approx dt$. Given this, the discrete Itô expansion looks like:\n$$ f(B_{t+\\Delta t}) = f(B_t) + f’(B_t)\\,\\Delta B_t + \\frac{1}{2} f’’(B_t)\\, (\\Delta B_t)^2 + o((\\Delta t)^2). $$\nSince $(\\Delta B_t)^2 \\approx \\Delta t$, this becomes\n$$ f(B_{t+\\Delta t}) - f(B_t) = f’(B_t)\\,\\Delta B_t + \\frac{1}{2} f’’(B_t)\\, \\Delta t. $$\nPassing to differential notation:\n$$ df = f’(B_t)\\, dB_t + \\frac{1}{2} f’’(B_t)\\, dt. $$\nThis shows that $df$ has drift term $\\tfrac12 f’’(B_t)$ and diffusion term $f’(B_t)$.\nFinally, note that\n$$ dB_t\\,dt \\approx 0, $$\nbecause $\\Delta B_t \\sim \\mathcal{N}(0, \\Delta t)$ gives $\\Delta B_t \\cdot \\Delta t$ of order $(\\Delta t)^{3/2}$, which is smaller than order $dt$.\n",
+  "wordCount" : "261",
   "inLanguage": "en",
-  "datePublished": "2025-12-10T19:34:57-06:00",
-  "dateModified": "2025-12-10T19:34:57-06:00",
+  "datePublished": "2025-12-10T20:36:29-06:00",
+  "dateModified": "2025-12-10T20:36:29-06:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/"
   },
   "publisher": {
     "@type": "Organization",
@@ -276,121 +235,89 @@ $$">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
+      Brownian Motion Intuition
     </h1>
-    <div class="post-meta"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
+    <div class="post-meta"><span title='2025-12-10 20:36:29 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
-  <div class="post-content"><div class="problem-box problem-question">
-  <div class="problem-box-label">Question</div>
-  <div class="problem-box-body">
-    Let $X, Y$ be jointly normal with correlation $\rho$.  Compute<br>
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)].
-$$
-  </div>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#why-do-we-say-db_t2-approx-dt" aria-label="Why do we say $(dB_t)^2 \approx dt$">Why do we say $(dB_t)^2 \approx dt$</a>
+                </li>
+            </ul>
+        </div>
+    </details>
 </div>
 
-
-<div class="problem-box problem-solution">
-  <div class="problem-box-label">Solution</div>
-  <div class="problem-box-body">
-    <p>Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that
-$$
-X = Z_1, \qquad
-Y = \rho Z_1 + \sqrt{1 - \rho^2}, Z_2.
+  <div class="post-content"><h2 id="why-do-we-say-db_t2-approx-dt">Why do we say $(dB_t)^2 \approx dt$<a hidden class="anchor" aria-hidden="true" href="#why-do-we-say-db_t2-approx-dt">#</a></h2>
+<p>Let $B_t$ be standard Brownian motion.<br>
+In Itô calculus we track contributions up to order $dt$.<br>
+Although ordinary calculus would ignore second-order terms, in stochastic calculus
+the term $(dB_t)^2$ is <strong>of order $dt$</strong>, not negligible.</p>
+<p>To see this:</p>
+<p>$$
+dB_t \approx B_{t+\Delta t} - B_t \sim \mathcal{N}(0, \Delta t).
 $$</p>
-<p>Then
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= \mathbb{P}(X&gt;0, Y&gt;0) + \mathbb{P}(X&lt;0, Y&lt;0)
-- \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0).
+<p>Let $Z_{\Delta t} \sim \mathcal{N}(0, \Delta t)$.<br>
+Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and</p>
+<p>$$
+\mathbb{E}[Z_{\Delta t}^2] = \Delta t.
 $$</p>
-<p>By symmetry,
-$$
-\mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0),
-$$
-and
-$$
-\mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0).
+<p>Next compute the variance:</p>
+<p>$$
+\mathrm{Var}(Z_{\Delta t}^2)
+= \mathbb{E}[Z_{\Delta t}^4] - (\Delta t)^2.
 $$</p>
-<p>Since the four quadrants partition the plane,
-$$
-2,\mathbb{P}(X&gt;0, Y&gt;0) + 2,\mathbb{P}(X&gt;0, Y&lt;0) = 1.
-$$
-Therefore
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1.
+<p>The fourth moment of a normal is</p>
+<p>$$
+\mathbb{E}[Z_{\Delta t}^4] = 3 (\Delta t)^2,
 $$</p>
-<p>Thus we only need $\mathbb{P}(X&gt;0, Y&gt;0)$.</p>
-<p>From the representation of $Y$,
-$$
-Y&gt;0 \quad\Longleftrightarrow\quad
-\rho X + \sqrt{1-\rho^2}, Z_2 &gt; 0
-\quad\Longleftrightarrow\quad
-Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X.
+<p>so</p>
+<p>$$
+\mathrm{Var}(Z_{\Delta t}^2)
+= 3(\Delta t)^2 - (\Delta t)^2
+= 2(\Delta t)^2.
 $$</p>
-<p>Hence
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \mathbb{P}!\left( X&gt;0,; Z_2 &gt; -\frac{\rho}{\sqrt{1-\rho^2}}, X \right).
+<p>As $\Delta t \to 0$,</p>
+<ul>
+<li>the <strong>mean</strong> is order $\Delta t$,</li>
+<li>the <strong>standard deviation</strong> is order $(\Delta t)$,<br>
+so the fluctuation shrinks <em>faster</em> than the mean.<br>
+Thus $(dB_t)^2$ has a deterministic first-order contribution $\approx dt$.</li>
+</ul>
+<hr>
+<p>Given this, the discrete Itô expansion looks like:</p>
+<p>$$
+f(B_{t+\Delta t})
+= f(B_t)
++ f&rsquo;(B_t)\,\Delta B_t
++ \frac{1}{2} f&rsquo;&rsquo;(B_t)\, (\Delta B_t)^2
++ o((\Delta t)^2).
 $$</p>
-<p>Let
-$$
-\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}.
+<p>Since $(\Delta B_t)^2 \approx \Delta t$, this becomes</p>
+<p>$$
+f(B_{t+\Delta t}) - f(B_t)
+= f&rsquo;(B_t)\,\Delta B_t
++ \frac{1}{2} f&rsquo;&rsquo;(B_t)\, \Delta t.
 $$</p>
-<p>We need
-$$
-\mathbb{P}(x&gt;0,\ z&gt;\alpha x)
-= \iint_{x&gt;0,\ z&gt;\alpha x} \frac{1}{2\pi}
-\exp!\left(-\frac12(x^2 + z^2)\right), dz, dx.
+<p>Passing to differential notation:</p>
+<p>$$
+df
+= f&rsquo;(B_t)\, dB_t
++ \frac{1}{2} f&rsquo;&rsquo;(B_t)\, dt.
 $$</p>
-<p>Switch to polar coordinates $x = r\cos\theta$, $z = r\sin\theta$.<br>
-The line $z = \alpha x$ becomes $\tan\theta = \alpha$, i.e. $\theta = \arctan(\alpha)$.</p>
-<p>Thus the region $x&gt;0$ and $z&gt;\alpha x$ corresponds to
-$$
-\theta \in [\arctan(\alpha),, \tfrac{\pi}{2}], \qquad r&gt;0.
+<p>This shows that $df$ has drift term $\tfrac12 f&rsquo;&rsquo;(B_t)$ and diffusion term $f&rsquo;(B_t)$.</p>
+<p>Finally, note that</p>
+<p>$$
+dB_t\,dt \approx 0,
 $$</p>
-<p>Compute:
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}
-\int_{\arctan(\alpha)}^{\pi/2}
-\int_0^\infty r, e^{-r^2/2}, dr, d\theta.
-$$</p>
-<p>The $r$–integral is
-$$
-\int_0^\infty r, e^{-r^2/2}, dr = 1.
-$$</p>
-<p>Hence
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} - \arctan(\alpha) \right).
-$$</p>
-<p>Recall $\alpha = -\frac{\rho}{\sqrt{1-\rho^2}}$, so
-$$
-\arctan(\alpha)
-= -\arctan!\left(\frac{\rho}{\sqrt{1-\rho^2}}\right)
-= -\arcsin(\rho).
-$$</p>
-<p>Thus
-$$
-\mathbb{P}(X&gt;0, Y&gt;0)
-= \frac{1}{2\pi}\left( \frac{\pi}{2} + \arcsin(\rho) \right).
-$$</p>
-<p>Finally,
-$$
-\mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]
-= 4,\mathbb{P}(X&gt;0, Y&gt;0) - 1
-= \frac{2}{\pi}\arcsin(\rho).
-$$</p>
-
-  </div>
-</div>
-
+<p>because $\Delta B_t \sim \mathcal{N}(0, \Delta t)$ gives $\Delta B_t \cdot \Delta t$ of order $(\Delta t)^{3/2}$,  which is smaller than order $dt$.</p>
 
 
   </div>
@@ -399,15 +326,15 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/">
     <span class="title">« Prev</span>
     <br>
-    <span>Correlation matrix sum of eigenvalues lower bound</span>
+    <span>Fake Brownian Motion</span>
   </a>
-  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/">
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/">
     <span class="title">Next »</span>
     <br>
-    <span>Stopping time for 2D Wiener process</span>
+    <span>Identity for expectation of power of absolute value</span>
   </a>
 </nav>
 
