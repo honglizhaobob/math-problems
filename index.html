@@ -202,6 +202,19 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Probability two random numbers are coprime
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question What is the probability that two randomly chosen integers are coprime? Solution Every integer has probability 1 to be divisible by 1. Similarly, every integer has probability $1/2$ to be divisible by $2$. The induction is to consider all prime factors. For the $k$-th prime $p_k$, every integer has probability $1/p_k$ to be divisible by it. Therefore, two independently chosen random integers simultaneously being divisible by $p_k$ is $1/p_k^2$. This means that the probability that two integers are not simultaneously divisible by a prime factor $p_k$ is $1-1/p_k^2$, which means they are co-prime.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-19 18:36:29 -0600 CST'>December 19, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Probability two random numbers are coprime" href="https://honglizhaobob.github.io/math-problems/problems/2025-12-19-01-coprime-probability/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Useful identities
     </h2>
   </header>
@@ -351,22 +364,6 @@ Here $f(s) = t - s$, so $$ \int_0^t (t-s)^2\, ds = \frac{t^3}{3}. $$
   </div>
   <footer class="entry-footer"><span title='2025-12-10 20:28:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
   <a class="entry-link" aria-label="post link to Distribution of Brownian integral" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-11-brownian-integral-distribution/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Lower bound of number of independent generations
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$? Solution Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
-Each has probability $$ \mathbb{P}(E_i) = 0.02. $$
-We want $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95. $$
-Since the $U_i$ are independent, $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) = 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right) = 1 - (0.98)^N. $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:27:52 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Lower bound of number of independent generations" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

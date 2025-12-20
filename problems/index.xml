@@ -6,8 +6,26 @@
     <description>Recent content in Problems on Math &amp; Stats Lounge</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Dec 2025 20:53:12 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 19 Dec 2025 18:36:29 -0600</lastBuildDate>
     <atom:link href="https://honglizhaobob.github.io/math-problems/problems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Probability two random numbers are coprime</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2025-12-19-01-coprime-probability/</link>
+      <pubDate>Fri, 19 Dec 2025 18:36:29 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2025-12-19-01-coprime-probability/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    What is the probability that two randomly chosen integers are coprime?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;Every integer has probability 1 to be divisible by 1. Similarly, every integer has probability $1/2$ to be divisible by $2$. The induction is to consider all prime factors. For the $k$-th prime $p_k$, every integer has probability $1/p_k$ to be divisible by it. Therefore, two independently chosen random integers simultaneously being divisible by $p_k$ is $1/p_k^2$. This means that the probability that two integers are not simultaneously divisible by a prime factor $p_k$ is $1-1/p_k^2$, which means they are co-prime.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Useful identities</title>
       <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/</link>

@@ -169,6 +169,22 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Lower bound of number of independent generations
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$? Solution Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
+Each has probability $$ \mathbb{P}(E_i) = 0.02. $$
+We want $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95. $$
+Since the $U_i$ are independent, $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) = 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right) = 1 - (0.98)^N. $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:27:52 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Lower bound of number of independent generations" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Simulating fair coin using unfair
     </h2>
   </header>
