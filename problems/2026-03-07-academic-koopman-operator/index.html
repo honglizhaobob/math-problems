@@ -5,36 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Lower bound of number of independent generations | Math &amp; Stats Lounge</title>
+<title>Derivation of Koopman operator for stochastic dynamical systems | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
-<meta name="description" content="
-  Question
-  
-    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
-  
-
-
-
-
-  Solution
-  
-    Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
-Each has probability
+<meta name="description" content="In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.
+Consider a $d$-dimensional dynamical system evolving on a smooth manifold $\mathcal{M} \subset \mathbb{R}^d$:
 $$
-\mathbb{P}(E_i) = 0.02.
+\begin{cases}
+\displaystyle \frac{d\mathbf{x}}{dt} = G(\mathbf{x}) \\
+\mathbf{x}(0) = \mathbf{x}_0 \sim p_0(\mathbf{x}_0).
+\end{cases}
 $$
-We want
-$$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
-$$
-Since the $U_i$ are independent,
-$$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
-= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
-= 1 - (0.98)^N.
-$$">
+Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\mathbf{x}$ to include the driving noise variables.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/problems/2025-10-10-10-number-of-rvs/">
+<link rel="canonical" href="http://localhost:1313/problems/2026-03-07-academic-koopman-operator/">
 <link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -43,7 +26,7 @@ $$">
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/problems/2025-10-10-10-number-of-rvs/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/problems/2026-03-07-academic-koopman-operator/">
 <noscript>
     <style>
         #theme-toggle,
@@ -122,7 +105,6 @@ $$">
 </script>
 
 
-
 </head>
 <body id="top">
     <header class="header">
@@ -172,55 +154,124 @@ $$">
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Lower bound of number of independent generations
+      Derivation of Koopman operator for stochastic dynamical systems
     </h1>
-    <div class="post-meta"><span title='2025-12-10 20:27:52 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span>
+    <div class="post-meta"><span title='2026-03-07 16:36:00 -0600 CST'>March 7, 2026</span>&nbsp;·&nbsp;<span>3 min</span>
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
 
-  <div class="post-content"><div class="problem-box problem-question">
-  <div class="problem-box-label">Question</div>
-  <div class="problem-box-body">
-    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
-  </div>
+        <div class="inner"><ul>
+                <li>
+                    <a href="#why-the-koopman-operator-is-linear" aria-label="Why the Koopman operator is linear?">Why the Koopman operator is linear?</a>
+                </li>
+            </ul>
+        </div>
+    </details>
 </div>
 
-
-<div class="problem-box problem-solution">
-  <div class="problem-box-label">Solution</div>
-  <div class="problem-box-body">
-    <p>Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.<br>
-Each has probability
+  <div class="post-content"><p>In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.</p>
+<p>Consider a $d$-dimensional dynamical system evolving on a smooth manifold $\mathcal{M} \subset \mathbb{R}^d$:
 $$
-\mathbb{P}(E_i) = 0.02.
-$$</p>
-<p>We want
+\begin{cases}
+\displaystyle \frac{d\mathbf{x}}{dt} = G(\mathbf{x}) \\
+\mathbf{x}(0) = \mathbf{x}_0 \sim p_0(\mathbf{x}_0).
+\end{cases}
 $$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
+Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\mathbf{x}$ to include the driving noise variables.</p>
+<p>Let $u:\mathcal{M}\to\mathbb{R}$ be a real-valued observable, for example the projection onto coordinate $j$:</p>
+<p>$$
+u(\mathbf{x}) = x_j, \qquad \mathbf{x}\in\mathcal{M}.
 $$</p>
-<p>Since the $U_i$ are independent,
+<p>If $\mathbf{x}(t,\mathbf{x}_0)$ denotes the flow map generated by the dynamics, then the time evolution of the observable is given by</p>
+<p>$$
+u(\mathbf{x}(t,\mathbf{x}_0)) = \exp\left(t \sum_{k=1}^d G_k(\mathbf{x}_0)\frac{\partial}{\partial (\mathbf{x}_0)_k} \right) u(\mathbf{x}_0).
+$$</p>
+<p>Differentiating with respect to $t$ yields the evolution equation
 $$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
-= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
-= 1 - (0.98)^N.
+\frac{\partial u}{\partial t} =
+\mathcal{K}(\mathbf{x}_0)u(t,\mathbf{x}_0) =
+\left(
+\sum_{k=1}^d G_k(\mathbf{x}_0)\frac{\partial}{\partial (\mathbf{x}_0)_k}
+\right)u(t,\mathbf{x}_0).
 $$</p>
-<p>Thus we need
+<p>The generator
 $$
-1 - 0.98^N \ge 0.95
-\quad\Longleftrightarrow\quad
-0.98^N \le 0.05.
-$$</p>
-<p>Taking logarithms,
+\mathcal{K}
+= \sum_{k=1}^d G_k(\mathbf{x}_0)\frac{\partial}{\partial (\mathbf{x}_0)_k}
+$$ is the infinitesimal generator of the Koopman semigroup, and the operator $\exp(t\mathcal{K})$ is referred to as the <em>Koopman operator</em>.</p>
+<h3 id="why-the-koopman-operator-is-linear">Why the Koopman operator is linear?<a hidden class="anchor" aria-hidden="true" href="#why-the-koopman-operator-is-linear">#</a></h3>
+<hr>
+<p>Let $\Phi^t:\mathcal{M}\to\mathcal{M}$ denote the flow map,
 $$
-N \log(0.98) \le \log(0.05)
-\quad\Longrightarrow\quad
-N \ge \frac{\log 0.05}{\log 0.98}.
+\Phi^t(\mathbf{x}_0) = \mathbf{x}(t,\mathbf{x}_0).
 $$</p>
-
-  </div>
+<p>Then the Koopman operator $U^t$ acts on observables by composition:</p>
+<p>$$
+(U^t u)(\mathbf{x}_0) := u(\Phi^t(\mathbf{x}_0)).
+$$</p>
+<p>To verify linearity, let $u,v:\mathcal{M}\to\mathbb{R}$ and let $a,b\in\mathbb{R}$. Then</p>
+<p>$$
+U^t(au+bv)(\mathbf{x}_0)
+= (au+bv)(\Phi^t(\mathbf{x}_0))
+= a\,u(\Phi^t(\mathbf{x}_0)) + b\,v(\Phi^t(\mathbf{x}_0)).
+$$</p>
+<p>Hence
+$$
+U^t(au+bv)(\mathbf{x}_0)
+= a\,(U^t u)(\mathbf{x}_0) + b\,(U^t v)(\mathbf{x}_0).
+$$</p>
+<p>Since this holds for every $\mathbf{x}_0\in\mathcal{M}$, we conclude that
+$$
+U^t(au+bv) = a\,U^t u + b\,U^t v.
+$$</p>
+<p>Therefore, the Koopman operator is linear, even when the underlying state dynamics are nonlinear.</p>
+<p>The dual operator of the Koopman generator with respect to the weighted inner product
+$$
+\langle f, g\rangle
+= \int_{\mathcal{M}} f(\mathbf{x}_0)g(\mathbf{x}_0)p(\mathbf{x}_0)\,d\mathbf{x}_0
+$$ is the <em>Perron&ndash;Frobenius operator</em>. Its infinitesimal generator is
+$$
+\mathcal{L}(\mathbf{x})\phi
+= -\nabla\cdot\bigl(G(\mathbf{x})\phi(\mathbf{x})\bigr),
+$$
+and the associated semigroup is $\exp(t\mathcal{L})$.</p>
+<p>This operator evolves the joint probability density of the flow map $\mathbf{x}(t,\mathbf{x}_0)$ according to
+$$
+p(\mathbf{x},t)
+= e^{t\mathcal{L}}p(\mathbf{x},0)
+= e^{t\mathcal{L}}p_0(\mathbf{x}).
+$$</p>
+<p>Differentiating with respect to $t$ yields the Liouville transport equation:
+$$
+\frac{\partial p(\mathbf{x},t)}{\partial t}
++ \nabla\cdot\left(G(\mathbf{x})p(\mathbf{x},t)\right) = 0.
+$$</p>
+<p>To obtain an equation for the probability density of a quantity of interest $z=u(\mathbf{x})$, one may project onto the level set of $u$ using the Dirac delta distribution:
+$$
+p(z,t)
+=
+\int_{\mathcal{M}} \delta\bigl(z-u(\mathbf{x})\bigr)p(\mathbf{x},t),d\mathbf{x}.
+$$</p>
+<p>Differentiating with respect to $t$ and applying the chain rule formally yields the reduced-order equation
+$$
+\frac{\partial p(z,t)}{\partial t}
++ \int_{\mathcal{M}} e^{ia(z-u(\mathbf{x}))}
+\nabla\cdot\bigl(G(\mathbf{x})p(\mathbf{x},t)\bigr)\,d\mathbf{x}\,da = 0.
+$$</p>
+<p>In general, the integral term is not closed in the reduced density $p(z,t)$. Nevertheless, the induced reduced-order evolution operator remains linear; see Brennan and Venturi for a data-driven closure perspective on stochastic dynamical systems.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> For general observables $u$, one may augment the state so that $u$ becomes part of the extended system, and the same operator-theoretic argument applies.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Brennan, C., &amp; Venturi, D. (2018). Data-driven closures for stochastic dynamical systems. <em>Journal of Computational Physics</em>, 372, 281–298. <a href="https://doi.org/10.1016/j.jcp.2018.06.038">https://doi.org/10.1016/j.jcp.2018.06.038</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
 </div>
-
 
 
   </div>
@@ -229,15 +280,10 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/problems/2025-10-10-11-brownian-integral-distribution/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Distribution of Brownian integral</span>
-  </a>
-  <a class="next" href="http://localhost:1313/problems/2025-10-10-09-simulating-fair-coin/">
+  <a class="next" href="http://localhost:1313/problems/2025-12-19-01-coprime-probability/">
     <span class="title">Next »</span>
     <br>
-    <span>Simulating fair coin using unfair</span>
+    <span>Probability two random numbers are coprime</span>
   </a>
 </nav>
 

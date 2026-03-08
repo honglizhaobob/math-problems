@@ -5,36 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Lower bound of number of independent generations | Math &amp; Stats Lounge</title>
+<title>Problems | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
-<meta name="description" content="
-  Question
-  
-    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
-  
-
-
-
-
-  Solution
-  
-    Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
-Each has probability
-$$
-\mathbb{P}(E_i) = 0.02.
-$$
-We want
-$$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
-$$
-Since the $U_i$ are independent,
-$$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
-= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
-= 1 - (0.98)^N.
-$$">
+<meta name="description" content="Problems - Math &amp; Stats Lounge">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/problems/2025-10-10-10-number-of-rvs/">
+<link rel="canonical" href="http://localhost:1313/problems/">
 <link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -43,7 +18,8 @@ $$">
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/problems/2025-10-10-10-number-of-rvs/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/problems/index.xml" title="rss">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/problems/">
 <noscript>
     <style>
         #theme-toggle,
@@ -124,7 +100,7 @@ $$">
 
 
 </head>
-<body id="top">
+<body class="list" id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -166,83 +142,34 @@ $$">
         </ul>
     </nav>
 </header>
-<main class="main">
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/">Home</a></div>
+  <h1>
+    Problems
+  </h1>
+</header>
 
-<article class="post-single">
-  <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/problems/">Problems</a></div>
-    <h1 class="post-title entry-hint-parent">
-      Lower bound of number of independent generations
-    </h1>
-    <div class="post-meta"><span title='2025-12-10 20:27:52 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span>
-
-</div>
-  </header> 
-
-  <div class="post-content"><div class="problem-box problem-question">
-  <div class="problem-box-label">Question</div>
-  <div class="problem-box-body">
-    How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$?
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Range of regression coefficient
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient? Solution We have $$ \beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X} $$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.
+This means $$ \beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta} $$
+And because $0\le\rho^2\le 1$, we have $$ \beta_{\text{new}} \in [0, 1/\beta]. $$
+</p>
   </div>
-</div>
-
-
-<div class="problem-box problem-solution">
-  <div class="problem-box-label">Solution</div>
-  <div class="problem-box-body">
-    <p>Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.<br>
-Each has probability
-$$
-\mathbb{P}(E_i) = 0.02.
-$$</p>
-<p>We want
-$$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95.
-$$</p>
-<p>Since the $U_i$ are independent,
-$$
-\mathbb{P}!\left( \bigcup_{i=1}^N E_i \right)
-= 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right)
-= 1 - (0.98)^N.
-$$</p>
-<p>Thus we need
-$$
-1 - 0.98^N \ge 0.95
-\quad\Longleftrightarrow\quad
-0.98^N \le 0.05.
-$$</p>
-<p>Taking logarithms,
-$$
-N \log(0.98) \le \log(0.05)
-\quad\Longrightarrow\quad
-N \ge \frac{\log 0.05}{\log 0.98}.
-$$</p>
-
-  </div>
-</div>
-
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-<nav class="paginav">
-  <a class="prev" href="http://localhost:1313/problems/2025-10-10-11-brownian-integral-distribution/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Distribution of Brownian integral</span>
-  </a>
-  <a class="next" href="http://localhost:1313/problems/2025-10-10-09-simulating-fair-coin/">
-    <span class="title">Next »</span>
-    <br>
-    <span>Simulating fair coin using unfair</span>
-  </a>
-</nav>
-
-  </footer>
+  <footer class="entry-footer"><span title='2025-12-10 14:36:00 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Range of regression coefficient" href="http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/"></a>
 </article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/problems/page/2/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
     </main>
     
 <footer class="footer">

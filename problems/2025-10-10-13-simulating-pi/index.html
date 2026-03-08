@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Computing Pi with Monte Carlo | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
 <meta name="description" content="
@@ -42,16 +42,16 @@ $$
 $$
 is unbiased.">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/">
-<link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://honglizhaobob.github.io/math-problems/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://honglizhaobob.github.io/math-problems/apple-touch-icon.png">
-<link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/problems/2025-10-10-13-simulating-pi/">
+<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/problems/2025-10-10-13-simulating-pi/">
 <noscript>
     <style>
         #theme-toggle,
@@ -130,112 +130,13 @@ is unbiased.">
 </script>
 
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/">
-  <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Computing Pi with Monte Carlo">
-  <meta property="og:description" content=" Question How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.
-Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether $$ X^2 &#43; Y^2 &lt; 1. $$
-The probability of this event is the area of a quarter unit circle inside the unit square: $$ \mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}. $$
-Let $$ A_n = \sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
-Then $$ \mathbb{E}[X_i] = \frac{\pi}{4}, $$ so the estimator $$ \hat{\pi}_n = \frac{4 A_n}{n} $$ is unbiased.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-10T20:33:16-06:00">
-    <meta property="article:modified_time" content="2025-12-10T20:33:16-06:00">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Computing Pi with Monte Carlo">
-<meta name="twitter:description" content="
-  Question
-  
-    How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator?
-  
 
-
-
-
-  Solution
-  
-    Correct estimator.
-Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether
-$$
-X^2 &#43; Y^2 &lt; 1.
-$$
-The probability of this event is the area of a quarter unit circle inside the unit square:
-$$
-\mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}.
-$$
-Let
-$$
-A_n = \sum_{i=1}^n X_i,
-$$
-where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
-Then
-$$
-\mathbb{E}[X_i] = \frac{\pi}{4},
-$$
-so the estimator
-$$
-\hat{\pi}_n = \frac{4 A_n}{n}
-$$
-is unbiased.">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Problems",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Computing Pi with Monte Carlo",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Computing Pi with Monte Carlo",
-  "name": "Computing Pi with Monte Carlo",
-  "description": " Question How can we compute $\\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.\nGenerate i.i.d. uniform random variables $X,Y \\sim \\mathrm{Uniform}(0,1)$ and check whether $$ X^2 + Y^2 \u0026lt; 1. $$\nThe probability of this event is the area of a quarter unit circle inside the unit square: $$ \\mathbb{P}(X^2 + Y^2 \u0026lt; 1) = \\frac{\\pi}{4}. $$\nLet $$ A_n = \\sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 + Y_i^2 \u0026lt; 1}$.\nThen $$ \\mathbb{E}[X_i] = \\frac{\\pi}{4}, $$ so the estimator $$ \\hat{\\pi}_n = \\frac{4 A_n}{n} $$ is unbiased.\n",
-  "keywords": [
-    
-  ],
-  "articleBody": " Question How can we compute $\\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.\nGenerate i.i.d. uniform random variables $X,Y \\sim \\mathrm{Uniform}(0,1)$ and check whether $$ X^2 + Y^2 \u003c 1. $$\nThe probability of this event is the area of a quarter unit circle inside the unit square: $$ \\mathbb{P}(X^2 + Y^2 \u003c 1) = \\frac{\\pi}{4}. $$\nLet $$ A_n = \\sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 + Y_i^2 \u003c 1}$.\nThen $$ \\mathbb{E}[X_i] = \\frac{\\pi}{4}, $$ so the estimator $$ \\hat{\\pi}_n = \\frac{4 A_n}{n} $$ is unbiased.\nSolution Standard deviation of the estimator.\nSince $X_i$ is Bernoulli, $$ \\mathrm{Var}(X_i) = \\mathbb{E}[X_i^2] - (\\mathbb{E}[X_i])^2 = \\frac{\\pi}{4} - \\frac{\\pi^2}{16}. $$\nThus, $$ \\mathrm{Var}(A_n) = n \\left( \\frac{\\pi}{4} - \\frac{\\pi^2}{16} \\right). $$\nFor the estimator, $$ \\hat{\\pi}_n = \\frac{4A_n}{n}, $$ we have $$ \\mathrm{Var}(\\hat{\\pi}_n) = \\frac{16}{n^2} \\mathrm{Var}(A_n) = \\frac{16}{n^2} \\cdot n \\left( \\frac{\\pi}{4} - \\frac{\\pi^2}{16} \\right) = \\frac{4\\pi - \\pi^2}{n}. $$\nTherefore, the standard deviation is $$ \\sqrt{\\frac{4\\pi - \\pi^2}{n}}. $$\n",
-  "wordCount" : "173",
-  "inLanguage": "en",
-  "datePublished": "2025-12-10T20:33:16-06:00",
-  "dateModified": "2025-12-10T20:33:16-06:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Math \u0026 Stats Lounge",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://honglizhaobob.github.io/math-problems/favicon.ico"
-    }
-  }
-}
-</script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://honglizhaobob.github.io/math-problems/" accesskey="h" title="Math &amp; Stats (Alt + H)">Math &amp; Stats</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Math &amp; Stats (Alt + H)">Math &amp; Stats</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -261,12 +162,12 @@ is unbiased.">
         </div>
         <ul id="menu">
             <li>
-                <a href="https://honglizhaobob.github.io/math-problems/" title="Problems">
+                <a href="http://localhost:1313/" title="Problems">
                     <span>Problems</span>
                 </a>
             </li>
             <li>
-                <a href="https://honglizhaobob.github.io/math-problems/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -277,7 +178,7 @@ is unbiased.">
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
       Computing Pi with Monte Carlo
     </h1>
@@ -366,12 +267,12 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/">
+  <a class="prev" href="http://localhost:1313/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/">
     <span class="title">« Prev</span>
     <br>
     <span>Identity for expectation of power of absolute value</span>
   </a>
-  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/">
+  <a class="next" href="http://localhost:1313/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/">
     <span class="title">Next »</span>
     <br>
     <span>Conditional probability of 2D Gaussian</span>
@@ -383,7 +284,7 @@ $$</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://honglizhaobob.github.io/math-problems/">Math &amp; Stats Lounge</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">Math &amp; Stats Lounge</a></span> · 
 
     <span>
         Powered by
