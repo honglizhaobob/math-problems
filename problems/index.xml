@@ -2,24 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Problems on Math &amp; Stats Lounge</title>
-    <link>http://localhost:1313/problems/</link>
+    <link>http://localhost:1313/math-problems/problems/</link>
     <description>Recent content in Problems on Math &amp; Stats Lounge</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 07 Mar 2026 16:36:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/problems/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/math-problems/problems/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Derivation of Koopman operator</title>
-      <link>http://localhost:1313/problems/2026-03-07-academic-koopman-operator/</link>
+      <title>Derivation of Koopman operator for stochastic dynamical systems</title>
+      <link>http://localhost:1313/math-problems/problems/2026-03-07-academic-koopman-operator/</link>
       <pubDate>Sat, 07 Mar 2026 16:36:00 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2026-03-07-academic-koopman-operator/</guid>
-      <description>&lt;p&gt;In this post, we derive the Koopman operator, which is an infinite-dimensional linear operator describing the evolution of dynamics.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/math-problems/problems/2026-03-07-academic-koopman-operator/</guid>
+      <description>&lt;p&gt;In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.&lt;/p&gt;
+&lt;p&gt;Consider a $d$-dimensional dynamical system evolving on a smooth manifold $\mathcal{M} \subset \mathbb{R}^d$:
+$$
+\begin{cases}
+\displaystyle \frac{d\mathbf{x}}{dt} = G(\mathbf{x}) \\
+\mathbf{x}(0) = \mathbf{x}_0 \sim p_0(\mathbf{x}_0).
+\end{cases}
+$$
+Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\mathbf{x}$ to include the driving noise variables.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Probability two random numbers are coprime</title>
-      <link>http://localhost:1313/problems/2025-12-19-01-coprime-probability/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-12-19-01-coprime-probability/</link>
       <pubDate>Fri, 19 Dec 2025 18:36:29 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-12-19-01-coprime-probability/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-12-19-01-coprime-probability/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -35,9 +43,9 @@
     </item>
     <item>
       <title>Useful identities</title>
-      <link>http://localhost:1313/problems/2025-10-10-19-important-identities/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-19-important-identities/</link>
       <pubDate>Wed, 10 Dec 2025 20:53:12 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-19-important-identities/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-19-important-identities/</guid>
       <description>&lt;h1 id=&#34;probability-identities&#34;&gt;Probability Identities&lt;/h1&gt;
 &lt;h2 id=&#34;1-conditional-bayes-formula&#34;&gt;1. Conditional Bayes’ Formula&lt;/h2&gt;
 &lt;p&gt;Let $A, B, C$ be events. Then&lt;/p&gt;
@@ -57,9 +65,9 @@ In estimating whether a coin is biased, suppose the first toss is $H$ and the se
     </item>
     <item>
       <title>Conditional Expectation of Exponential Gaussian</title>
-      <link>http://localhost:1313/problems/2025-10-10-18-conditional-exponential-gaussian/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/</link>
       <pubDate>Wed, 10 Dec 2025 20:50:39 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-18-conditional-exponential-gaussian/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -97,9 +105,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linear Regression Primer</title>
-      <link>http://localhost:1313/problems/2025-10-10-17-linear-regression-primer/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-17-linear-regression-primer/</link>
       <pubDate>Wed, 10 Dec 2025 20:41:27 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-17-linear-regression-primer/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-17-linear-regression-primer/</guid>
       <description>&lt;p&gt;In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
@@ -111,9 +119,9 @@ $$&lt;/p&gt;
     </item>
     <item>
       <title>Fake Brownian Motion</title>
-      <link>http://localhost:1313/problems/2025-10-10-16-fake-brownian-motion/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-16-fake-brownian-motion/</link>
       <pubDate>Wed, 10 Dec 2025 20:39:12 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-16-fake-brownian-motion/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-16-fake-brownian-motion/</guid>
       <description>&lt;h2 id=&#34;definition-of-brownian-motion&#34;&gt;Definition of Brownian motion&lt;/h2&gt;
 &lt;p&gt;A Brownian motion $B_t$ is a stochastic process with the following properties:&lt;/p&gt;
 &lt;ol&gt;
@@ -137,9 +145,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Brownian Motion Intuition</title>
-      <link>http://localhost:1313/problems/2025-10-10-15-brownian-motion-intuition/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-15-brownian-motion-intuition/</link>
       <pubDate>Wed, 10 Dec 2025 20:36:29 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-15-brownian-motion-intuition/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-15-brownian-motion-intuition/</guid>
       <description>&lt;h2 id=&#34;why-do-we-say-db_t2-approx-dt&#34;&gt;Why do we say $(dB_t)^2 \approx dt$&lt;/h2&gt;
 &lt;p&gt;Let $B_t$ be standard Brownian motion.&lt;br&gt;
 In Itô calculus we track contributions up to order $dt$.&lt;br&gt;
@@ -154,9 +162,9 @@ Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and&lt;/p&gt;</description>
     </item>
     <item>
       <title>Identity for expectation of power of absolute value</title>
-      <link>http://localhost:1313/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/</link>
       <pubDate>Wed, 10 Dec 2025 20:35:21 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -185,9 +193,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Computing Pi with Monte Carlo</title>
-      <link>http://localhost:1313/problems/2025-10-10-13-simulating-pi/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-13-simulating-pi/</link>
       <pubDate>Wed, 10 Dec 2025 20:33:16 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-13-simulating-pi/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-13-simulating-pi/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -225,9 +233,9 @@ is &lt;strong&gt;unbiased&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Conditional probability of 2D Gaussian</title>
-      <link>http://localhost:1313/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/</link>
       <pubDate>Wed, 10 Dec 2025 20:30:56 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -264,9 +272,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Distribution of Brownian integral</title>
-      <link>http://localhost:1313/problems/2025-10-10-11-brownian-integral-distribution/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-11-brownian-integral-distribution/</link>
       <pubDate>Wed, 10 Dec 2025 20:28:57 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-11-brownian-integral-distribution/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-11-brownian-integral-distribution/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -297,9 +305,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lower bound of number of independent generations</title>
-      <link>http://localhost:1313/problems/2025-10-10-10-number-of-rvs/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-10-number-of-rvs/</link>
       <pubDate>Wed, 10 Dec 2025 20:27:52 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-10-number-of-rvs/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-10-number-of-rvs/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -329,9 +337,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Simulating fair coin using unfair</title>
-      <link>http://localhost:1313/problems/2025-10-10-09-simulating-fair-coin/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-09-simulating-fair-coin/</link>
       <pubDate>Wed, 10 Dec 2025 20:26:54 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-09-simulating-fair-coin/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-09-simulating-fair-coin/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -363,9 +371,9 @@ which are not equal unless $p=\tfrac12$.&lt;/p&gt;
     </item>
     <item>
       <title>Correlation matrix sum of eigenvalues lower bound</title>
-      <link>http://localhost:1313/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/</link>
       <pubDate>Wed, 10 Dec 2025 20:23:02 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -398,9 +406,9 @@ $$&lt;/p&gt;
     </item>
     <item>
       <title>Expected distance from disk center</title>
-      <link>http://localhost:1313/problems/2025-10-10-07-disc-probability/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-07-disc-probability/</link>
       <pubDate>Wed, 10 Dec 2025 20:18:45 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-07-disc-probability/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-07-disc-probability/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -431,9 +439,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$</title>
-      <link>http://localhost:1313/problems/2025-10-10-06-product-of-sign-expectation/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-06-product-of-sign-expectation/</link>
       <pubDate>Wed, 10 Dec 2025 19:34:57 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-06-product-of-sign-expectation/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-06-product-of-sign-expectation/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -470,9 +478,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Stopping time for 2D Wiener process</title>
-      <link>http://localhost:1313/problems/2025-10-10-05-2d-wiener-process-stopping/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/</link>
       <pubDate>Wed, 10 Dec 2025 19:25:22 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-05-2d-wiener-process-stopping/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -501,9 +509,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Correlation matrix with constant correlation</title>
-      <link>http://localhost:1313/problems/2025-10-10-04-equicorrelation-matrix/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-04-equicorrelation-matrix/</link>
       <pubDate>Wed, 10 Dec 2025 19:12:44 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-04-equicorrelation-matrix/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-04-equicorrelation-matrix/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -532,9 +540,9 @@ where $M$ is the $n\times n$ matrix of all ones.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Expected value of exponential Wiener process</title>
-      <link>http://localhost:1313/problems/2025-10-10-03-expectation-of-exponential-wiener/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/</link>
       <pubDate>Wed, 10 Dec 2025 19:04:43 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-03-expectation-of-exponential-wiener/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -552,9 +560,9 @@ where $M$ is the $n\times n$ matrix of all ones.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Expectation of Gaussian CDF</title>
-      <link>http://localhost:1313/problems/2025-10-10-02-expectation-of-cdf/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-02-expectation-of-cdf/</link>
       <pubDate>Wed, 10 Dec 2025 18:44:30 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-02-expectation-of-cdf/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-02-expectation-of-cdf/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
@@ -589,9 +597,9 @@ $$&lt;/p&gt;</description>
     </item>
     <item>
       <title>Range of regression coefficient</title>
-      <link>http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/</link>
+      <link>http://localhost:1313/math-problems/problems/2025-10-10-01-range-of-regression-coeff/</link>
       <pubDate>Wed, 10 Dec 2025 14:36:00 -0600</pubDate>
-      <guid>http://localhost:1313/problems/2025-10-10-01-range-of-regression-coeff/</guid>
+      <guid>http://localhost:1313/math-problems/problems/2025-10-10-01-range-of-regression-coeff/</guid>
       <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
   &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
   &lt;div class=&#34;problem-box-body&#34;&gt;
