@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/math-problems/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=math-problems/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Derivation of Koopman operator for stochastic dynamical systems | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
 <meta name="description" content="In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.
@@ -17,16 +17,16 @@ $$
 $$
 Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\mathbf{x}$ to include the driving noise variables.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/math-problems/problems/2026-03-07-academic-koopman-operator/">
-<link crossorigin="anonymous" href="http://localhost:1313/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/math-problems/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/math-problems/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/math-problems/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/math-problems/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/math-problems/safari-pinned-tab.svg">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-07-academic-koopman-operator/">
+<link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://honglizhaobob.github.io/math-problems/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://honglizhaobob.github.io/math-problems/apple-touch-icon.png">
+<link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/math-problems/problems/2026-03-07-academic-koopman-operator/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-07-academic-koopman-operator/">
 <noscript>
     <style>
         #theme-toggle,
@@ -104,13 +104,84 @@ Here the initial condition is distributed according to the density $p_0$. Stocha
   });
 </script>
 
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2026-03-07-academic-koopman-operator/">
+  <meta property="og:site_name" content="Math & Stats Lounge">
+  <meta property="og:title" content="Derivation of Koopman operator for stochastic dynamical systems">
+  <meta property="og:description" content="In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.
+Consider a $d$-dimensional dynamical system evolving on a smooth manifold $\mathcal{M} \subset \mathbb{R}^d$: $$ \begin{cases} \displaystyle \frac{d\mathbf{x}}{dt} = G(\mathbf{x}) \\ \mathbf{x}(0) = \mathbf{x}_0 \sim p_0(\mathbf{x}_0). \end{cases} $$ Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\mathbf{x}$ to include the driving noise variables.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="problems">
+    <meta property="article:published_time" content="2026-03-07T16:36:00-06:00">
+    <meta property="article:modified_time" content="2026-03-07T16:36:00-06:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Derivation of Koopman operator for stochastic dynamical systems">
+<meta name="twitter:description" content="In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.
+Consider a $d$-dimensional dynamical system evolving on a smooth manifold $\mathcal{M} \subset \mathbb{R}^d$:
+$$
+\begin{cases}
+\displaystyle \frac{d\mathbf{x}}{dt} = G(\mathbf{x}) \\
+\mathbf{x}(0) = \mathbf{x}_0 \sim p_0(\mathbf{x}_0).
+\end{cases}
+$$
+Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\mathbf{x}$ to include the driving noise variables.">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Problems",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Derivation of Koopman operator for stochastic dynamical systems",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2026-03-07-academic-koopman-operator/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Derivation of Koopman operator for stochastic dynamical systems",
+  "name": "Derivation of Koopman operator for stochastic dynamical systems",
+  "description": "In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.\nConsider a $d$-dimensional dynamical system evolving on a smooth manifold $\\mathcal{M} \\subset \\mathbb{R}^d$: $$ \\begin{cases} \\displaystyle \\frac{d\\mathbf{x}}{dt} = G(\\mathbf{x}) \\\\ \\mathbf{x}(0) = \\mathbf{x}_0 \\sim p_0(\\mathbf{x}_0). \\end{cases} $$ Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\\mathbf{x}$ to include the driving noise variables.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.\nConsider a $d$-dimensional dynamical system evolving on a smooth manifold $\\mathcal{M} \\subset \\mathbb{R}^d$: $$ \\begin{cases} \\displaystyle \\frac{d\\mathbf{x}}{dt} = G(\\mathbf{x}) \\\\ \\mathbf{x}(0) = \\mathbf{x}_0 \\sim p_0(\\mathbf{x}_0). \\end{cases} $$ Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\\mathbf{x}$ to include the driving noise variables.\nLet $u:\\mathcal{M}\\to\\mathbb{R}$ be a real-valued observable, for example the projection onto coordinate $j$:\n$$ u(\\mathbf{x}) = x_j, \\qquad \\mathbf{x}\\in\\mathcal{M}. $$\nIf $\\mathbf{x}(t,\\mathbf{x}_0)$ denotes the flow map generated by the dynamics, then the time evolution of the observable is given by\n$$ u(\\mathbf{x}(t,\\mathbf{x}_0)) = \\exp\\left(t \\sum_{k=1}^d G_k(\\mathbf{x}_0)\\frac{\\partial}{\\partial (\\mathbf{x}_0)_k} \\right) u(\\mathbf{x}_0). $$\nDifferentiating with respect to $t$ yields the evolution equation $$ \\frac{\\partial u}{\\partial t} = \\mathcal{K}(\\mathbf{x}_0)u(t,\\mathbf{x}_0) = \\left( \\sum_{k=1}^d G_k(\\mathbf{x}_0)\\frac{\\partial}{\\partial (\\mathbf{x}_0)_k} \\right)u(t,\\mathbf{x}_0). $$\nThe generator $$ \\mathcal{K} = \\sum_{k=1}^d G_k(\\mathbf{x}_0)\\frac{\\partial}{\\partial (\\mathbf{x}_0)_k} $$ is the infinitesimal generator of the Koopman semigroup, and the operator $\\exp(t\\mathcal{K})$ is referred to as the Koopman operator.\nWhy the Koopman operator is linear? Let $\\Phi^t:\\mathcal{M}\\to\\mathcal{M}$ denote the flow map, $$ \\Phi^t(\\mathbf{x}_0) = \\mathbf{x}(t,\\mathbf{x}_0). $$\nThen the Koopman operator $U^t$ acts on observables by composition:\n$$ (U^t u)(\\mathbf{x}_0) := u(\\Phi^t(\\mathbf{x}_0)). $$\nTo verify linearity, let $u,v:\\mathcal{M}\\to\\mathbb{R}$ and let $a,b\\in\\mathbb{R}$. Then\n$$ U^t(au+bv)(\\mathbf{x}_0) = (au+bv)(\\Phi^t(\\mathbf{x}_0)) = a\\,u(\\Phi^t(\\mathbf{x}_0)) + b\\,v(\\Phi^t(\\mathbf{x}_0)). $$\nHence $$ U^t(au+bv)(\\mathbf{x}_0) = a\\,(U^t u)(\\mathbf{x}_0) + b\\,(U^t v)(\\mathbf{x}_0). $$\nSince this holds for every $\\mathbf{x}_0\\in\\mathcal{M}$, we conclude that $$ U^t(au+bv) = a\\,U^t u + b\\,U^t v. $$\nTherefore, the Koopman operator is linear, even when the underlying state dynamics are nonlinear.\nThe dual operator of the Koopman generator with respect to the weighted inner product $$ \\langle f, g\\rangle = \\int_{\\mathcal{M}} f(\\mathbf{x}_0)g(\\mathbf{x}_0)p(\\mathbf{x}_0)\\,d\\mathbf{x}_0 $$ is the Perron–Frobenius operator. Its infinitesimal generator is $$ \\mathcal{L}(\\mathbf{x})\\phi = -\\nabla\\cdot\\bigl(G(\\mathbf{x})\\phi(\\mathbf{x})\\bigr), $$ and the associated semigroup is $\\exp(t\\mathcal{L})$.\nThis operator evolves the joint probability density of the flow map $\\mathbf{x}(t,\\mathbf{x}_0)$ according to $$ p(\\mathbf{x},t) = e^{t\\mathcal{L}}p(\\mathbf{x},0) = e^{t\\mathcal{L}}p_0(\\mathbf{x}). $$\nDifferentiating with respect to $t$ yields the Liouville transport equation: $$ \\frac{\\partial p(\\mathbf{x},t)}{\\partial t} + \\nabla\\cdot\\left(G(\\mathbf{x})p(\\mathbf{x},t)\\right) = 0. $$\nTo obtain an equation for the probability density of a quantity of interest $z=u(\\mathbf{x})$, one may project onto the level set of $u$ using the Dirac delta distribution: $$ p(z,t) = \\int_{\\mathcal{M}} \\delta\\bigl(z-u(\\mathbf{x})\\bigr)p(\\mathbf{x},t),d\\mathbf{x}. $$\nDifferentiating with respect to $t$ and applying the chain rule formally yields the reduced-order equation $$ \\frac{\\partial p(z,t)}{\\partial t} + \\int_{\\mathcal{M}} e^{ia(z-u(\\mathbf{x}))} \\nabla\\cdot\\bigl(G(\\mathbf{x})p(\\mathbf{x},t)\\bigr)\\,d\\mathbf{x}\\,da = 0. $$\nIn general, the integral term is not closed in the reduced density $p(z,t)$. Nevertheless, the induced reduced-order evolution operator remains linear; see Brennan and Venturi for a data-driven closure perspective on stochastic dynamical systems.1 For general observables $u$, one may augment the state so that $u$ becomes part of the extended system, and the same operator-theoretic argument applies.\nBrennan, C., \u0026 Venturi, D. (2018). Data-driven closures for stochastic dynamical systems. Journal of Computational Physics, 372, 281–298. https://doi.org/10.1016/j.jcp.2018.06.038 ↩︎\n",
+  "wordCount" : "493",
+  "inLanguage": "en",
+  "datePublished": "2026-03-07T16:36:00-06:00",
+  "dateModified": "2026-03-07T16:36:00-06:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2026-03-07-academic-koopman-operator/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Math \u0026 Stats Lounge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://honglizhaobob.github.io/math-problems/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/math-problems/" accesskey="h" title="Math &amp; Stats (Alt + H)">Math &amp; Stats</a>
+            <a href="https://honglizhaobob.github.io/math-problems/" accesskey="h" title="Math &amp; Stats (Alt + H)">Math &amp; Stats</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -136,12 +207,12 @@ Here the initial condition is distributed according to the density $p_0$. Stocha
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/math-problems/" title="Problems">
+                <a href="https://honglizhaobob.github.io/math-problems/" title="Problems">
                     <span>Problems</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/math-problems/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://honglizhaobob.github.io/math-problems/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
@@ -152,7 +223,7 @@ Here the initial condition is distributed according to the density $p_0$. Stocha
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/math-problems/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/math-problems/problems/">Problems</a></div>
+    <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
       Derivation of Koopman operator for stochastic dynamical systems
     </h1>
@@ -280,7 +351,7 @@ $$</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="next" href="http://localhost:1313/math-problems/problems/2025-12-19-01-coprime-probability/">
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-12-19-01-coprime-probability/">
     <span class="title">Next »</span>
     <br>
     <span>Probability two random numbers are coprime</span>
@@ -292,7 +363,7 @@ $$</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/math-problems/">Math &amp; Stats Lounge</a></span> · 
+        <span>&copy; 2026 <a href="https://honglizhaobob.github.io/math-problems/">Math &amp; Stats Lounge</a></span> · 
 
     <span>
         Powered by
