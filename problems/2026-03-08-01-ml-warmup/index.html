@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Machine learning warm-up | Math &amp; Stats Lounge</title>
+<meta name="keywords" content="">
+<meta name="description" content="In this note, we review a list of questions that are helpful for ML from a generalist point of view.
+ML basics
+
+  Question
+  
+    What is overfitting? How can we deal with overfitting?
+  
+
+
+
+
+  Solution
+  
+    Overfitting occurs when a model fits the training data too closely, including noise or spurious patterns that do not generalize to new data. As a result, the model achieves very low training error but performs poorly on unseen data, such as validation or test data.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/problems/2026-03-08-01-ml-warmup/">
+<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/problems/2026-03-08-01-ml-warmup/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+      integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+      crossorigin="anonymous">
+
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+        integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+        crossorigin="anonymous"></script>
+
+<script defer
+        src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+        crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$",  right: "$",  display: false}
+      ]
+    });
+  });
+</script>
+
+<meta property="og:url" content="http://localhost:1313/problems/2026-03-08-01-ml-warmup/">
+  <meta property="og:site_name" content="Math & Stats Lounge">
+  <meta property="og:title" content="Machine learning warm-up">
+  <meta property="og:description" content="In this note, we review a list of questions that are helpful for ML from a generalist point of view.
+ML basics Question What is overfitting? How can we deal with overfitting? Solution Overfitting occurs when a model fits the training data too closely, including noise or spurious patterns that do not generalize to new data. As a result, the model achieves very low training error but performs poorly on unseen data, such as validation or test data.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="problems">
+    <meta property="article:published_time" content="2026-03-08T16:36:00-06:00">
+    <meta property="article:modified_time" content="2026-03-08T16:36:00-06:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Machine learning warm-up">
+<meta name="twitter:description" content="In this note, we review a list of questions that are helpful for ML from a generalist point of view.
+ML basics
+
+  Question
+  
+    What is overfitting? How can we deal with overfitting?
+  
+
+
+
+
+  Solution
+  
+    Overfitting occurs when a model fits the training data too closely, including noise or spurious patterns that do not generalize to new data. As a result, the model achieves very low training error but performs poorly on unseen data, such as validation or test data.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Problems",
+      "item": "http://localhost:1313/problems/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Machine learning warm-up",
+      "item": "http://localhost:1313/problems/2026-03-08-01-ml-warmup/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Machine learning warm-up",
+  "name": "Machine learning warm-up",
+  "description": "In this note, we review a list of questions that are helpful for ML from a generalist point of view.\nML basics Question What is overfitting? How can we deal with overfitting? Solution Overfitting occurs when a model fits the training data too closely, including noise or spurious patterns that do not generalize to new data. As a result, the model achieves very low training error but performs poorly on unseen data, such as validation or test data.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "In this note, we review a list of questions that are helpful for ML from a generalist point of view.\nML basics Question What is overfitting? How can we deal with overfitting? Solution Overfitting occurs when a model fits the training data too closely, including noise or spurious patterns that do not generalize to new data. As a result, the model achieves very low training error but performs poorly on unseen data, such as validation or test data.\nA common sign of overfitting is a large gap between training performance and validation performance. For example, the training loss may continue to decrease while the validation loss starts to increase.\nTypical ways to reduce overfitting include:\ncross-validation for model selection; add regularization, such as $L^1$ or $L^2$ penalties (weight decay); reduce model complexity or performing feature selection; increase the amount of training data or using data augmentation; early stopping; ensemble methods. Question What is underfitting? How can we deal with underfitting? Solution Underfitting occurs when a model is too simple or too constrained to capture the underlying patterns in the data. As a result, it performs poorly even on the training set, and also generalizes poorly to validation or test data.\nA common sign of underfitting is that both the training error and the validation error remain high. In this case, the model has not learned enough structure from the data.\nTypical ways to reduce underfitting include:\nincrease model complexity; add more informative features; reduce regularization strength; train for more iterations or epochs. Question What is the bias–variance tradeoff? Solution Suppose the true relationship is$y = f(x) + \\epsilon,$ where $\\epsilon$ has $\\mathbb{E}[\\epsilon]=0$. Let $h(x)$ be the hypothesis learned from the data. Then $$ \\mathbb{E}_{\\mathcal{D},\\epsilon}[(y-h(x))^2] = \\mathbb{E}_{\\mathcal{D},\\epsilon}[(f(x)+\\epsilon-h(x))^2]. $$\nExpand $$ \\mathbb{E}_{\\mathcal{D}}[(f(x)-h(x))^2] + 2\\cancel{\\mathbb{E}_{\\mathcal{D},\\epsilon}[(f(x)-h(x))\\epsilon]} + \\mathbb{E}[\\epsilon^2]. $$ The middle term is $0$ since $\\epsilon$ is independent mean-zero noise. Hence $$ \\mathbb{E}_{\\mathcal{D},\\epsilon}[(y-h(x))^2] = \\mathbb{E}_{\\mathcal{D}}[(f(x)-h(x))^2] + \\mathbb{E}[\\epsilon^2]. $$ The term $\\mathbb{E}[\\epsilon^2]$ is the irreducible error.\nWe decompose $$ \\mathbb{E}_{\\mathcal{D}}[(f(x)-h(x))^2] = \\mathbb{E}_{\\mathcal{D}}\\!\\left[ \\bigl(f(x)-\\mathbb{E}[h(x)] + \\mathbb{E}[h(x)]-h(x)\\bigr)^2 \\right]. $$\nExpanding, $$ (f(x)-\\mathbb{E}[h(x)])^2 - \\cancel{2(f(x)-\\mathbb{E}[h(x)])\\mathbb{E}_{\\mathcal{D}}[\\mathbb{E}[h(x)]-h(x)]} + \\mathbb{E}_{\\mathcal{D}}[(h(x)-\\mathbb{E}[h(x)])^2]. $$\nThe middle term is $0$, so $$ \\mathbb{E}_{\\mathcal{D}}[(f(x)-h(x))^2] = \\underbrace{(f(x)-\\mathbb{E}[h(x)])^2}_{\\text{bias}^2} + \\underbrace{\\mathbb{E}_{\\mathcal{D}}[(h(x)-\\mathbb{E}[h(x)])^2]}_{\\text{variance}}. $$\nThe bias–variance tradeoff describes the relationship between model complexity, prediction accuracy, and generalization to unseen data. A low-bias model is usually more flexible but may have high variance, while a low-variance model is usually simpler but may have high bias.\nQuestion What is the difference between generative and discriminative models? Solution Let $X$ denote the features and $Y$ the label.\nA generative model models the joint distribution $$ p(X,Y) = p(X\\mid Y)p(Y). $$ Equivalently, it models the class-conditional distribution $p(X\\mid Y)$ together with the prior $p(Y)$. By Bayes’ rule, $$ p(Y\\mid X) = \\frac{p(X\\mid Y)p(Y)}{p(X)}, $$ so a generative model can also be used for classification. Since it models how the data are generated, it can in principle generate new synthetic samples.\nA discriminative model directly models the posterior $$ p(Y\\mid X), $$ or directly learns a decision rule from $X$ to $Y$ without modeling the full data distribution.\nIn words:\ngenerative models model the underlying data-generating distribution; discriminative models focus only assigning posterior probabilities of labels given data Question Given a set of ground truths and two models, how can we be confident that one model is better than the other? Solution To compare two models fairly, we should train and test them on the same data splits and evaluate them using the same metric.\nThe choice of metric depends on the task:\nfor classification, one may compare accuracy, precision, recall, or F1-score; for regression, one compare MSE, MAE, or $R^2$. A single train-test split may give a noisy comparison, so a more reliable approach is to use cross-validation. That is, we repeatedly split the data, evaluate both models on the same folds, and then average their performance.\nIf one model consistently performs better across the cross-validation folds under the chosen metric, we can be more confident that it is the better model.\nRegularization Question What are $L^1$$ and $$L^2$? What is the difference between them? Solution A regularized objective can be written as $$ \\mathcal{L}(\\theta) = \\sum_{i=1}^n \\|y_i - f(x_i;\\theta)\\|^2 + \\lambda \\|\\theta\\|_{1,2}. $$ Here $L^1$ means using the $\\ell^1$ norm of the parameters, $\\|\\theta\\|_1 = \\sum_j |\\theta_j|,$ while $L^2$ means using the $\\ell^2$ norm, $\\|\\theta\\|_2^2 = \\sum_j \\theta_j^2.$\n$L^1$ encourages sparsity, so some coefficients can become exactly zero, while $L^2$ shrinks the coefficients smoothly toward zero but usually does not make them exactly zero. $L^1$ can be used for feature selection, while $L^2$ mainly controls the size of the weights and stabilizes the model.\nAlso, $L^1$ is not differentiable at zero, while $L^2$ is smooth.\nQuestion Why does $L^1$ promote sparsity? Solution A simple example in 1D. Consider the function $$ M(x) = L(x) + c x^2. $$ Then $$ M'(x) = L'(x) + 2cx. $$ At $x=0$, $M'(0) = L'(0).$ So for $x=0$ to be a critical point, we must have $L'(0)=0.$ Thus, under $L^2$ regularization, it is not easy for the optimum to occur exactly at zero unless the unregularized loss already has derivative zero there.\nNow consider $$ M(x) = L(x) + c|x|. $$ This is not differentiable at $x=0$. The one-sided derivatives at $0$ are $$ M'_-(0) = L'(0) - c, \\quad M'_+(0) = L'(0) + c. $$ If these two have opposite signs, then $x=0$ is a minimizer. This happens when $ (L'(0)-c)(L'(0)+c) \u003c 0, $ that is, $$ L'(0)^2 - c^2 \u003c 0 \\quad\\Longleftrightarrow\\quad |L'(0)| \u003c c. $$ So as long as the slope of the original loss at zero is not too large, the corner created by $|x|$ makes $x=0$ an optimum. Hence $L^1$ is much more likely to set coefficients exactly to zero, which is why it promotes sparsity.\nFrom a Bayesian viewpoint, $L^1$ regularization corresponds to a Laplace prior on the weights, while $L^2$ regularization corresponds to a Gaussian prior. Question Why do we usually use $L^1$ or $L^2$ regularization, but not $L^3$ or $L^4$? Solution A regularized objective can be written as $$ \\mathcal{L}(\\theta) = L(\\theta) + \\lambda \\|\\theta\\|_p^p. $$ In principle, one can use other values of $p$, but $L^1$ and $L^2$ are the most common. For $L^2$, the penalty is smooth and easy to optimize. Its gradient is linear in the weights, so gradient-based methods are stable and simple $\\nabla_\\theta \\|\\theta\\|_2^2 = 2\\theta.$\nFor $L^1$, the penalty is not smooth at zero, but promotes sparsity.\nIf we use higher powers such as $L^3$ or $L^4$, then the gradient becomes steeper for large weights, for example $$ \\frac{d}{dx}|x|^p = p|x|^{p-1}\\operatorname{sign}(x), $$ For $p\u003e2$ the penalty becomes more sensitive to large coefficients. This can make optimization less stable and less well-conditioned.\nHigher-order penalties usually do not add a qualitatively new advantage than the effects of $L^{1,2}$ in standard ML.\nFinally, near an optimum, smooth objectives are often well-approximated by quadratic terms, which is another reason $L^2$ appears naturally.\nQuestion Why does regularization reduce overfitting? Solution Regularization adds a penalty term to the loss, so the model is discouraged from using very large weights. Large weights make the model more sensitive to small fluctuations in the training data. By shrinking the weights, regularization reduces variance.\nFor $L^2$ regularization, weights are shrunk continuously toward zero, which makes the fitted model less unstable. For $L^1$ regularization, some weights may become exactly zero, so the model effectively uses fewer features, which reduces complexity.\nMetrics Question What are precision and recall? What is the tradeoff between them? Solution In binary classification, there are two cases: whether a sample is actually positive, and whether the model predicts it as positive.\nThe four possible outcomes are: $$ \\mathrm{TP} = \\text{true positive}, \\quad \\mathrm{FP} = \\text{false positive}, $$ $$ \\mathrm{TN} = \\text{true negative}, \\quad \\mathrm{FN} = \\text{false negative}. $$\nPrecision is the probability of being actually positive given that the model predicted positive: $$ \\mathrm{Precision} = P(\\text{actually positive} \\mid \\text{predicted positive}) = \\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FP}}. $$\nRecall is the probability of predicting positive given that the sample is actually positive: $$ \\mathrm{Recall} = P(\\text{predicted positive} \\mid \\text{actually positive}) = \\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FN}}. $$\nSo precision measures how well we avoid false positives, while recall measures how well we avoid false negatives.\nTradeoff: If we increase the threshold for predicting positive, then fewer samples are labeled positive. This decreases $\\mathrm{FP}$, but increases $\\mathrm{FN}$. As a result, precision tends to increase while recall tends to decrease. If we lower the threshold, then recall tends to increase, but precision may decrease.\nQuestion When there is class imbalance, what metric should we use? Solution When there is class imbalance, accuracy can be misleading. For example, if $99\\%$ of samples are negative, then a classifier that always predicts negative already gets $99\\%$ accuracy, even though it is useless for detecting the positive class.\nIn this case, a common metric is the $F_1$ score, which is the harmonic mean of precision and recall: $$ F_1 = \\frac{2PR}{P+R}, $$ where $$ P = \\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FP}}, \\qquad R = \\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FN}}. $$\nThe reason to use the harmonic mean is that it is large only when both precision and recall are large. So if one of them is poor, the $F_1$ score will also be poor. This makes it more suitable when classes are imbalanced.\nQuestion What metrics are used for classification problems? Solution Common metrics for classification include accuracy, precision, recall, $F_1$ score, and ROC-AUC.\nAccuracy is $$ \\mathrm{Accuracy} = \\frac{\\mathrm{TP}+\\mathrm{TN}}{\\mathrm{TP}+\\mathrm{TN}+\\mathrm{FP}+\\mathrm{FN}}. $$ It measures the overall fraction of correct predictions, but it can be misleading when the classes are imbalanced.\nPrecision and recall are $$ \\mathrm{Precision} = \\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FP}}, \\qquad \\mathrm{Recall} = \\frac{\\mathrm{TP}}{\\mathrm{TP}+\\mathrm{FN}}. $$ Precision measures how reliable positive predictions are, while recall measures how many actual positives are detected.\nThe $F_1$ score is the harmonic mean of precision and recall: $$ F_1 = \\frac{2PR}{P+R}. $$ It is useful when the classes are imbalanced, since it is large only when both precision and recall are large.\nAnother important metric is ROC-AUC. The ROC curve plots the true positive rate against the false positive rate as the classification threshold varies. A random classifier gives the baseline diagonal line $y=x$. The AUC is the area under this curve.\nAUC can also be interpreted as the probability that the classifier ranks a randomly chosen positive sample higher than a randomly chosen negative sample. It is a useful metric because it accounts for all thresholds and measures how well the model separates the two classes. It is also often useful for imbalanced data, since it depends on the relative ranking of scores rather than one fixed threshold.\nROC and classifiers. ROC and metrics. Question What is logistic loss, and when do we use it? Solution Consider logistic regression for binary classification. It models the log-odds linearly: $$ \\log \\frac{P(Y=1\\mid X)}{P(Y=0\\mid X)} = X^\\top \\beta. $$ Since $P(Y=0\\mid X)=1-P(Y=1\\mid X),$ this gives $$ P(Y=1\\mid X) = \\frac{e^{X^\\top\\beta}}{1+e^{X^\\top\\beta}}. $$\nTo fit parameters, we use maximum likelihood. For labels $y_i\\in{0,1}$, the likelihood is $$ \\prod_{i=1}^n P(Y=y_i\\mid x_i,\\beta). $$ Taking logs gives $$ \\sum_{i=1}^n \\log P(Y=y_i\\mid x_i,\\beta). $$ This can be written as $$ \\log P(Y=y_i\\mid x_i,\\beta)=y_i \\log p_i + (1-y_i)\\log(1-p_i), $$ where $p_i = P(Y=1\\mid x_i,\\beta).$ If $y_i=1$, this becomes $\\log p_i$, and if $y_i=0$, this becomes $\\log(1-p_i)$.\nTherefore the negative log-likelihood is $$ -\\sum_{i=1}^n \\Big(y_i \\log p_i + (1-y_i)\\log(1-p_i)\\Big), $$ which is called the logistic loss, or log loss. It is also the binary cross-entropy loss.\nLogistic loss is useful for classification when we want not only a label, but also a probability for each class. It penalizes being confidently wrong, so it encourages probabilistic predictions.\nQuestion Why do we not use MSE for logistic regression? Solution In logistic regression, the model is $$ \\hat y_i = P(Y=1\\mid x_i,w) = \\sigma(x_i^\\top w), $$ where $\\sigma(z)=\\frac{1}{1+e^{-z}}$. If we use MSE, the loss is $$ L(w) = \\sum_{i=1}^N (y_i-\\hat y_i)^2. $$\nThe issue is that this loss is generally not convex in $w$. Differentiating gives $$ \\frac{\\partial L(w)}{\\partial w} = \\sum_{i=1}^N (y_i-\\hat y_i)\\hat y_i(1-\\hat y_i)x_i. $$ Differentiating again, the Hessian is $$ \\frac{\\partial^2 L(w)}{\\partial w^2} = -\\sum_{i=1}^N \\hat y_i(1-\\hat y_i)(1-2\\hat y_i),x_i x_i^\\top. $$\nNow $\\hat y_i(1-\\hat y_i)\\ge 0$, but the factor $(1-2\\hat y_i)$ can be $+$ or $-$. In particular, when $\\hat y_i\u003e1/2$, we have $1-2\\hat y_i\u003c0$, while when $\\hat y_i\u003c1/2$, we have $1-2\\hat y_i\u003e0$. So the Hessian does not have a fixed sign, which means the MSE objective for logistic regression is nonconvex.\nAlso, MSE is natural for ordinary regression with Gaussian noise, since it comes from Gaussian MLE. Logistic regression is Bernoulli, so the natural loss is the negative log-likelihood, namely the logistic loss.\nQuestion What is MSE, and when do we use MSE? Solution MSE stands for mean squared error: $$ \\mathrm{MSE} = \\frac{1}{n}\\sum_{i=1}^n (y_i-f(x_i))^2. $$\nIt is natural when we assume the model $$ y = f(x) + \\epsilon, $$ where the error $\\epsilon$ is Gaussian, say $\\epsilon \\sim \\mathcal{N}(0,\\sigma^2)$. Under this assumption, the likelihood of the observed data is proportional to $$ \\exp\\left(-\\frac{1}{2\\sigma^2}\\sum_{i=1}^n (y_i-f(x_i))^2\\right). $$ So maximizing the likelihood is equivalent to minimizing $\\sum_{i=1}^n (y_i-f(x_i))^2$.\nTherefore MSE is commonly used for regression problems, especially when a Gaussian noise model is reasonable.\nSquared error penalizes large errors, since the error is squared. MSE is sensitive to outliers. Question What are relative entropy / cross-entropy and KL divergence? What is the intuition behind them? Solution Relative entropy is another name for KL divergence. For two probability distributions $P$ and $Q$, it is defined by $$ D_{\\mathrm{KL}}(P|Q) = \\int P(z)\\log\\frac{P(z)}{Q(z)},dz $$ in the continuous case, or $$ D_{\\mathrm{KL}}(P|Q) = \\sum_z P(z)\\log\\frac{P(z)}{Q(z)} $$ in the discrete case.\nIt measures how different $Q$ is from $P$, or how much information is lost when we use $Q$ to approximate the true distribution $P$. It is always $\\ge 0$, and equals $0$ only when $P=Q$ almost everywhere.\nThe cross-entropy between $P$ and $Q$ is $$ H(P,Q) = -\\int P(z)\\log Q(z),dz $$ or in the discrete case $$ H(P,Q) = -\\sum_z P(z)\\log Q(z). $$ It measures the expected surprise when data are actually generated from $P$, but we evaluate them using $Q$.\nThe relationship between them is $$ H(P,Q) = H(P) + D_{\\mathrm{KL}}(P|Q), $$ where $$ H(P) = -\\int P(z)\\log P(z),dz $$ is the entropy of $P$.\nIntuition:\n$H(P)$ is the intrinsic uncertainty in the true distribution $P$.\n$H(P,Q)$ is the uncertainty we incur when we use $Q$ instead of $P$.\n$D_{\\mathrm{KL}}(P|Q)$ is the extra cost / information loss, from using $Q$ to approximate $P$.\nQuestion What is entropy? Solution Entropy is a measure of randomness or uncertainty in a probability distribution. It can also be interpreted as the average number of bits needed to describe the outcome of a random variable.\nIf a discrete random variable $X$ takes values $x$ with probabilities $p(x)$, then its entropy is $$ H(X) = -\\sum_x p(x)\\log_2 p(x). $$\nThe intuition is that an event with probability $p(x)$ carries information content $ -\\log_2 p(x), $ because rarer events are more surprising and require more bits to describe. Entropy is the average of this quantity over all outcomes.\nSo if the distribution is very concentrated, the entropy is small; if the distribution is more spread out or random, the entropy is large.\nQuestion What is the loss function of SVM? Solution SVM uses the hinge loss, $ \\max(0,,1-y_i\\hat y_i), $ where $ \\hat y_i = w^\\top x_i + b, $ and $y_i\\in\\{-1,1\\}$. The decision boundary is $ w^\\top x_i+b=0, $ and the margin boundaries are $$ w^\\top x_i+b=1,\\qquad w^\\top x_i+b=-1. $$ A correctly classified point with sufficient margin satisfies $ y_i\\hat y_i \\ge 1, $ so its hinge loss is $0$. If $y_i\\hat y_i\u003c1$, then the point is either inside the margin or misclassified, and the loss is positive. So hinge loss penalizes points that are not classified with enough margin. Question When splitting a node in a decision tree, what is the objective? Solution The objective is to maximize information gain, or equivalently to reduce entropy as much as possible.\nIf the parent node has entropy $ H(\\text{parent}), $ and the split produces child nodes with entropies $ H(\\text{child}_1),\\dots,H(\\text{child}_k), $ then the information gain is $$ \\mathrm{Gain} = H(\\text{parent}) - \\sum_{j=1}^k \\frac{n_j}{n} H(\\text{child}_j), $$ where $n_j$ is the number of samples in child $j$ and $n$ is the number of samples in the parent node. We compute the entropy before the split, then subtract the weighted average of the entropies after the split. The best split is the one with the largest gain.\nNeural Net Basics Question Why does a DNN need a bias term? What is the intuition behind the bias term? Solution A bias term lets each neuron shift its activation threshold. Without bias, a layer computes only $ Wx, $ so every decision boundary must pass through the origin. With bias, it becomes $ Wx+b, $ which is much more flexible. Question What is backpropagation? Solution Backpropagation is the algorithm for computing gradients of the loss with respect to all network parameters by repeatedly applying the chain rule from the output layer back to the earlier layers. The idea is to do a forward pass to compute predictions and loss, then do a backward pass to compute gradients, then update the parameters using gradient descent or some optimizer. Question What are vanishing gradients / exploding gradients? How do we deal with them? Solution Vanishing gradients mean the gradients become extremely small as they are propagated backward through many layers, so early layers learn very slowly. Exploding gradients mean the gradients become extremely large, so training becomes unstable.\nThey often happen because gradients are products of many Jacobians. Repeated multiplication by numbers $\u003c1$ causes vanishing, while repeated multiplication by numbers $\u003e1$ causes exploding.\nCommon fixes:\ninitialization ReLU-type activations batch normalization residual connections gradient clipping architectures like LSTM/GRU for sequence models. Question Can we initialize all neural network weights to zero? Solution No. If all weights are initialized to zero, then all neurons in the same layer produce the same output, get the same gradient, and remain identical during training. The network does not learn different features. We usually use random initialization to break symmetry. Question What is the difference between a DNN and logistic regression? Solution Logistic regression is a single linear model followed by a sigmoid or softmax output. Its decision boundary is linear in the input features.\nA DNN stacks many layers with nonlinear activations, can learn nonlinear feature representations. Logistic regression is shallow and linear; a DNN is deep and nonlinear.\nQuestion How do we do hyperparameter tuning in deep learning? What are random search and grid search? Solution Hyperparameter tuning means trying different values of things like learning rate, batch size, number of layers, hidden dimension, weight decay, and dropout rate, then selecting the setting with the best validation performance.\nGrid search tries all combinations from a fixed grid. It is simple but expensive for many parameters.\nRandom search samples hyperparameter combinations randomly from a range or distribution. It is often better in deep learning because only a few hyperparameters usually matter a lot, so random search explores more efficiently.\nQuestion What is dropout? Why does it work? What is the procedure during training and testing? Solution Dropout randomly sets some neuron outputs to zero during training (but not inference). If the keep probability is $p$, then each unit is kept with probability $p$ and dropped with probability $1-p$.\nIt works because it prevents neurons from relying too much on specific other neurons, reduces co-adaptation, and acts like a kind of model averaging over many subnetworks.During training, we randomly drop units and usually scale the kept activations by $1/p$ in inverted dropout. During testing, we do not drop units; we use the full network.\nQuestion What is batch normalization? Why does it work? What is the procedure during training and testing? Solution Batch normalization normalizes activations within a mini-batch. For an activation $x$, it computes $$ \\hat x = \\frac{x-\\mu_B}{\\sqrt{\\sigma_B^2+\\varepsilon}}, \\quad y = \\gamma \\hat x + \\beta, $$ where $\\mu_B$ and $\\sigma_B^2$ are the batch mean and variance, and $\\gamma,\\beta$ are learnable parameters.\nIt helps allow larger learning rates, and adds a small regularization effect through batch noise. During training, it uses the current mini-batch mean and variance. During testing, it uses the running averages accumulated during training.\nQuestion What are common activation functions such as sigmoid, tanh, ReLU, and leaky ReLU? What are their advantages and disadvantages? Solution Sigmoid is $ \\sigma(x)=\\frac{1}{1+e^{-x}}. $ It maps to $(0,1)$, useful for probabilities, but causes vanishing gradients.\n$$ \\tanh(x)=\\frac{e^x-e^{-x}}{e^x+e^{-x}}. $$ maps to $(-1,1)$ and is zero-centered, but also vanishing gradients.\n$$ \\mathrm{ReLU}(x)=\\max(0,x). $$ cheap to compute, but but neurons can die if they stay in the negative region.\nLeaky ReLU: $$ \\mathrm{LeakyReLU}(x)=\\max(\\alpha x,x), $$ with small $\\alpha\u003e0$. It keeps a small slope on the negative side, so it helps reduce the dying ReLU problem.\nQuestion Why do we need nonlinear activation functions? Solution Because without nonlinear activation functions, a multilayer network is still just a linear map. For example, composing $ W_2(W_1x+b_1)+b_2 $ is still affine in $x$. So depth would give no extra expressive power. Nonlinear activations are what let neural networks model complicated nonlinear functions. Question What is the difference between common optimizers such as SGD, Momentum, RMSprop, Adagrad, and Adam? Solution SGD: updates parameters using the current gradient only. Simple but noisy and slow.\nMomentum: adds an exponential moving average of past gradients, reduces oscillation.\nAdagrad: scales each parameter by the accumulated squared gradients, gives larger updates to infrequent features, but learning rate can shrink too much over time.\nRMSprop: also uses squared gradients, but with an exponential moving average instead of a cumulative sum, avoids Adagrad’s aggressive decay.\nAdam: combines Momentum and RMSprop: keeps moving averages of both the gradient and the squared gradient, then uses bias correction. Default choice to be used.\nQuestion Advantages and disadvantages of batch gradient descent and SGD? What is the effect of batch size? Solution Batch gradient descent uses the whole dataset for each update. Gradient is accurate and stable, but each step is memory intensive.\nSGD or mini-batch SGD uses one sample or a small batch. Each update is cheaper and faster; noise can help escape bad regions, the trajectory is noisier.\nBatch size affects this tradeoff. Small batch sizes give noisier gradients but more frequent updates and sometimes better generalization. Large batch sizes give more stable gradients and better hardware efficiency, but they may generalize worse and need careful learning-rate tuning.\nQuestion What happens if the learning rate is too large or too small? Solution If the learning rate is too small, training is very slow and may get stuck for a long time on plateaus.\nIf the learning rate is too large, updates can overshoot the minimum, oscillate, or diverge; the loss may fail to converge.\nQuestion What are plateaus and saddle points? Solution A plateau is a region where the loss surface is very flat, gradients are close to zero and optimization moves very slowly. A saddle point is a point where the gradient is zero, but the point is not a local minimum: the function curves upward in some directions and downward in others.\nIn high-dimensional problems, saddle points are common. They can slow training because first-order methods see very small gradients nearby.\nQuestion When does transfer learning make sense? Solution Transfer learning makes sense when we have a pretrained model from a related task or dataset, especially when our own labeled data are limited.\nMain idea: Early and intermediate layers may already have useful features, so we reuse them and only fine-tune part or all of the model on the new task. Most useful when the source and target tasks are similar enough that the learned representation transfers.\n",
+  "wordCount" : "3928",
+  "inLanguage": "en",
+  "datePublished": "2026-03-08T16:36:00-06:00",
+  "dateModified": "2026-03-08T16:36:00-06:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/problems/2026-03-08-01-ml-warmup/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Math \u0026 Stats Lounge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Math &amp; Stats (Alt + H)">Math &amp; Stats</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Problems">
+                    <span>Problems</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/problems/">Problems</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Machine learning warm-up
+    </h1>
+    <div class="post-meta"><span title='2026-03-08 16:36:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>19 min</span>
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#ml-basics" aria-label="ML basics">ML basics</a></li>
+                <li>
+                    <a href="#regularization" aria-label="Regularization">Regularization</a></li>
+                <li>
+                    <a href="#metrics" aria-label="Metrics">Metrics</a></li>
+                <li>
+                    <a href="#neural-net-basics" aria-label="Neural Net Basics">Neural Net Basics</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>In this note, we review a list of questions that are helpful for ML from a generalist point of view.</p>
+<h3 id="ml-basics">ML basics<a hidden class="anchor" aria-hidden="true" href="#ml-basics">#</a></h3>
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is overfitting? How can we deal with overfitting?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p><strong>Overfitting occurs</strong> when a model fits the training data too closely, including noise or spurious patterns that do not generalize to new data. As a result, the model achieves very low training error but performs poorly on unseen data, such as validation or test data.</p>
+<p>A common sign of overfitting is a large gap between training performance and validation performance. For example, the training loss may continue to decrease while the validation loss starts to increase.</p>
+<p>Typical ways to <strong>reduce overfitting</strong> include:</p>
+<ol>
+<li>cross-validation for model selection;</li>
+<li>add regularization, such as $L^1$ or $L^2$ penalties (weight decay);</li>
+<li>reduce model complexity or performing feature selection;</li>
+<li>increase the amount of training data or using data augmentation;</li>
+<li>early stopping;</li>
+<li>ensemble methods.</li>
+</ol>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is underfitting? How can we deal with underfitting?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p><strong>Underfitting</strong> occurs when a model is too simple or too constrained to capture the underlying patterns in the data. As a result, it performs poorly even on the training set, and also generalizes poorly to validation or test data.</p>
+<p>A common sign of underfitting is that both the training error and the validation error remain high. In this case, the model has not learned enough structure from the data.</p>
+<p>Typical ways to <strong>reduce underfitting</strong> include:</p>
+<ol>
+<li>increase model complexity;</li>
+<li>add more informative features;</li>
+<li>reduce regularization strength;</li>
+<li>train for more iterations or epochs.</li>
+</ol>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is the bias&ndash;variance tradeoff?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Suppose the true relationship is$y = f(x) + \epsilon,$ where $\epsilon$ has $\mathbb{E}[\epsilon]=0$. Let $h(x)$ be the hypothesis learned from the data. Then
+$$
+\mathbb{E}_{\mathcal{D},\epsilon}[(y-h(x))^2]
+= \mathbb{E}_{\mathcal{D},\epsilon}[(f(x)+\epsilon-h(x))^2].
+$$</p>
+<p>Expand
+$$
+\mathbb{E}_{\mathcal{D}}[(f(x)-h(x))^2]
++ 2\cancel{\mathbb{E}_{\mathcal{D},\epsilon}[(f(x)-h(x))\epsilon]} + \mathbb{E}[\epsilon^2].
+$$
+The middle term is $0$ since $\epsilon$ is independent mean-zero noise. Hence
+$$
+\mathbb{E}_{\mathcal{D},\epsilon}[(y-h(x))^2] = \mathbb{E}_{\mathcal{D}}[(f(x)-h(x))^2] + \mathbb{E}[\epsilon^2].
+$$
+The term $\mathbb{E}[\epsilon^2]$ is the irreducible error.</p>
+<p>We decompose
+$$
+\mathbb{E}_{\mathcal{D}}[(f(x)-h(x))^2] = \mathbb{E}_{\mathcal{D}}\!\left[
+\bigl(f(x)-\mathbb{E}[h(x)] + \mathbb{E}[h(x)]-h(x)\bigr)^2 \right].
+$$</p>
+<p>Expanding,
+$$
+(f(x)-\mathbb{E}[h(x)])^2 - \cancel{2(f(x)-\mathbb{E}[h(x)])\mathbb{E}_{\mathcal{D}}[\mathbb{E}[h(x)]-h(x)]} + \mathbb{E}_{\mathcal{D}}[(h(x)-\mathbb{E}[h(x)])^2].
+$$</p>
+<p>The middle term is $0$, so
+$$
+\mathbb{E}_{\mathcal{D}}[(f(x)-h(x))^2] = \underbrace{(f(x)-\mathbb{E}[h(x)])^2}_{\text{bias}^2} + \underbrace{\mathbb{E}_{\mathcal{D}}[(h(x)-\mathbb{E}[h(x)])^2]}_{\text{variance}}.
+$$</p>
+<p>The bias&ndash;variance tradeoff describes the relationship between model complexity, prediction accuracy, and generalization to unseen data. A low-bias model is usually more flexible but may have high variance, while a low-variance model is usually simpler but may have high bias.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is the difference between generative and discriminative models?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Let $X$ denote the features and $Y$ the label.</p>
+<p>A <strong>generative model</strong> models the joint distribution
+$$
+p(X,Y) = p(X\mid Y)p(Y).
+$$
+Equivalently, it models the class-conditional distribution $p(X\mid Y)$ together with the prior $p(Y)$. By Bayes&rsquo; rule,
+$$
+p(Y\mid X) = \frac{p(X\mid Y)p(Y)}{p(X)},
+$$
+so a generative model can also be used for classification. Since it models how the data are generated, it can in principle generate new synthetic samples.</p>
+<p>A <strong>discriminative model</strong> directly models the posterior
+$$
+p(Y\mid X),
+$$
+or directly learns a decision rule from $X$ to $Y$ without modeling the full data distribution.</p>
+<p>In words:</p>
+<ul>
+<li>generative models model the underlying data-generating distribution;</li>
+<li>discriminative models focus only assigning posterior probabilities of labels given data</li>
+</ul>
+<p><img alt="Generative vs discriminative models" loading="lazy" src="http://localhost:1313/images/posts/generative-vs-discriminative.png"></p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Given a set of ground truths and two models, how can we be confident that one model is better than the other?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>To compare two models fairly, we should train and test them on the same data splits and evaluate them using the same metric.</p>
+<p>The choice of metric depends on the task:</p>
+<ul>
+<li>for classification, one may compare accuracy, precision, recall, or F1-score;</li>
+<li>for regression, one compare MSE, MAE, or $R^2$.</li>
+</ul>
+<p>A single train-test split may give a noisy comparison, so a more reliable approach is to use cross-validation. That is, we repeatedly split the data, evaluate both models on the same folds, and then average their performance.</p>
+<p>If one model consistently performs better across the cross-validation folds under the chosen metric, we can be more confident that it is the better model.</p>
+
+  </div>
+</div>
+
+<h3 id="regularization">Regularization<a hidden class="anchor" aria-hidden="true" href="#regularization">#</a></h3>
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What are $L^1$$ and $$L^2$? What is the difference between them?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>A regularized objective can be written as
+$$
+\mathcal{L}(\theta) = \sum_{i=1}^n \|y_i - f(x_i;\theta)\|^2 + \lambda \|\theta\|_{1,2}.
+$$
+Here $L^1$ means using the $\ell^1$ norm of the parameters, $\|\theta\|_1 = \sum_j |\theta_j|,$ while $L^2$ means using the $\ell^2$ norm, $\|\theta\|_2^2 = \sum_j \theta_j^2.$</p>
+<p>$L^1$ encourages sparsity, so some coefficients can become exactly zero, while $L^2$ shrinks the coefficients smoothly toward zero but usually does not make them exactly zero. $L^1$ can be used for feature selection, while $L^2$ mainly controls the size of the weights and stabilizes the model.</p>
+<p>Also, $L^1$ is not differentiable at zero, while $L^2$ is smooth.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Why does $L^1$ promote sparsity?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>A simple example in 1D. Consider the function
+$$
+M(x) = L(x) + c x^2.
+$$
+Then
+$$
+M'(x) = L'(x) + 2cx.
+$$
+At $x=0$, $M'(0) = L'(0).$
+So for $x=0$ to be a critical point, we must have
+$L'(0)=0.$
+Thus, under $L^2$ regularization, it is not easy for the optimum to occur exactly at zero unless the unregularized loss already has derivative zero there.</p>
+<p>Now consider
+$$
+M(x) = L(x) + c|x|.
+$$
+This is not differentiable at $x=0$. The one-sided derivatives at $0$ are
+$$
+M'_-(0) = L'(0) - c, \quad
+M'_+(0) = L'(0) + c.
+$$
+If these two have opposite signs, then $x=0$ is a minimizer. This happens when
+$
+(L'(0)-c)(L'(0)+c) &lt; 0,
+$
+that is,
+$$
+L'(0)^2 - c^2 &lt; 0
+\quad\Longleftrightarrow\quad
+|L'(0)| &lt; c.
+$$
+So as long as the slope of the original loss at zero is not too large, the corner created by $|x|$ makes $x=0$ an optimum. Hence $L^1$ is much more likely to set coefficients exactly to zero, which is why it promotes sparsity.</p>
+<ul>
+<li>From a Bayesian viewpoint, $L^1$ regularization corresponds to a Laplace prior on the weights, while $L^2$ regularization corresponds to a Gaussian prior.</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Why do we usually use $L^1$ or $L^2$ regularization, but not $L^3$ or $L^4$?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>A regularized objective can be written as
+$$
+\mathcal{L}(\theta) = L(\theta) + \lambda \|\theta\|_p^p.
+$$
+In principle, one can use other values of $p$, but $L^1$ and $L^2$ are the most common. For $L^2$, the penalty is smooth and easy to optimize. Its gradient is linear in the weights, so gradient-based methods are stable and simple $\nabla_\theta \|\theta\|_2^2 = 2\theta.$</p>
+<p>For $L^1$, the penalty is not smooth at zero, but promotes sparsity.</p>
+<p>If we use higher powers such as $L^3$ or $L^4$, then the gradient becomes steeper for large weights, for example
+$$
+\frac{d}{dx}|x|^p = p|x|^{p-1}\operatorname{sign}(x),
+$$
+For $p&gt;2$ the penalty becomes more sensitive to large coefficients. This can make optimization less stable and less well-conditioned.</p>
+<p>Higher-order penalties usually do not add a qualitatively new advantage than the effects of $L^{1,2}$ in standard ML.</p>
+<p>Finally, near an optimum, smooth objectives are often well-approximated by quadratic terms, which is another reason $L^2$ appears naturally.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Why does regularization reduce overfitting?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Regularization adds a penalty term to the loss, so the model is discouraged from using very large weights. Large weights make the model more sensitive to small fluctuations in the training data. By shrinking the weights, regularization reduces variance.</p>
+<p>For $L^2$ regularization, weights are shrunk continuously toward zero, which makes the fitted model less unstable. For $L^1$ regularization, some weights may become exactly zero, so the model effectively uses fewer features, which reduces complexity.</p>
+
+  </div>
+</div>
+
+<h3 id="metrics">Metrics<a hidden class="anchor" aria-hidden="true" href="#metrics">#</a></h3>
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What are precision and recall? What is the tradeoff between them?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>In binary classification, there are two cases: whether a sample is actually positive, and whether the model predicts it as positive.</p>
+<p>The four possible outcomes are:
+$$
+\mathrm{TP} = \text{true positive}, \quad
+\mathrm{FP} = \text{false positive},
+$$
+$$
+\mathrm{TN} = \text{true negative}, \quad
+\mathrm{FN} = \text{false negative}.
+$$</p>
+<p>Precision is the probability of being actually positive given that the model predicted positive:
+$$
+\mathrm{Precision} =
+P(\text{actually positive} \mid \text{predicted positive}) =
+\frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FP}}.
+$$</p>
+<p>Recall is the probability of predicting positive given that the sample is actually positive:
+$$
+\mathrm{Recall} =
+P(\text{predicted positive} \mid \text{actually positive}) = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FN}}.
+$$</p>
+<p>So precision measures how well we avoid false positives, while recall measures how well we avoid false negatives.</p>
+<p><strong>Tradeoff</strong>: If we increase the threshold for predicting positive, then fewer samples are labeled positive. This decreases $\mathrm{FP}$, but increases $\mathrm{FN}$. As a result, precision tends to increase while recall tends to decrease. If we lower the threshold, then recall tends to increase, but precision may decrease.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    When there is class imbalance, what metric should we use?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>When there is class imbalance, accuracy can be misleading. For example, if $99\%$ of samples are negative, then a classifier that always predicts negative already gets $99\%$ accuracy, even though it is useless for detecting the positive class.</p>
+<p>In this case, a common metric is the $F_1$ score, which is the harmonic mean of precision and recall:
+$$
+F_1 = \frac{2PR}{P+R},
+$$
+where
+$$
+P = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FP}},
+\qquad
+R = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FN}}.
+$$</p>
+<p>The reason to use the harmonic mean is that it is large only when both precision and recall are large. So if one of them is poor, the $F_1$ score will also be poor. This makes it more suitable when classes are imbalanced.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What metrics are used for classification problems?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Common metrics for classification include accuracy, precision, recall, $F_1$ score, and ROC-AUC.</p>
+<p>Accuracy is
+$$
+\mathrm{Accuracy} = \frac{\mathrm{TP}+\mathrm{TN}}{\mathrm{TP}+\mathrm{TN}+\mathrm{FP}+\mathrm{FN}}.
+$$
+It measures the overall fraction of correct predictions, but it can be misleading when the classes are imbalanced.</p>
+<p>Precision and recall are
+$$
+\mathrm{Precision} = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FP}},
+\qquad
+\mathrm{Recall} = \frac{\mathrm{TP}}{\mathrm{TP}+\mathrm{FN}}.
+$$
+Precision measures how reliable positive predictions are, while recall measures how many actual positives are detected.</p>
+<p>The $F_1$ score is the harmonic mean of precision and recall:
+$$
+F_1 = \frac{2PR}{P+R}.
+$$
+It is useful when the classes are imbalanced, since it is large only when both precision and recall are large.</p>
+<p>Another important metric is ROC-AUC. The ROC curve plots the true positive rate against the false positive rate as the classification threshold varies. A random classifier gives the baseline diagonal line $y=x$. The AUC is the area under this curve.</p>
+<p>AUC can also be interpreted as the probability that the classifier ranks a randomly chosen positive sample higher than a randomly chosen negative sample. It is a useful metric because it accounts for all thresholds and measures how well the model separates the two classes. It is also often useful for imbalanced data, since it depends on the relative ranking of scores rather than one fixed threshold.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><img alt="ROC" loading="lazy" src="http://localhost:1313/images/posts/roc-illustration.png"></td>
+          <td><img alt="AUC" loading="lazy" src="http://localhost:1313/images/posts/auc-illustration.png"></td>
+      </tr>
+      <tr>
+          <td>ROC and classifiers.</td>
+          <td>ROC and metrics.</td>
+      </tr>
+  </tbody>
+</table>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is logistic loss, and when do we use it?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Consider logistic regression for binary classification. It models the log-odds linearly:
+$$
+\log \frac{P(Y=1\mid X)}{P(Y=0\mid X)} = X^\top \beta.
+$$
+Since $P(Y=0\mid X)=1-P(Y=1\mid X),$
+this gives
+$$
+P(Y=1\mid X) = \frac{e^{X^\top\beta}}{1+e^{X^\top\beta}}.
+$$</p>
+<p>To fit parameters, we use maximum likelihood. For labels $y_i\in{0,1}$, the likelihood is
+$$
+\prod_{i=1}^n P(Y=y_i\mid x_i,\beta).
+$$
+Taking logs gives
+$$
+\sum_{i=1}^n \log P(Y=y_i\mid x_i,\beta).
+$$
+This can be written as
+$$
+\log P(Y=y_i\mid x_i,\beta)=y_i \log p_i + (1-y_i)\log(1-p_i),
+$$
+where $p_i = P(Y=1\mid x_i,\beta).$
+If $y_i=1$, this becomes $\log p_i$, and if $y_i=0$, this becomes $\log(1-p_i)$.</p>
+<p>Therefore the negative log-likelihood is
+$$
+-\sum_{i=1}^n \Big(y_i \log p_i + (1-y_i)\log(1-p_i)\Big),
+$$
+which is called the logistic loss, or log loss. It is also the binary cross-entropy loss.</p>
+<p>Logistic loss is useful for classification when we want not only a label, but also a probability for each class. It penalizes being confidently wrong, so it encourages probabilistic predictions.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Why do we not use MSE for logistic regression?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>In logistic regression, the model is
+$$
+\hat y_i = P(Y=1\mid x_i,w) = \sigma(x_i^\top w),
+$$ where $\sigma(z)=\frac{1}{1+e^{-z}}$. If we use MSE, the loss is
+$$
+L(w) = \sum_{i=1}^N (y_i-\hat y_i)^2.
+$$</p>
+<p>The issue is that this loss is generally not convex in $w$. Differentiating gives
+$$
+\frac{\partial L(w)}{\partial w} = \sum_{i=1}^N (y_i-\hat y_i)\hat y_i(1-\hat y_i)x_i.
+$$
+Differentiating again, the Hessian is
+$$
+\frac{\partial^2 L(w)}{\partial w^2} = -\sum_{i=1}^N \hat y_i(1-\hat y_i)(1-2\hat y_i),x_i x_i^\top.
+$$</p>
+<p>Now $\hat y_i(1-\hat y_i)\ge 0$, but the factor $(1-2\hat y_i)$ can be $+$ or $-$. In particular, when $\hat y_i&gt;1/2$, we have $1-2\hat y_i&lt;0$, while when $\hat y_i&lt;1/2$, we have $1-2\hat y_i&gt;0$. So the Hessian does not have a fixed sign, which means the MSE objective for logistic regression is nonconvex.</p>
+<p>Also, MSE is natural for ordinary regression with Gaussian noise, since it comes from Gaussian MLE. Logistic regression is Bernoulli, so the natural loss is the negative log-likelihood, namely the logistic loss.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is MSE, and when do we use MSE?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>MSE stands for mean squared error:
+$$
+\mathrm{MSE} = \frac{1}{n}\sum_{i=1}^n (y_i-f(x_i))^2.
+$$</p>
+<p>It is natural when we assume the model
+$$
+y = f(x) + \epsilon,
+$$
+where the error $\epsilon$ is Gaussian, say $\epsilon \sim \mathcal{N}(0,\sigma^2)$. Under this assumption, the likelihood of the observed data is proportional to
+$$
+\exp\left(-\frac{1}{2\sigma^2}\sum_{i=1}^n (y_i-f(x_i))^2\right).
+$$
+So maximizing the likelihood is equivalent to minimizing $\sum_{i=1}^n (y_i-f(x_i))^2$.</p>
+<p>Therefore MSE is commonly used for regression problems, especially when a Gaussian noise model is reasonable.</p>
+<ul>
+<li>Squared error penalizes large errors, since the error is squared.</li>
+<li>MSE is sensitive to outliers.</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What are relative entropy / cross-entropy  and KL divergence? What is the intuition behind them?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p><strong>Relative</strong> entropy is another name for <strong>KL divergence</strong>. For two probability distributions $P$ and $Q$, it is defined by
+$$
+D_{\mathrm{KL}}(P|Q) = \int P(z)\log\frac{P(z)}{Q(z)},dz
+$$
+in the continuous case, or
+$$
+D_{\mathrm{KL}}(P|Q) = \sum_z P(z)\log\frac{P(z)}{Q(z)}
+$$
+in the discrete case.</p>
+<p>It measures how different $Q$ is from $P$, or how much information is lost when we use $Q$ to approximate the true distribution $P$. It is always $\ge 0$, and equals $0$ only when $P=Q$ almost everywhere.</p>
+<p>The <strong>cross-entropy</strong> between $P$ and $Q$ is
+$$
+H(P,Q) = -\int P(z)\log Q(z),dz
+$$
+or in the discrete case
+$$
+H(P,Q) = -\sum_z P(z)\log Q(z).
+$$
+It measures the expected surprise when data are actually generated from $P$, but we evaluate them using $Q$.</p>
+<p>The relationship between them is
+$$
+H(P,Q) = H(P) + D_{\mathrm{KL}}(P|Q),
+$$
+where
+$$
+H(P) = -\int P(z)\log P(z),dz
+$$
+is the entropy of $P$.</p>
+<p><strong>Intuition</strong>:</p>
+<ul>
+<li>
+<p>$H(P)$ is the intrinsic uncertainty in the true distribution $P$.</p>
+</li>
+<li>
+<p>$H(P,Q)$ is the uncertainty we incur when we use $Q$ instead of $P$.</p>
+</li>
+<li>
+<p>$D_{\mathrm{KL}}(P|Q)$ is the extra cost / information loss, from using $Q$ to approximate $P$.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is entropy?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Entropy is a measure of randomness or uncertainty in a probability distribution. It can also be interpreted as the average number of bits needed to describe the outcome of a random variable.</p>
+<p>If a discrete random variable $X$ takes values $x$ with probabilities $p(x)$, then its entropy is
+$$
+H(X) = -\sum_x p(x)\log_2 p(x).
+$$</p>
+<p>The intuition is that an event with probability $p(x)$ carries information content
+$
+-\log_2 p(x),
+$
+because rarer events are more surprising and require more bits to describe. Entropy is the average of this quantity over all outcomes.</p>
+<p>So if the distribution is very concentrated, the entropy is small; if the distribution is more spread out or random, the entropy is large.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is the loss function of SVM?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    SVM uses the hinge loss,
+$
+\max(0,,1-y_i\hat y_i),
+$
+where
+$
+\hat y_i = w^\top x_i + b,
+$
+and $y_i\in\{-1,1\}$. The decision boundary is
+$
+w^\top x_i+b=0,
+$
+and the margin boundaries are
+$$
+w^\top x_i+b=1,\qquad w^\top x_i+b=-1.
+$$
+A correctly classified point with sufficient margin satisfies
+$
+y_i\hat y_i \ge 1,
+$
+so its hinge loss is $0$. If $y_i\hat y_i&lt;1$, then the point is either inside the margin or misclassified, and the loss is positive. So hinge loss penalizes points that are not classified with enough margin.
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    When splitting a node in a decision tree, what is the objective?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>The objective is to maximize information gain, or equivalently to reduce entropy as much as possible.</p>
+<p>If the parent node has entropy
+$
+H(\text{parent}),
+$
+and the split produces child nodes with entropies
+$
+H(\text{child}_1),\dots,H(\text{child}_k),
+$
+then the information gain is
+$$
+\mathrm{Gain} =
+H(\text{parent}) - \sum_{j=1}^k \frac{n_j}{n} H(\text{child}_j),
+$$ where $n_j$ is the number of samples in child $j$ and $n$ is the number of samples in the parent node. We compute the entropy before the split, then subtract the weighted average of the entropies after the split. The best split is the one with the largest gain.</p>
+
+  </div>
+</div>
+
+<h3 id="neural-net-basics">Neural Net Basics<a hidden class="anchor" aria-hidden="true" href="#neural-net-basics">#</a></h3>
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Why does a DNN need a bias term? What is the intuition behind the bias term?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    A bias term lets each neuron shift its activation threshold. Without bias, a layer computes only
+$
+Wx,
+$
+so every decision boundary must pass through the origin. With bias, it becomes
+$
+Wx+b,
+$
+which is much more flexible.
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is backpropagation?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    Backpropagation is the algorithm for computing gradients of the loss with respect to all network parameters by repeatedly applying the chain rule from the output layer back to the earlier layers. The idea is to do a forward pass to compute predictions and loss, then do a backward pass to compute gradients, then update the parameters using gradient descent or some optimizer.
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What are vanishing gradients / exploding gradients? How do we deal with them?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Vanishing gradients mean the gradients become extremely small as they are propagated backward through many layers, so early layers learn very slowly. Exploding gradients mean the gradients become extremely large, so training becomes unstable.</p>
+<p>They often happen because gradients are products of many Jacobians. Repeated multiplication by numbers $&lt;1$ causes vanishing, while repeated multiplication by numbers $&gt;1$ causes exploding.</p>
+<p><strong>Common fixes</strong>:</p>
+<ul>
+<li>initialization</li>
+<li>ReLU-type activations</li>
+<li>batch normalization</li>
+<li>residual connections</li>
+<li>gradient clipping</li>
+<li>architectures like LSTM/GRU for sequence models.</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Can we initialize all neural network weights to zero?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    No. If all weights are initialized to zero, then all neurons in the same layer produce the same output, get the same gradient, and remain identical during training. The network does not learn different features. We usually use random initialization to break symmetry.
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is the difference between a DNN and logistic regression?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Logistic regression is a single linear model followed by a sigmoid or softmax output. Its decision boundary is linear in the input features.</p>
+<p>A DNN stacks many layers with nonlinear activations, can learn nonlinear feature representations. Logistic regression is shallow and linear; a DNN is deep and nonlinear.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    How do we do hyperparameter tuning in deep learning? What are random search and grid search?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Hyperparameter tuning means trying different values of things like learning rate, batch size, number of layers, hidden dimension, weight decay, and dropout rate, then selecting the setting with the best validation performance.</p>
+<p>Grid search tries all combinations from a fixed grid. It is simple but expensive for many parameters.</p>
+<p>Random search samples hyperparameter combinations randomly from a range or distribution. It is often better in deep learning because only a few hyperparameters usually matter a lot, so random search explores more efficiently.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is dropout? Why does it work? What is the procedure during training and testing?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Dropout randomly sets some neuron outputs to zero during training (but not inference). If the keep probability is $p$, then each unit is kept with probability $p$ and dropped with probability $1-p$.</p>
+<p>It works because it prevents neurons from relying too much on specific other neurons, reduces co-adaptation, and acts like a kind of model averaging over many subnetworks.During training, we randomly drop units and usually scale the kept activations by $1/p$ in inverted dropout. During testing, we do not drop units; we use the full network.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is batch normalization? Why does it work? What is the procedure during training and testing?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Batch normalization normalizes activations within a mini-batch. For an activation $x$, it computes
+$$
+\hat x = \frac{x-\mu_B}{\sqrt{\sigma_B^2+\varepsilon}},
+\quad
+y = \gamma \hat x + \beta,
+$$
+where $\mu_B$ and $\sigma_B^2$ are the batch mean and variance, and $\gamma,\beta$ are learnable parameters.</p>
+<p>It helps allow larger learning rates, and adds a small regularization effect through batch noise. During training, it uses the current mini-batch mean and variance. During testing, it uses the running averages accumulated during training.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What are common activation functions such as sigmoid, tanh, ReLU, and leaky ReLU? What are their advantages and disadvantages?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Sigmoid is
+$
+\sigma(x)=\frac{1}{1+e^{-x}}.
+$
+It maps to $(0,1)$, useful for probabilities, but causes vanishing gradients.</p>
+<p>$$
+\tanh(x)=\frac{e^x-e^{-x}}{e^x+e^{-x}}.
+$$ maps to $(-1,1)$ and is zero-centered, but also vanishing gradients.</p>
+<p>$$
+\mathrm{ReLU}(x)=\max(0,x).
+$$ cheap to compute, but but neurons can die if they stay in the negative region.</p>
+<p>Leaky ReLU:
+$$
+\mathrm{LeakyReLU}(x)=\max(\alpha x,x),
+$$
+with small $\alpha&gt;0$. It keeps a small slope on the negative side, so it helps reduce the dying ReLU problem.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Why do we need nonlinear activation functions?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    Because without nonlinear activation functions, a multilayer network is still just a linear map. For example, composing
+$
+W_2(W_1x+b_1)+b_2
+$
+is still affine in $x$. So depth would give no extra expressive power. Nonlinear activations are what let neural networks model complicated nonlinear functions.
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What is the difference between common optimizers such as SGD, Momentum, RMSprop, Adagrad, and Adam?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>SGD: updates parameters using the current gradient only. Simple but noisy and slow.</p>
+<p>Momentum: adds an exponential moving average of past gradients, reduces oscillation.</p>
+<p>Adagrad: scales each parameter by the accumulated squared gradients, gives larger updates to infrequent features, but learning rate can shrink too much over time.</p>
+<p>RMSprop: also uses squared gradients, but with an exponential moving average instead of a cumulative sum, avoids Adagrad&rsquo;s aggressive decay.</p>
+<p>Adam: combines Momentum and RMSprop: keeps moving averages of both the gradient and the squared gradient, then uses bias correction. Default choice to be used.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Advantages and disadvantages of batch gradient descent and SGD? What is the effect of batch size?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Batch gradient descent uses the whole dataset for each update. Gradient is accurate and stable, but each step is memory intensive.</p>
+<p>SGD or mini-batch SGD uses one sample or a small batch. Each update is cheaper and faster; noise can help escape bad regions, the trajectory is noisier.</p>
+<p><strong>Batch size affects this tradeoff</strong>. Small batch sizes give noisier gradients but more frequent updates and sometimes better generalization. Large batch sizes give more stable gradients and better hardware efficiency, but they may generalize worse and need careful learning-rate tuning.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What happens if the learning rate is too large or too small?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>If the learning rate is too small, training is very slow and may get stuck for a long time on plateaus.</p>
+<p>If the learning rate is too large, updates can overshoot the minimum, oscillate, or diverge; the loss may fail to converge.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    What are plateaus and saddle points?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>A plateau is a region where the loss surface is very flat, gradients are close to zero and optimization moves very slowly. A <strong>saddle point</strong> is a point where the gradient is zero, but the point is not a local minimum: the function curves upward in some directions and downward in others.</p>
+<p>In high-dimensional problems, saddle points are common. They can slow training because first-order methods see very small gradients nearby.</p>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    When does transfer learning make sense?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Transfer learning makes sense when we have a pretrained model from a related task or dataset, especially when our own labeled data are limited.</p>
+<p><strong>Main idea</strong>: Early and intermediate layers may already have useful features, so we reuse them and only fine-tune part or all of the model on the new task. Most useful when the source and target tasks are similar enough that the learned representation transfers.</p>
+
+  </div>
+</div>
+
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/problems/2026-03-07-academic-koopman-operator/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Derivation of Koopman operator for stochastic dynamical systems</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Math &amp; Stats Lounge</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
