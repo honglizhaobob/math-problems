@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.152.2"><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Math &amp; Stats Lounge</title>
-
-<meta name="description" content="">
+<title>Max profit with bid and ask | Math &amp; Stats Lounge</title>
+<meta name="keywords" content="ア">
+<meta name="description" content="We edit the popular problem series of best time to buy and sell stocks to allow differing buy and sell prices.
+def max_profit(buy, sell):
+    n = len(buy)
+    dp_holding, dp_not_holding = 0, 0
+    dp_holding = -sell[0]
+    for i in range(1, n):
+        tmp = dp_holding
+        dp_holding = max(dp_holding, dp_not_holding - buy[i])
+        dp_not_holding = max(tmp &#43; sell[i], dp_not_holding)
+    return dp_not_holding
+">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-05-max-profit/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -19,9 +28,7 @@
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://honglizhaobob.github.io/math-problems/index.xml" title="rss">
-<link rel="alternate" type="application/json" href="https://honglizhaobob.github.io/math-problems/index.json" title="json">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-05-max-profit/">
 <noscript>
     <style>
         #theme-toggle,
@@ -99,30 +106,83 @@
   });
 </script>
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-05-max-profit/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Math & Stats Lounge">
+  <meta property="og:title" content="Max profit with bid and ask">
+  <meta property="og:description" content="We edit the popular problem series of best time to buy and sell stocks to allow differing buy and sell prices.
+def max_profit(buy, sell): n = len(buy) dp_holding, dp_not_holding = 0, 0 dp_holding = -sell[0] for i in range(1, n): tmp = dp_holding dp_holding = max(dp_holding, dp_not_holding - buy[i]) dp_not_holding = max(tmp &#43; sell[i], dp_not_holding) return dp_not_holding ">
   <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="problems">
+    <meta property="article:published_time" content="2026-03-08T16:41:00-06:00">
+    <meta property="article:modified_time" content="2026-03-08T16:41:00-06:00">
+    <meta property="article:tag" content="ア">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Math &amp; Stats Lounge">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Max profit with bid and ask">
+<meta name="twitter:description" content="We edit the popular problem series of best time to buy and sell stocks to allow differing buy and sell prices.
+def max_profit(buy, sell):
+    n = len(buy)
+    dp_holding, dp_not_holding = 0, 0
+    dp_holding = -sell[0]
+    for i in range(1, n):
+        tmp = dp_holding
+        dp_holding = max(dp_holding, dp_not_holding - buy[i])
+        dp_not_holding = max(tmp &#43; sell[i], dp_not_holding)
+    return dp_not_holding
+">
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Math \u0026 Stats Lounge",
-  "url": "https://honglizhaobob.github.io/math-problems/",
-  "description": "",
-  "logo": "https://honglizhaobob.github.io/math-problems/favicon.ico",
-  "sameAs": [
-      "https://github.com/honglizhaobob", "https://www.linkedin.com/"
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Problems",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Max profit with bid and ask",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2026-03-08-05-max-profit/"
+    }
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Max profit with bid and ask",
+  "name": "Max profit with bid and ask",
+  "description": "We edit the popular problem series of best time to buy and sell stocks to allow differing buy and sell prices.\ndef max_profit(buy, sell): n = len(buy) dp_holding, dp_not_holding = 0, 0 dp_holding = -sell[0] for i in range(1, n): tmp = dp_holding dp_holding = max(dp_holding, dp_not_holding - buy[i]) dp_not_holding = max(tmp + sell[i], dp_not_holding) return dp_not_holding ",
+  "keywords": [
+    "ア"
+  ],
+  "articleBody": "We edit the popular problem series of best time to buy and sell stocks to allow differing buy and sell prices.\ndef max_profit(buy, sell): n = len(buy) dp_holding, dp_not_holding = 0, 0 dp_holding = -sell[0] for i in range(1, n): tmp = dp_holding dp_holding = max(dp_holding, dp_not_holding - buy[i]) dp_not_holding = max(tmp + sell[i], dp_not_holding) return dp_not_holding ",
+  "wordCount" : "57",
+  "inLanguage": "en",
+  "datePublished": "2026-03-08T16:41:00-06:00",
+  "dateModified": "2026-03-08T16:41:00-06:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2026-03-08-05-max-profit/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Math \u0026 Stats Lounge",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://honglizhaobob.github.io/math-problems/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -169,104 +229,52 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
-$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
-Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0) - \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$
-By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Max profit with bid and ask
+    </h1>
+    <div class="post-meta"><span title='2026-03-08 16:41:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>1 min</span>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Stopping time for 2D Wiener process
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.
-What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.
-$\mathbb{P}[\tau_y &lt; \tau_x]$, where $$ \tau_x = \min\{t : Y_t = 0\}, \qquad \tau_y = \min\{t : X_t = 0\}? $$ Solution Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.
-Itô’s formula gives
-$$ u(X_\tau, Y_\tau) - u(x,y) = \int_0^\tau u_x dX_t &#43; \int_0^\tau u_y dY_t &#43; \frac12 \int_0^\tau (u_{xx} &#43; u_{yy}) dt. $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:25:22 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Stopping time for 2D Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/"></a>
-</article>
+</div>
+  </header> 
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Correlation matrix with constant correlation
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Give the upper and lower bounds on the correlation parameter (\rho) for the matrix $$ C=\begin{pmatrix} 1 &amp; \rho &amp; \cdots &amp; \rho \\ \rho &amp; 1 &amp; \cdots &amp; \rho \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \rho &amp; \rho &amp; \cdots &amp; 1 \end{pmatrix}. $$ Solution We write
-$$ C = (1-\rho) I &#43; \rho M, $$ where $M$ is the $n\times n$ matrix of all ones.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:12:44 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Correlation matrix with constant correlation" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-04-equicorrelation-matrix/"></a>
-</article>
+  <div class="post-content"><p>We edit the popular problem series of <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">best time to buy and sell stocks</a> to allow differing buy and sell prices.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">max_profit</span>(buy, sell):
+</span></span><span style="display:flex;"><span>    n <span style="color:#f92672">=</span> len(buy)
+</span></span><span style="display:flex;"><span>    dp_holding, dp_not_holding <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    dp_holding <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>sell[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, n):
+</span></span><span style="display:flex;"><span>        tmp <span style="color:#f92672">=</span> dp_holding
+</span></span><span style="display:flex;"><span>        dp_holding <span style="color:#f92672">=</span> max(dp_holding, dp_not_holding <span style="color:#f92672">-</span> buy[i])
+</span></span><span style="display:flex;"><span>        dp_not_holding <span style="color:#f92672">=</span> max(tmp <span style="color:#f92672">+</span> sell[i], dp_not_holding)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> dp_not_holding
+</span></span></code></pre></div>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Expected value of exponential Wiener process
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $W_t$ be the standard Wiener process, what is $\mathbb{E}[e^{W_t}]$? Solution We will use the moment generating function (MGF) for $W_t\sim\mathcal{N}(0,t)$. The MGF for Gaussian is $M(s) = \exp\left(\mu s&#43; (1/2)\sigma^2s^2\right)$, plug in $\mu=0, \sigma=\sqrt{t}$, we have $M(t) = e^{(1/2)s^2}$ and $M(1) = \mathbb{E}[e^{W_t}] = \exp((1/2)t)$. </p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:04:43 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expected value of exponential Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Expectation of Gaussian CDF
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$? Solution By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then
-$$ \Phi(X) = P[Z \le X] = P[Z - X \le 0] $$
-where $Z - X \sim \mathcal{N}(-\mu, 1&#43;\sigma^2)$. Therefore
-$$ \begin{aligned} P[Z - X \le 0] &amp;= P\!\left( \frac{Z - X &#43; \mu}{\sqrt{1&#43;\sigma^2}} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= P\!\left( \tilde{Z} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= \Phi\!\left( \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right). \end{aligned} $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 18:44:30 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expectation of Gaussian CDF" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/"></a>
-</article>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://honglizhaobob.github.io/math-problems/tags/%E3%82%A2/">ア</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-06-rotate-images/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Rotate images</span>
+  </a>
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-04-remove-duplicates/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Remove duplicate from unsorted array</span>
+  </a>
+</nav>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Range of regression coefficient
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Consider the regression $Y\sim X$ which gives us coefficient $\beta$, now if we do $X\sim Y$, what is the range of the new coefficient? Solution We have $$ \beta = \frac{\text{Cov}(X,Y)}{\text{Var}(X)} = \rho\frac{\sigma_Y}{\sigma_X} $$ where $\rho$ is the correlation; $\sigma_X,\sigma_Y$ are the standard deviations.
-This means $$ \beta_{\text{new}} = \frac{\text{Cov(X,Y)}}{\text{Var}(Y)} = \rho\cdot\frac{\sigma_X}{\sigma_Y} = \rho^2\cdot\frac{1}{\beta} $$
-And because $0\le\rho^2\le 1$, we have $$ \beta_{\text{new}} \in [0, 1/\beta]. $$
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 14:36:00 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Range of regression coefficient" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-01-range-of-regression-coeff/"></a>
+  </footer>
 </article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="https://honglizhaobob.github.io/page/2/">
-      «&nbsp;Prev&nbsp;
-    </a>
-  </nav>
-</footer>
     </main>
     
 <footer class="footer">

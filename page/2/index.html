@@ -173,6 +173,76 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Linear Regression Primer
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
+$$ \begin{aligned} &amp;\text{for each } i=1,\ldots,n,\ &amp;\qquad y_i = f(x_i) &#43; \epsilon_i, \end{aligned} $$
+where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:41:27 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>4 min</span></footer>
+  <a class="entry-link" aria-label="post link to Linear Regression Primer" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Fake Brownian Motion
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Definition of Brownian motion A Brownian motion $B_t$ is a stochastic process with the following properties:
+Stationary increments.
+If $s&lt;t$, then $B_t - B_s$ has the same distribution as $B_{t-s} - B_0$.
+Independent increments.
+If $s&lt;t$, then $B_t - B_s$ is independent of all $B_r$ for $r \le s$.
+Continuous paths.
+The function $t \mapsto B_t$ is almost surely continuous.
+Note: The definition does not assume Gaussian increments, but from these three properties it follows that
+$$ B_t \sim \mathcal{N}(0,t). $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:39:12 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Fake Brownian Motion" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-16-fake-brownian-motion/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Brownian Motion Intuition
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Why do we say $(dB_t)^2 \approx dt$ Let $B_t$ be standard Brownian motion.
+In Itô calculus we track contributions up to order $dt$.
+Although ordinary calculus would ignore second-order terms, in stochastic calculus the term $(dB_t)^2$ is of order $dt$, not negligible.
+To see this:
+$$ dB_t \approx B_{t&#43;\Delta t} - B_t \sim \mathcal{N}(0, \Delta t). $$
+Let $Z_{\Delta t} \sim \mathcal{N}(0, \Delta t)$.
+Then $(dB_t)^2$ behaves like $Z_{\Delta t}^2$ and
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:36:29 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Brownian Motion Intuition" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-15-brownian-motion-intuition/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Identity for expectation of power of absolute value
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Suppose $\mathbb{E}[|X|^k]$ exists (is finite). Does $\mathbb{E}[|X|^m]$ exist for all $0 \le m \le k$? Solution Yes, $\mathbb{E}[|X|^m]$ exists for all $0 \le m \le k$.
+Assume $\mathbb{E}[|X|^k] &lt; \infty$. Then $$ \mathbb{E}[|X|^m] = \int_{-\infty}^{\infty} |x|^{m} f_X(x)\,dx = \int_{|x|\le 1} |x|^{m} f_X(x)\,dx &#43; \int_{|x|&gt;1} |x|^{m} f_X(x)\,dx. $$
+On the set $|x| \le 1$, we have $|x|^m \le 1$, so $$ \int_{|x|\le 1} |x|^{m} f_X(x)\,dx \le \int_{|x|\le 1} f_X(x)\,dx \le 1. $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:35:21 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Identity for expectation of power of absolute value" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Computing Pi with Monte Carlo
     </h2>
   </header>
@@ -270,65 +340,6 @@ Solution Lower bound for the eigenvalue sum of the inverse.
   </div>
   <footer class="entry-footer"><span title='2025-12-10 20:23:02 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
   <a class="entry-link" aria-label="post link to Correlation matrix sum of eigenvalues lower bound" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $X, Y$ be jointly normal with correlation $\rho$. Compute
-$$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)]. $$ Solution Let $Z_1, Z_2$ be independent standard normal variables and define a linear transformation so that $$ X = Z_1, \qquad Y = \rho Z_1 &#43; \sqrt{1 - \rho^2}, Z_2. $$
-Then $$ \mathbb{E}[\operatorname{sign}(X)\operatorname{sign}(Y)] = \mathbb{P}(X&gt;0, Y&gt;0) &#43; \mathbb{P}(X&lt;0, Y&lt;0) - \mathbb{P}(X&gt;0, Y&lt;0) - \mathbb{P}(X&lt;0, Y&gt;0). $$
-By symmetry, $$ \mathbb{P}(X&gt;0, Y&gt;0) = \mathbb{P}(X&lt;0, Y&lt;0), $$ and $$ \mathbb{P}(X&gt;0, Y&lt;0) = \mathbb{P}(X&lt;0, Y&gt;0). $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:34:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expectation of $\text{sgn}(X)\cdot\text{sgn}(Y)$" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-06-product-of-sign-expectation/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Stopping time for 2D Wiener process
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $W_t = (X_t, Y_t)$ be planar Brownian motion started at $(x,y)$ with $x&gt;0$, $y&gt;0$.
-What is the probability that the process hits the $y$-axis before the $x$-axis, i.e.
-$\mathbb{P}[\tau_y &lt; \tau_x]$, where $$ \tau_x = \min\{t : Y_t = 0\}, \qquad \tau_y = \min\{t : X_t = 0\}? $$ Solution Define $\tau = \min\{\tau_x, \tau_y\}$ and let $u(x,y)$ be twice differentiable.
-Itô’s formula gives
-$$ u(X_\tau, Y_\tau) - u(x,y) = \int_0^\tau u_x dX_t &#43; \int_0^\tau u_y dY_t &#43; \frac12 \int_0^\tau (u_{xx} &#43; u_{yy}) dt. $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:25:22 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
-  <a class="entry-link" aria-label="post link to Stopping time for 2D Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-05-2d-wiener-process-stopping/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Correlation matrix with constant correlation
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Give the upper and lower bounds on the correlation parameter (\rho) for the matrix $$ C=\begin{pmatrix} 1 &amp; \rho &amp; \cdots &amp; \rho \\ \rho &amp; 1 &amp; \cdots &amp; \rho \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \rho &amp; \rho &amp; \cdots &amp; 1 \end{pmatrix}. $$ Solution We write
-$$ C = (1-\rho) I &#43; \rho M, $$ where $M$ is the $n\times n$ matrix of all ones.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:12:44 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Correlation matrix with constant correlation" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-04-equicorrelation-matrix/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Expected value of exponential Wiener process
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $W_t$ be the standard Wiener process, what is $\mathbb{E}[e^{W_t}]$? Solution We will use the moment generating function (MGF) for $W_t\sim\mathcal{N}(0,t)$. The MGF for Gaussian is $M(s) = \exp\left(\mu s&#43; (1/2)\sigma^2s^2\right)$, plug in $\mu=0, \sigma=\sqrt{t}$, we have $M(t) = e^{(1/2)s^2}$ and $M(1) = \mathbb{E}[e^{W_t}] = \exp((1/2)t)$. </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 19:04:43 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expected value of exponential Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

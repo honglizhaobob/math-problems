@@ -163,6 +163,60 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Rotate images
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Given an image stored in a 2D Python array, we provide code for rotation by different degrees.
+Clockwise by 90 degrees Transpose then reverse each row def rotate(image): n = len(image) for i in range(n): for j in range(i&#43;1, n): image[i][j], image[j][i] = image[j][i], image[i][j] for i in range(n): row = image[i] l, r = 0, n-1 while l &lt; r: row[l], row[r] = row[r], row[l] return image Counterclockwise by 90 degrees Reverse each row then transpose Transpose is 180 degrees def rotate_counterclockwise(image): n = len(image) for i in range(n): row = image[i] l, r = 0, n-1 while l &lt; r: row[l], row[r] = row[r], row[l] l &#43;= 1 r -= 1 for i in range(n): for j in range(i&#43;1, n): image[i][j], image[j][i] = image[j][i], image[i][j] return image </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-08 16:42:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Rotate images" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-06-rotate-images/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Max profit with bid and ask
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>We edit the popular problem series of best time to buy and sell stocks to allow differing buy and sell prices.
+def max_profit(buy, sell): n = len(buy) dp_holding, dp_not_holding = 0, 0 dp_holding = -sell[0] for i in range(1, n): tmp = dp_holding dp_holding = max(dp_holding, dp_not_holding - buy[i]) dp_not_holding = max(tmp &#43; sell[i], dp_not_holding) return dp_not_holding </p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-08 16:41:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Max profit with bid and ask" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-05-max-profit/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Remove duplicate from unsorted array
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>We provide an implementation of removing duplicated values from an (unsorted) array.
+Sorted version (link) def remove_duplicate(arr): seen = [] for num in arr: seen.append(num) return seen print(remove_duplicate([1, 2, 2, 4, 4])) print(remove_duplicate([5, 4, 1, 5])) print(remove_duplicate([5, 2, 5, 1])) [1, 2, 4] [5, 4, 1] [5, 2, 1] Time and space: $O(N)$. Not possible to be $O(1)$ since we do not know where the duplicate is located and no ordering information. Extra space is needed to check if value has been encountered before.
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-08 16:40:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Remove duplicate from unsorted array" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-04-remove-duplicates/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">O(1) methods for test statistics
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In this note, we provide code to compute useful statistics in a dataset in $O(1)$ space.
+Sliding window max and min from collections import deque def sliding_window_maximum(nums, k): &#34;&#34;&#34; nums: observed data stream k: window size ( k &lt;= len(nums) ) &#34;&#34;&#34; res = [] q = deque() for i in range(k): num = nums[i] while q and nums[q[-1]] &lt;= num: q.pop() q.append(i) res.append(nums[q[0]]) for i in range(k, len(nums)): num = nums[i] # adjust window if q and q[0] &lt;= i-k: q.popleft() while q and nums[q[-1]] &lt;= num: q.pop() q.append(i) res.append(nums[q[0]]) return res # test nums = [1, 1, 2, 3, -1, 3, 2] k = 2 # =&gt; [1, 2, 3, 3, 3, 3] print(sliding_window_maximum(nums, k)) def sliding_window_minimum(nums, k): nums_neg = [-num for num in nums] neg_res = sliding_window_maximum(nums_neg, k) return [-num for num in neg_res] nums = [1, 1, 2, 3, -1, 3, 2] k = 2 # =&gt; [1, 1, 2, -1, -1, 2] print(sliding_window_minimum(nums, k)) The outputs are the following
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-08 16:38:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>5 min</span></footer>
+  <a class="entry-link" aria-label="post link to O(1) methods for test statistics" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-03-o-of-1-statistics-copy/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Expected loops in shoelaces
     </h2>
   </header>
