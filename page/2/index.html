@@ -161,10 +161,32 @@
                     <span>Search</span>
                 </a>
             </li>
+            <li>
+                <a href="https://honglizhaobob.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Computing Pi with Monte Carlo
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.
+Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether $$ X^2 &#43; Y^2 &lt; 1. $$
+The probability of this event is the area of a quarter unit circle inside the unit square: $$ \mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}. $$
+Let $$ A_n = \sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
+Then $$ \mathbb{E}[X_i] = \frac{\pi}{4}, $$ so the estimator $$ \hat{\pi}_n = \frac{4 A_n}{n} $$ is unbiased.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:33:16 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Computing Pi with Monte Carlo" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -307,22 +329,6 @@ $$ C = (1-\rho) I &#43; \rho M, $$ where $M$ is the $n\times n$ matrix of all on
   </div>
   <footer class="entry-footer"><span title='2025-12-10 19:04:43 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
   <a class="entry-link" aria-label="post link to Expected value of exponential Wiener process" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-03-expectation-of-exponential-wiener/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Expectation of Gaussian CDF
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $X\sim \mathcal{N}(\mu,\sigma^2)$, $\Phi$ denotes the standard Gaussian CDF. What is $\mathbb{E}[\Phi(X)]$? Solution By definition $\Phi(X) = P[Z \le X]$ where $Z$ is a standard Gaussian variable. Then
-$$ \Phi(X) = P[Z \le X] = P[Z - X \le 0] $$
-where $Z - X \sim \mathcal{N}(-\mu, 1&#43;\sigma^2)$. Therefore
-$$ \begin{aligned} P[Z - X \le 0] &amp;= P\!\left( \frac{Z - X &#43; \mu}{\sqrt{1&#43;\sigma^2}} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= P\!\left( \tilde{Z} \le \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right) \\ &amp;= \Phi\!\left( \frac{\mu}{\sqrt{1&#43;\sigma^2}} \right). \end{aligned} $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 18:44:30 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Expectation of Gaussian CDF" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-02-expectation-of-cdf/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

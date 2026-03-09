@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://honglizhaobob.github.io/math-problems/problems/2026-03-08-02-shoelaces/</loc>
+    <lastmod>2026-03-08T16:36:00-06:00</lastmod>
+  </url><url>
     <loc>https://honglizhaobob.github.io/math-problems/problems/2026-03-08-01-ml-warmup/</loc>
     <lastmod>2026-03-08T16:36:00-06:00</lastmod>
   </url><url>
@@ -9,6 +12,12 @@
     <lastmod>2026-03-08T16:36:00-06:00</lastmod>
   </url><url>
     <loc>https://honglizhaobob.github.io/math-problems/problems/</loc>
+    <lastmod>2026-03-08T16:36:00-06:00</lastmod>
+  </url><url>
+    <loc>https://honglizhaobob.github.io/math-problems/tags/</loc>
+    <lastmod>2026-03-08T16:36:00-06:00</lastmod>
+  </url><url>
+    <loc>https://honglizhaobob.github.io/math-problems/tags/%E3%82%A2/</loc>
     <lastmod>2026-03-08T16:36:00-06:00</lastmod>
   </url><url>
     <loc>https://honglizhaobob.github.io/math-problems/problems/2026-03-07-academic-koopman-operator/</loc>
@@ -74,7 +83,5 @@
     <loc>https://honglizhaobob.github.io/math-problems/categories/</loc>
   </url><url>
     <loc>https://honglizhaobob.github.io/math-problems/search/</loc>
-  </url><url>
-    <loc>https://honglizhaobob.github.io/math-problems/tags/</loc>
   </url>
 </urlset>

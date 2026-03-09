@@ -161,6 +161,11 @@
                     <span>Search</span>
                 </a>
             </li>
+            <li>
+                <a href="https://honglizhaobob.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -170,6 +175,20 @@
     Problems
   </h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Expected loops in shoelaces
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In this note, we solve a problem from Introduction to Probability (Blitzstein, Hwang)
+Question There are 100 shoelaces in a box. At each stage, you pick two random ends and tie them together. Either this results in a longer shoelace (if the two ends came from different pieces), or it results in a loop (if the two ends came from the same piece). What are the expected number of steps until everything is in loops, and the expected number of loops after everything is in loops? Solution Start with small case, let $f(n)$ be the number of loops that can be formed. $\mathbb{E}[f(1)] = 1$, since with probability 1 the two ends of the only shoelace are chosen. Then,
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-08 16:36:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Expected loops in shoelaces" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-02-shoelaces/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -312,23 +331,6 @@ On the set $|x| \le 1$, we have $|x|^m \le 1$, so $$ \int_{|x|\le 1} |x|^{m} f_X
   </div>
   <footer class="entry-footer"><span title='2025-12-10 20:35:21 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
   <a class="entry-link" aria-label="post link to Identity for expectation of power of absolute value" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-14-upper-bounding-absolute-power-expectation/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Computing Pi with Monte Carlo
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question How can we compute $\pi$ using Monte Carlo, and what is the standard deviation of the estimator? Solution Correct estimator.
-Generate i.i.d. uniform random variables $X,Y \sim \mathrm{Uniform}(0,1)$ and check whether $$ X^2 &#43; Y^2 &lt; 1. $$
-The probability of this event is the area of a quarter unit circle inside the unit square: $$ \mathbb{P}(X^2 &#43; Y^2 &lt; 1) = \frac{\pi}{4}. $$
-Let $$ A_n = \sum_{i=1}^n X_i, $$ where $X_i$ is the indicator of the event ${X_i^2 &#43; Y_i^2 &lt; 1}$.
-Then $$ \mathbb{E}[X_i] = \frac{\pi}{4}, $$ so the estimator $$ \hat{\pi}_n = \frac{4 A_n}{n} $$ is unbiased.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:33:16 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Computing Pi with Monte Carlo" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
