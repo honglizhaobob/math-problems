@@ -5,15 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Conditional Expectation of Exponential Gaussian | Math &amp; Stats Lounge</title>
+<title>Conditional expectation is the unique minimizer | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
-<meta name="description" content="
+<meta name="description" content="In this note, we briefly prove a well-known claim.
+
   Question
   
-    Suppose $X \sim \mathcal{N}(\mu_x, \sigma_x^2)$ and $Y \sim \mathcal{N}(\mu_y, \sigma_y^2)$ are jointly Gaussian with correlation $\rho$. Compute
+    Claim: let $X,Y$ be real-valued random variables. Let $f$ be a differentiable function. Then $\mathbb{E}[Y|X]$ is the (almost sure) unique minimizer of
 $$
-\mathbb{E}[e^Y \mid X].
+\min_f\mathbb{E}\left[
+(Y-f(X))^2
+\right]
 $$
+
   
 
 
@@ -21,28 +25,20 @@ $$
 
   Solution
   
-    The key step is to identify the conditional distribution of $Y$ given $X$.
-For jointly Gaussian $(X,Y)$, the conditional distribution $Y \mid X$ is Gaussian.
-We first compute the conditional mean by linear regression of $Y$ on $X$:
+    We expand
 $$
-\mathbb{E}[Y \mid X] = aX &#43; b,
+\mathbb{E}\left[
+(Y-f(X))^2
+\right] = \underbrace{\mathbb{E}\left[
+(Y-\mathbb{E}[Y|X])^2
+\right]}_{\text{indep. of $f$}} &#43;
+\mathbb{E}\left[
+(f(X)-\mathbb{E}[Y|X])^2
+\right]
 $$
-where
-$$
-a = \frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)},
-\qquad
-b = \mathbb{E}[Y] - a,\mathbb{E}[X].
-$$
-Since $\mathrm{Cov}(X,Y) = \rho \sigma_x \sigma_y$ and $\mathrm{Var}(X) = \sigma_x^2$, we obtain
-$$
-\mathbb{E}[Y \mid X]
-= \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} X
-&#43; \mu_y
-- \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} \mu_x
-= \mu_y &#43; \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x).
-$$">
+The minimizer over all $f$ for $\mathbb{E}\left[ Y-f(X))^2\right]$ is equivalent to that of $\mathbb{E}\left[ (f(X)-\mathbb{E}[Y|X])^2\right]$. The second term is almost surely nonnegative, and becomes zero at $f(X) = \mathbb{E}[Y|X]$.">
 <meta name="author" content="">
-<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/">
+<link rel="canonical" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-09-04-condexp-unique-min/">
 <link crossorigin="anonymous" href="https://honglizhaobob.github.io/math-problems/assets/css/stylesheet.1a2f777219edb163fd703fb47abdabec32a0bfb2b7e33508d0b260f0583d6555.css" integrity="sha256-Gi93chntsWP9cD&#43;0er2r7DKgv7K34zUI0LJg8Fg9ZVU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://honglizhaobob.github.io/math-problems/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://honglizhaobob.github.io/math-problems/favicon-16x16.png">
@@ -51,7 +47,7 @@ $$">
 <link rel="mask-icon" href="https://honglizhaobob.github.io/math-problems/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/">
+<link rel="alternate" hreflang="en" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-09-04-condexp-unique-min/">
 <noscript>
     <style>
         #theme-toggle,
@@ -129,26 +125,33 @@ $$">
   });
 </script>
 
-<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/">
+<meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2026-03-09-04-condexp-unique-min/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Conditional Expectation of Exponential Gaussian">
-  <meta property="og:description" content=" Question Suppose $X \sim \mathcal{N}(\mu_x, \sigma_x^2)$ and $Y \sim \mathcal{N}(\mu_y, \sigma_y^2)$ are jointly Gaussian with correlation $\rho$. Compute $$ \mathbb{E}[e^Y \mid X]. $$ Solution The key step is to identify the conditional distribution of $Y$ given $X$.
-For jointly Gaussian $(X,Y)$, the conditional distribution $Y \mid X$ is Gaussian.
-We first compute the conditional mean by linear regression of $Y$ on $X$: $$ \mathbb{E}[Y \mid X] = aX &#43; b, $$ where $$ a = \frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)}, \qquad b = \mathbb{E}[Y] - a,\mathbb{E}[X]. $$ Since $\mathrm{Cov}(X,Y) = \rho \sigma_x \sigma_y$ and $\mathrm{Var}(X) = \sigma_x^2$, we obtain $$ \mathbb{E}[Y \mid X] = \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} X &#43; \mu_y - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} \mu_x = \mu_y &#43; \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x). $$">
+  <meta property="og:title" content="Conditional expectation is the unique minimizer">
+  <meta property="og:description" content="In this note, we briefly prove a well-known claim.
+Question Claim: let $X,Y$ be real-valued random variables. Let $f$ be a differentiable function. Then $\mathbb{E}[Y|X]$ is the (almost sure) unique minimizer of
+$$ \min_f\mathbb{E}\left[ (Y-f(X))^2 \right] $$
+Solution We expand
+$$ \mathbb{E}\left[ (Y-f(X))^2 \right] = \underbrace{\mathbb{E}\left[ (Y-\mathbb{E}[Y|X])^2 \right]}_{\text{indep. of $f$}} &#43; \mathbb{E}\left[ (f(X)-\mathbb{E}[Y|X])^2 \right] $$
+The minimizer over all $f$ for $\mathbb{E}\left[ Y-f(X))^2\right]$ is equivalent to that of $\mathbb{E}\left[ (f(X)-\mathbb{E}[Y|X])^2\right]$. The second term is almost surely nonnegative, and becomes zero at $f(X) = \mathbb{E}[Y|X]$.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="problems">
-    <meta property="article:published_time" content="2025-12-10T20:50:39-06:00">
-    <meta property="article:modified_time" content="2025-12-10T20:50:39-06:00">
+    <meta property="article:published_time" content="2026-03-09T08:49:00-06:00">
+    <meta property="article:modified_time" content="2026-03-09T08:49:00-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Conditional Expectation of Exponential Gaussian">
-<meta name="twitter:description" content="
+<meta name="twitter:title" content="Conditional expectation is the unique minimizer">
+<meta name="twitter:description" content="In this note, we briefly prove a well-known claim.
+
   Question
   
-    Suppose $X \sim \mathcal{N}(\mu_x, \sigma_x^2)$ and $Y \sim \mathcal{N}(\mu_y, \sigma_y^2)$ are jointly Gaussian with correlation $\rho$. Compute
+    Claim: let $X,Y$ be real-valued random variables. Let $f$ be a differentiable function. Then $\mathbb{E}[Y|X]$ is the (almost sure) unique minimizer of
 $$
-\mathbb{E}[e^Y \mid X].
+\min_f\mathbb{E}\left[
+(Y-f(X))^2
+\right]
 $$
+
   
 
 
@@ -156,26 +159,18 @@ $$
 
   Solution
   
-    The key step is to identify the conditional distribution of $Y$ given $X$.
-For jointly Gaussian $(X,Y)$, the conditional distribution $Y \mid X$ is Gaussian.
-We first compute the conditional mean by linear regression of $Y$ on $X$:
+    We expand
 $$
-\mathbb{E}[Y \mid X] = aX &#43; b,
+\mathbb{E}\left[
+(Y-f(X))^2
+\right] = \underbrace{\mathbb{E}\left[
+(Y-\mathbb{E}[Y|X])^2
+\right]}_{\text{indep. of $f$}} &#43;
+\mathbb{E}\left[
+(f(X)-\mathbb{E}[Y|X])^2
+\right]
 $$
-where
-$$
-a = \frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)},
-\qquad
-b = \mathbb{E}[Y] - a,\mathbb{E}[X].
-$$
-Since $\mathrm{Cov}(X,Y) = \rho \sigma_x \sigma_y$ and $\mathrm{Var}(X) = \sigma_x^2$, we obtain
-$$
-\mathbb{E}[Y \mid X]
-= \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} X
-&#43; \mu_y
-- \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} \mu_x
-= \mu_y &#43; \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x).
-$$">
+The minimizer over all $f$ for $\mathbb{E}\left[ Y-f(X))^2\right]$ is equivalent to that of $\mathbb{E}\left[ (f(X)-\mathbb{E}[Y|X])^2\right]$. The second term is almost surely nonnegative, and becomes zero at $f(X) = \mathbb{E}[Y|X]$.">
 
 
 <script type="application/ld+json">
@@ -192,8 +187,8 @@ $$">
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Conditional Expectation of Exponential Gaussian",
-      "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/"
+      "name": "Conditional expectation is the unique minimizer",
+      "item": "https://honglizhaobob.github.io/math-problems/problems/2026-03-09-04-condexp-unique-min/"
     }
   ]
 }
@@ -202,20 +197,20 @@ $$">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Conditional Expectation of Exponential Gaussian",
-  "name": "Conditional Expectation of Exponential Gaussian",
-  "description": " Question Suppose $X \\sim \\mathcal{N}(\\mu_x, \\sigma_x^2)$ and $Y \\sim \\mathcal{N}(\\mu_y, \\sigma_y^2)$ are jointly Gaussian with correlation $\\rho$. Compute $$ \\mathbb{E}[e^Y \\mid X]. $$ Solution The key step is to identify the conditional distribution of $Y$ given $X$.\nFor jointly Gaussian $(X,Y)$, the conditional distribution $Y \\mid X$ is Gaussian.\nWe first compute the conditional mean by linear regression of $Y$ on $X$: $$ \\mathbb{E}[Y \\mid X] = aX + b, $$ where $$ a = \\frac{\\mathrm{Cov}(X,Y)}{\\mathrm{Var}(X)}, \\qquad b = \\mathbb{E}[Y] - a,\\mathbb{E}[X]. $$ Since $\\mathrm{Cov}(X,Y) = \\rho \\sigma_x \\sigma_y$ and $\\mathrm{Var}(X) = \\sigma_x^2$, we obtain $$ \\mathbb{E}[Y \\mid X] = \\frac{\\rho \\sigma_x \\sigma_y}{\\sigma_x^2} X + \\mu_y - \\frac{\\rho \\sigma_x \\sigma_y}{\\sigma_x^2} \\mu_x = \\mu_y + \\rho \\frac{\\sigma_y}{\\sigma_x}(X - \\mu_x). $$\n",
+  "headline": "Conditional expectation is the unique minimizer",
+  "name": "Conditional expectation is the unique minimizer",
+  "description": "In this note, we briefly prove a well-known claim.\nQuestion Claim: let $X,Y$ be real-valued random variables. Let $f$ be a differentiable function. Then $\\mathbb{E}[Y|X]$ is the (almost sure) unique minimizer of\n$$ \\min_f\\mathbb{E}\\left[ (Y-f(X))^2 \\right] $$\nSolution We expand\n$$ \\mathbb{E}\\left[ (Y-f(X))^2 \\right] = \\underbrace{\\mathbb{E}\\left[ (Y-\\mathbb{E}[Y|X])^2 \\right]}_{\\text{indep. of $f$}} + \\mathbb{E}\\left[ (f(X)-\\mathbb{E}[Y|X])^2 \\right] $$\nThe minimizer over all $f$ for $\\mathbb{E}\\left[ Y-f(X))^2\\right]$ is equivalent to that of $\\mathbb{E}\\left[ (f(X)-\\mathbb{E}[Y|X])^2\\right]$. The second term is almost surely nonnegative, and becomes zero at $f(X) = \\mathbb{E}[Y|X]$.\n",
   "keywords": [
     
   ],
-  "articleBody": " Question Suppose $X \\sim \\mathcal{N}(\\mu_x, \\sigma_x^2)$ and $Y \\sim \\mathcal{N}(\\mu_y, \\sigma_y^2)$ are jointly Gaussian with correlation $\\rho$. Compute $$ \\mathbb{E}[e^Y \\mid X]. $$ Solution The key step is to identify the conditional distribution of $Y$ given $X$.\nFor jointly Gaussian $(X,Y)$, the conditional distribution $Y \\mid X$ is Gaussian.\nWe first compute the conditional mean by linear regression of $Y$ on $X$: $$ \\mathbb{E}[Y \\mid X] = aX + b, $$ where $$ a = \\frac{\\mathrm{Cov}(X,Y)}{\\mathrm{Var}(X)}, \\qquad b = \\mathbb{E}[Y] - a,\\mathbb{E}[X]. $$ Since $\\mathrm{Cov}(X,Y) = \\rho \\sigma_x \\sigma_y$ and $\\mathrm{Var}(X) = \\sigma_x^2$, we obtain $$ \\mathbb{E}[Y \\mid X] = \\frac{\\rho \\sigma_x \\sigma_y}{\\sigma_x^2} X + \\mu_y - \\frac{\\rho \\sigma_x \\sigma_y}{\\sigma_x^2} \\mu_x = \\mu_y + \\rho \\frac{\\sigma_y}{\\sigma_x}(X - \\mu_x). $$\nNext we use the law of total variance: $$ \\mathrm{Var}(Y) = \\mathbb{E}[\\mathrm{Var}(Y \\mid X)] + \\mathrm{Var}(\\mathbb{E}[Y \\mid X]). $$\nSince $\\mathbb{E}[Y \\mid X]$ is linear in $X$, the second term is $$ \\mathrm{Var}(\\mathbb{E}[Y \\mid X]) = \\rho^2 \\frac{\\sigma_y^2}{\\sigma_x^2} \\mathrm{Var}(X) = \\rho^2 \\sigma_y^2. $$\nThus $$ \\sigma_y^2 = \\mathrm{Var}(Y) = \\mathrm{Var}(Y \\mid X) + \\rho^2 \\sigma_y^2, $$ so $$ \\mathrm{Var}(Y \\mid X) = (1 - \\rho^2)\\sigma_y^2. $$\nHence $$ Y \\mid X = x \\sim \\mathcal{N}\\Big( \\mu_y + \\rho \\frac{\\sigma_y}{\\sigma_x}(x - \\mu_x), (1 - \\rho^2)\\sigma_y^2 \\Big). $$\nNow use the moment generating function of a Gaussian.\nIf $Z \\sim \\mathcal{N}(\\mu, \\sigma^2)$, then $$ \\mathbb{E}[e^{tZ}] = \\exp\\Big(\\mu t + \\tfrac12 \\sigma^2 t^2\\Big). $$\nConditionally on $X$, we therefore have $$ \\mathbb{E}[e^{tY} \\mid X] = \\exp\\Big( \\mu_{Y \\mid X} t + \\tfrac12 \\sigma_{Y \\mid X}^2 t^2 \\Big), $$ where $$ \\mu_{Y \\mid X} = \\mu_y + \\rho \\frac{\\sigma_y}{\\sigma_x}(X - \\mu_x), \\qquad \\sigma_{Y \\mid X}^2 = (1 - \\rho^2)\\sigma_y^2. $$\nSetting $t = 1$ gives $$ \\mathbb{E}[e^{Y} \\mid X] = \\exp\\Big( \\mu_y + \\rho \\frac{\\sigma_y}{\\sigma_x}(X - \\mu_x) + \\tfrac12 (1 - \\rho^2)\\sigma_y^2 \\Big). $$\nRemark.\nThe linear regression representation $\\mathbb{E}[Y \\mid X] = aX + b$ comes from the fact that $\\mathbb{E}[Y \\mid X]$ is the minimizer of $$ \\min_f ; \\mathbb{E}\\big[(Y - f(X))^2\\big], $$ and, for jointly Gaussian $(X,Y)$, the optimal predictor is linear in $X$.\n",
-  "wordCount" : "342",
+  "articleBody": "In this note, we briefly prove a well-known claim.\nQuestion Claim: let $X,Y$ be real-valued random variables. Let $f$ be a differentiable function. Then $\\mathbb{E}[Y|X]$ is the (almost sure) unique minimizer of\n$$ \\min_f\\mathbb{E}\\left[ (Y-f(X))^2 \\right] $$\nSolution We expand\n$$ \\mathbb{E}\\left[ (Y-f(X))^2 \\right] = \\underbrace{\\mathbb{E}\\left[ (Y-\\mathbb{E}[Y|X])^2 \\right]}_{\\text{indep. of $f$}} + \\mathbb{E}\\left[ (f(X)-\\mathbb{E}[Y|X])^2 \\right] $$\nThe minimizer over all $f$ for $\\mathbb{E}\\left[ Y-f(X))^2\\right]$ is equivalent to that of $\\mathbb{E}\\left[ (f(X)-\\mathbb{E}[Y|X])^2\\right]$. The second term is almost surely nonnegative, and becomes zero at $f(X) = \\mathbb{E}[Y|X]$.\nThis choice is unique. Suppose there is $h(X)$ that also minimizes $\\mathbb{E}\\left[ (f(X)-\\mathbb{E}[Y|X])^2\\right]$. Then $\\int_\\Omega (h(x) - \\mathbb{E}[Y|X=x])^2dx = 0$, which implies $h(x) = \\mathbb{E}[Y|X=x]$ almost surely.\n",
+  "wordCount" : "111",
   "inLanguage": "en",
-  "datePublished": "2025-12-10T20:50:39-06:00",
-  "dateModified": "2025-12-10T20:50:39-06:00",
+  "datePublished": "2026-03-09T08:49:00-06:00",
+  "dateModified": "2026-03-09T08:49:00-06:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/"
+    "@id": "https://honglizhaobob.github.io/math-problems/problems/2026-03-09-04-condexp-unique-min/"
   },
   "publisher": {
     "@type": "Organization",
@@ -281,20 +276,24 @@ $$">
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Conditional Expectation of Exponential Gaussian
+      Conditional expectation is the unique minimizer
     </h1>
-    <div class="post-meta"><span title='2025-12-10 20:50:39 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span>
+    <div class="post-meta"><span title='2026-03-09 08:49:00 -0600 -0600'>March 9, 2026</span>&nbsp;·&nbsp;<span>1 min</span>
 
 </div>
   </header> 
 
-  <div class="post-content"><div class="problem-box problem-question">
+  <div class="post-content"><p>In this note, we briefly prove a well-known claim.</p>
+<div class="problem-box problem-question">
   <div class="problem-box-label">Question</div>
   <div class="problem-box-body">
-    Suppose $X \sim \mathcal{N}(\mu_x, \sigma_x^2)$ and $Y \sim \mathcal{N}(\mu_y, \sigma_y^2)$ are jointly Gaussian with correlation $\rho$. Compute
-$$
-\mathbb{E}[e^Y \mid X].
-$$
+    <p>Claim: let $X,Y$ be real-valued random variables. Let $f$ be a differentiable function. Then $\mathbb{E}[Y|X]$ is the (almost sure) unique minimizer of</p>
+<p>$$
+\min_f\mathbb{E}\left[
+(Y-f(X))^2
+\right]
+$$</p>
+
   </div>
 </div>
 
@@ -302,97 +301,23 @@ $$
 <div class="problem-box problem-solution">
   <div class="problem-box-label">Solution</div>
   <div class="problem-box-body">
-    <p>The key step is to identify the conditional distribution of $Y$ given $X$.<br>
-For jointly Gaussian $(X,Y)$, the conditional distribution $Y \mid X$ is Gaussian.</p>
-<p>We first compute the conditional mean by linear regression of $Y$ on $X$:
-$$
-\mathbb{E}[Y \mid X] = aX + b,
-$$
-where
-$$
-a = \frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)},
-\qquad
-b = \mathbb{E}[Y] - a,\mathbb{E}[X].
-$$
-Since $\mathrm{Cov}(X,Y) = \rho \sigma_x \sigma_y$ and $\mathrm{Var}(X) = \sigma_x^2$, we obtain
-$$
-\mathbb{E}[Y \mid X]
-= \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} X
-+ \mu_y
-- \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} \mu_x
-= \mu_y + \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x).
+    <p>We expand</p>
+<p>$$
+\mathbb{E}\left[
+(Y-f(X))^2
+\right] = \underbrace{\mathbb{E}\left[
+(Y-\mathbb{E}[Y|X])^2
+\right]}_{\text{indep. of $f$}} +
+\mathbb{E}\left[
+(f(X)-\mathbb{E}[Y|X])^2
+\right]
 $$</p>
-<p>Next we use the law of total variance:
-$$
-\mathrm{Var}(Y)
-= \mathbb{E}[\mathrm{Var}(Y \mid X)] + \mathrm{Var}(\mathbb{E}[Y \mid X]).
-$$</p>
-<p>Since $\mathbb{E}[Y \mid X]$ is linear in $X$, the second term is
-$$
-\mathrm{Var}(\mathbb{E}[Y \mid X])
-= \rho^2 \frac{\sigma_y^2}{\sigma_x^2} \mathrm{Var}(X)
-= \rho^2 \sigma_y^2.
-$$</p>
-<p>Thus
-$$
-\sigma_y^2
-= \mathrm{Var}(Y)
-= \mathrm{Var}(Y \mid X) + \rho^2 \sigma_y^2,
-$$
-so
-$$
-\mathrm{Var}(Y \mid X) = (1 - \rho^2)\sigma_y^2.
-$$</p>
-<p>Hence
-$$
-Y \mid X = x
-\sim
-\mathcal{N}\Big(
-\mu_y + \rho \frac{\sigma_y}{\sigma_x}(x - \mu_x),
-(1 - \rho^2)\sigma_y^2
-\Big).
-$$</p>
-<p>Now use the moment generating function of a Gaussian.<br>
-If $Z \sim \mathcal{N}(\mu, \sigma^2)$, then
-$$
-\mathbb{E}[e^{tZ}] = \exp\Big(\mu t + \tfrac12 \sigma^2 t^2\Big).
-$$</p>
-<p>Conditionally on $X$, we therefore have
-$$
-\mathbb{E}[e^{tY} \mid X]
-=
-\exp\Big(
-\mu_{Y \mid X} t + \tfrac12 \sigma_{Y \mid X}^2 t^2
-\Big),
-$$
-where
-$$
-\mu_{Y \mid X}
-= \mu_y + \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x),
-\qquad
-\sigma_{Y \mid X}^2
-= (1 - \rho^2)\sigma_y^2.
-$$</p>
-<p>Setting $t = 1$ gives
-$$
-\mathbb{E}[e^{Y} \mid X]
-=
-\exp\Big(
-\mu_y
-+ \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x)
-+ \tfrac12 (1 - \rho^2)\sigma_y^2
-\Big).
-$$</p>
+<p>The minimizer over all $f$ for $\mathbb{E}\left[ Y-f(X))^2\right]$ is equivalent to that of $\mathbb{E}\left[ (f(X)-\mathbb{E}[Y|X])^2\right]$. The second term is almost surely nonnegative, and becomes zero at $f(X) = \mathbb{E}[Y|X]$.</p>
+<p>This choice is unique. Suppose there is $h(X)$ that also minimizes $\mathbb{E}\left[ (f(X)-\mathbb{E}[Y|X])^2\right]$. Then $\int_\Omega (h(x) - \mathbb{E}[Y|X=x])^2dx = 0$, which implies $h(x) = \mathbb{E}[Y|X=x]$ almost surely.</p>
 
   </div>
 </div>
 
-<p><strong>Remark.</strong><br>
-The linear regression representation $\mathbb{E}[Y \mid X] = aX + b$ comes from the fact that $\mathbb{E}[Y \mid X]$ is the minimizer of
-$$
-\min_f ; \mathbb{E}\big[(Y - f(X))^2\big],
-$$
-and, for jointly Gaussian $(X,Y)$, the optimal predictor is linear in $X$.</p>
 
 
   </div>
@@ -401,15 +326,15 @@ and, for jointly Gaussian $(X,Y)$, the optimal predictor is linear in $X$.</p>
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/">
+  <a class="prev" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-09-05-noise-to-regression/">
     <span class="title">« Prev</span>
     <br>
-    <span>Useful identities</span>
+    <span>Adding noise to regression is equivalent to regularization</span>
   </a>
-  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/">
+  <a class="next" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-09-03-conditioned-correlation/">
     <span class="title">Next »</span>
     <br>
-    <span>Linear regression primer</span>
+    <span>Correlation changes after conditioning</span>
   </a>
 </nav>
 

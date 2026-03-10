@@ -173,7 +173,80 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Linear Regression Primer
+    <h2 class="entry-hint-parent">Machine learning warm-up
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In this note, we review a list of questions that are helpful for ML from a generalist point of view.
+ML basics Question What is overfitting? How can we deal with overfitting? Solution Overfitting occurs when a model fits the training data too closely, including noise or spurious patterns that do not generalize to new data. As a result, the model achieves very low training error but performs poorly on unseen data, such as validation or test data.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-08 16:36:00 -0600 -0600'>March 8, 2026</span>&nbsp;·&nbsp;<span>21 min</span></footer>
+  <a class="entry-link" aria-label="post link to Machine learning warm-up" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-08-01-ml-warmup/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Derivation of Koopman operator for stochastic dynamical systems
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In this post, we derive the Koopman operator, an infinite-dimensional linear operator that describes the evolution of observables in a dynamical system.
+Consider a $d$-dimensional dynamical system evolving on a smooth manifold $\mathcal{M} \subset \mathbb{R}^d$: $$ \begin{cases} \displaystyle \frac{d\mathbf{x}}{dt} = G(\mathbf{x}) \\ \mathbf{x}(0) = \mathbf{x}_0 \sim p_0(\mathbf{x}_0). \end{cases} $$ Here the initial condition is distributed according to the density $p_0$. Stochastic dynamical systems can often be rewritten in this form by augmenting the state vector $\mathbf{x}$ to include the driving noise variables.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-07 16:36:00 -0600 CST'>March 7, 2026</span>&nbsp;·&nbsp;<span>3 min</span></footer>
+  <a class="entry-link" aria-label="post link to Derivation of Koopman operator for stochastic dynamical systems" href="https://honglizhaobob.github.io/math-problems/problems/2026-03-07-academic-koopman-operator/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Probability two random numbers are coprime
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question What is the probability that two randomly chosen integers are coprime? Solution Every integer has probability 1 to be divisible by 1. Similarly, every integer has probability $1/2$ to be divisible by $2$. The induction is to consider all prime factors. For the $k$-th prime $p_k$, every integer has probability $1/p_k$ to be divisible by it. Therefore, two independently chosen random integers simultaneously being divisible by $p_k$ is $1/p_k^2$. This means that the probability that two integers are not simultaneously divisible by a prime factor $p_k$ is $1-1/p_k^2$, which means they are co-prime.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-19 18:36:29 -0600 CST'>December 19, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
+  <a class="entry-link" aria-label="post link to Probability two random numbers are coprime" href="https://honglizhaobob.github.io/math-problems/problems/2025-12-19-01-coprime-probability/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Useful identities
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Probability Identities 1. Conditional Bayes’ Formula Let $A, B, C$ be events. Then
+$$ \frac{P(A \mid B, C)}{1} = \frac{P(C \mid A, B) , P(A \mid B)}{P(C \mid B)}. $$
+Application.
+In estimating whether a coin is biased, suppose the first toss is $H$ and the second toss is also $H$:
+$A =$ “the coin is biased” $B =$ “first toss is $H$” $C =$ “second toss is $H$” Then Bayes’ rule lets you update the posterior after observing the second toss without recomputing from scratch.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:53:12 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Useful identities" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-19-important-identities/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Conditional Expectation of Exponential Gaussian
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Question Suppose $X \sim \mathcal{N}(\mu_x, \sigma_x^2)$ and $Y \sim \mathcal{N}(\mu_y, \sigma_y^2)$ are jointly Gaussian with correlation $\rho$. Compute $$ \mathbb{E}[e^Y \mid X]. $$ Solution The key step is to identify the conditional distribution of $Y$ given $X$.
+For jointly Gaussian $(X,Y)$, the conditional distribution $Y \mid X$ is Gaussian.
+We first compute the conditional mean by linear regression of $Y$ on $X$: $$ \mathbb{E}[Y \mid X] = aX &#43; b, $$ where $$ a = \frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)}, \qquad b = \mathbb{E}[Y] - a,\mathbb{E}[X]. $$ Since $\mathrm{Cov}(X,Y) = \rho \sigma_x \sigma_y$ and $\mathrm{Var}(X) = \sigma_x^2$, we obtain $$ \mathbb{E}[Y \mid X] = \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} X &#43; \mu_y - \frac{\rho \sigma_x \sigma_y}{\sigma_x^2} \mu_x = \mu_y &#43; \rho \frac{\sigma_y}{\sigma_x}(X - \mu_x). $$
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-12-10 20:50:39 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>2 min</span></footer>
+  <a class="entry-link" aria-label="post link to Conditional Expectation of Exponential Gaussian" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-18-conditional-exponential-gaussian/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Linear regression primer
     </h2>
   </header>
   <div class="entry-content">
@@ -182,8 +255,8 @@ $$ \begin{aligned} &amp;\text{for each } i=1,\ldots,n,\ &amp;\qquad y_i = f(x_i)
 where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:41:27 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>4 min</span></footer>
-  <a class="entry-link" aria-label="post link to Linear Regression Primer" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/"></a>
+  <footer class="entry-footer"><span title='2025-12-10 20:41:27 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>5 min</span></footer>
+  <a class="entry-link" aria-label="post link to Linear regression primer" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -256,90 +329,6 @@ Then $$ \mathbb{E}[X_i] = \frac{\pi}{4}, $$ so the estimator $$ \hat{\pi}_n = \f
   </div>
   <footer class="entry-footer"><span title='2025-12-10 20:33:16 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
   <a class="entry-link" aria-label="post link to Computing Pi with Monte Carlo" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-13-simulating-pi/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Conditional probability of 2D Gaussian
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $X,Y$ be standard normal with $\operatorname{Cov}(X,Y)=\tfrac{1}{\sqrt{2}}$.
-Compute $\mathbb{P}[X&gt;0 \mid Y&lt;0]$. Solution We write $$ \mathbb{P}[X&gt;0 \mid Y&lt;0] = \frac{\mathbb{P}(X&gt;0,\, Y&lt;0)}{\mathbb{P}(Y&lt;0)} = 2,\mathbb{P}(X&gt;0,\, Y&lt;0), $$ since $\mathbb{P}(Y&lt;0)=\tfrac12$.
-Because $$ Y = \frac{1}{\sqrt{2}}\,X &#43; \frac{1}{\sqrt{2}}\,Z, $$ with $Z$ independent of $X$, the vector $(X,Z)$ is rotationally symmetric in $\mathbb{R}^2$.
-The event
-$$ X&gt;0,\qquad Y&lt;0 $$ corresponds to the wedge where $X&gt;0$ but $X&#43;Z&lt;0$.
-Geometrically, the plane is divided into $8$ equal $45^\circ$ sectors, and exactly one of these sectors corresponds to $(X&gt;0, X&#43;Z&lt;0)$. Thus $$ \mathbb{P}(X&gt;0,\, Y&lt;0)=\frac18. $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:30:56 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Conditional probability of 2D Gaussian" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-12-probability-of-2d-conditional-gaussian/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Distribution of Brownian integral
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Let $X_t = \int_0^t W_\tau , d\tau$, where $W_t$ is a standard Wiener process.
-What is the distribution of $X_t$? Solution Using integration by parts, $$ X_t = \int_0^t W_s\, ds = t W_t - \int_0^t s\, dW_s = \int_0^t (t-s)\, dW_s. $$
-For deterministic square-integrable $f(s)$, $$ \int_0^t f(s), dW_s \sim \mathcal{N}\!\left( 0,\; \int_0^t f(s)^2\, ds \right). $$
-Here $f(s) = t - s$, so $$ \int_0^t (t-s)^2\, ds = \frac{t^3}{3}. $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:28:57 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Distribution of Brownian integral" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-11-brownian-integral-distribution/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Lower bound of number of independent generations
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question How many independent $\mathrm{Uniform}(0,1)$ random variables must we generate to ensure that with probability at least $95%$ at least one of them lies in the interval $[0.7, 0.72]$? Solution Let $E_i$ denote the event $U_i \in [0.7, 0.72]$.
-Each has probability $$ \mathbb{P}(E_i) = 0.02. $$
-We want $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) \ge 0.95. $$
-Since the $U_i$ are independent, $$ \mathbb{P}!\left( \bigcup_{i=1}^N E_i \right) = 1 - \mathbb{P}!\left( \bigcap_{i=1}^N E_i^c \right) = 1 - (0.98)^N. $$
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:27:52 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Lower bound of number of independent generations" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-10-number-of-rvs/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Simulating fair coin using unfair
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question Given a biased coin with probability of heads $p \neq \tfrac12$, how can we simulate a fair coin? Solution Naive method (Von Neumann trick).
-Consider pairs of tosses. The outcomes $TH$ and $HT$ have equal probability: $$ \mathbb{P}[TH] = p(1-p), \qquad \mathbb{P}[HT] = p(1-p). $$
-But $$ \mathbb{P}[HH] = p^2, \qquad \mathbb{P}[TT] = (1-p)^2, $$ which are not equal unless $p=\tfrac12$.
-So we define:
-$TH \mapsto H$ $HT \mapsto T$ discard $HH$ and $TT$ This produces a fair coin.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:26:54 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Simulating fair coin using unfair" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-09-simulating-fair-coin/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Correlation matrix sum of eigenvalues lower bound
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> Question For a correlation matrix of $n$ random variables:
-What is the sum of eigenvalues? What is a lower bound for the sum of eigenvalues of the inverse of a nonsingular $n\times n$ correlation matrix? Solution Sum of eigenvalues.
-For any square matrix, the sum of eigenvalues equals the trace.
-A correlation matrix has all diagonal entries equal to $1$, so $$ \sum_{i=1}^n \lambda_i = \operatorname{tr}(C) = n. $$
-Solution Lower bound for the eigenvalue sum of the inverse.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-12-10 20:23:02 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>1 min</span></footer>
-  <a class="entry-link" aria-label="post link to Correlation matrix sum of eigenvalues lower bound" href="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-08-sum-of-eigenvalues-lower-bound/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -6,8 +6,146 @@
     <description>Recent content on Math &amp; Stats Lounge</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Mar 2026 16:42:00 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2026 08:50:00 -0600</lastBuildDate>
     <atom:link href="https://honglizhaobob.github.io/math-problems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adding noise to regression is equivalent to regularization</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-05-noise-to-regression/</link>
+      <pubDate>Mon, 09 Mar 2026 08:50:00 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-05-noise-to-regression/</guid>
+      <description>&lt;p&gt;In this note, we explore adding noise to regression problems.&lt;/p&gt;
+&lt;h3 id=&#34;multiplicative-gaussian-noise&#34;&gt;Multiplicative Gaussian noise&lt;/h3&gt;
+&lt;p&gt;In linear / ridge regression, let $X, y$ be data; we will assume that $X$ is standardized, thus $(1/N)\text{diag}(X^TX)=I$. Consider the following multiplicative perturbation&lt;/p&gt;
+&lt;p&gt;$$
+x_{ij} \leftarrow \epsilon_{ij}x_{ij}
+$$ where $\epsilon_{ij}\sim\mathcal{N}(1,\sigma)$. We will demonstrate that this is equivalent to Tikhonov regularization to the OLS problem $y\sim X\beta$.&lt;/p&gt;
+&lt;p&gt;In the infinite data case, consider&lt;/p&gt;
+&lt;p&gt;$$
+\min_{\beta}\mathbb{E}\left[
+\|
+y - (E\odot X)\beta
+\|^2
+\right]
+$$ where $E$ is the Gaussian matrix and $\odot$ denotes Hadamard product.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conditional expectation is the unique minimizer</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-04-condexp-unique-min/</link>
+      <pubDate>Mon, 09 Mar 2026 08:49:00 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-04-condexp-unique-min/</guid>
+      <description>&lt;p&gt;In this note, we briefly prove a well-known claim.&lt;/p&gt;
+&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;Claim: let $X,Y$ be real-valued random variables. Let $f$ be a differentiable function. Then $\mathbb{E}[Y|X]$ is the (almost sure) unique minimizer of&lt;/p&gt;
+&lt;p&gt;$$
+\min_f\mathbb{E}\left[
+(Y-f(X))^2
+\right]
+$$&lt;/p&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;We expand&lt;/p&gt;
+&lt;p&gt;$$
+\mathbb{E}\left[
+(Y-f(X))^2
+\right] = \underbrace{\mathbb{E}\left[
+(Y-\mathbb{E}[Y|X])^2
+\right]}_{\text{indep. of $f$}} +
+\mathbb{E}\left[
+(f(X)-\mathbb{E}[Y|X])^2
+\right]
+$$&lt;/p&gt;
+&lt;p&gt;The minimizer over all $f$ for $\mathbb{E}\left[ Y-f(X))^2\right]$ is equivalent to that of $\mathbb{E}\left[ (f(X)-\mathbb{E}[Y|X])^2\right]$. The second term is almost surely nonnegative, and becomes zero at $f(X) = \mathbb{E}[Y|X]$.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Correlation changes after conditioning</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-03-conditioned-correlation/</link>
+      <pubDate>Mon, 09 Mar 2026 08:44:00 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-03-conditioned-correlation/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    If we have two features, Feature A and Feature B. In a large and sufficiently diverse population, you find that their correlation is $0$. If you recompute the correlation on a restricted subpopulation, should you still expect it to be $0$?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Not necessarily. Correlation measures &lt;em&gt;linear association&lt;/em&gt;, and depends on the population being sampled. Even if Feature A and Feature B have correlation $0$ in the full population, the correlation can change after restricting to a subpopulation. This can happen because the two features may have a nonlinear relationship, and the full population may have enough symmetry that the overall correlation cancels out.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Correlation under conditioning&#34; loading=&#34;lazy&#34; src=&#34;https://honglizhaobob.github.io/math-problems/images/posts/conditioning-correlation.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Reservoir sampling</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-02-reservoir-sampling/</link>
+      <pubDate>Mon, 09 Mar 2026 08:43:00 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-02-reservoir-sampling/</guid>
+      <description>&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    Given a set or stream of values, consider an algorithm to randomly generate sample values.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;If the dataset is very large / stream, we describe reservoir sampling in this note.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Goal: sample $k$ items uniformly at random from $n \gg 1$ values, without storing all $n$ values in memory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;base-case-k1&#34;&gt;Base case $k=1$:&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Store the first item as the current sample.&lt;/li&gt;
+&lt;li&gt;When the $i$-th item arrives $(i \ge 2)$, replace the current sample with probability $1/i$. After processing all items, each item has probability exactly $1/n$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;general-k-case&#34;&gt;General $k$ case&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Put the first $k$ items into the reservoir.&lt;/li&gt;
+&lt;li&gt;For item $i=k+1,\dots,n$, generate a random integer $j$ uniformly from $\{1,\dots,i\}$.&lt;/li&gt;
+&lt;li&gt;If $j \le k$, replace the $j$-th element in the reservoir by the new item.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After processing all $n$ items, each item is included in the reservoir with probability $k/n$.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hypothesis testing for coin toss</title>
+      <link>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-01-coin-hypothesis-testing/</link>
+      <pubDate>Mon, 09 Mar 2026 08:42:00 -0600</pubDate>
+      <guid>https://honglizhaobob.github.io/math-problems/problems/2026-03-09-01-coin-hypothesis-testing/</guid>
+      <description>&lt;p&gt;We consider hypothesis testing in this note.&lt;/p&gt;
+&lt;div class=&#34;problem-box problem-question&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Question&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    What is $p$-value?
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;problem-box problem-solution&#34;&gt;
+  &lt;div class=&#34;problem-box-label&#34;&gt;Solution&lt;/div&gt;
+  &lt;div class=&#34;problem-box-body&#34;&gt;
+    &lt;p&gt;A $p$-value is the probability, &lt;strong&gt;assuming null hypothesis $H_0$ is true&lt;/strong&gt;, of observing a test statistic at least as extreme as the one actually obtained. Suppose the observed test statistic is $t$, and under $H_0$ the statistic $T$ has a known reference distribution.&lt;/p&gt;
+&lt;p&gt;For a &lt;strong&gt;right-tailed&lt;/strong&gt; test,
+$$
+p = \mathbb{P}(T \ge t \mid H_0).
+$$&lt;/p&gt;
+&lt;p&gt;For a &lt;strong&gt;left-tailed&lt;/strong&gt; test,
+$$
+p = \mathbb{P}(T \le t \mid H_0).
+$$&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Rotate images</title>
       <link>https://honglizhaobob.github.io/math-problems/problems/2026-03-08-06-rotate-images/</link>
@@ -270,7 +408,7 @@ $$
 $$&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Linear Regression Primer</title>
+      <title>Linear regression primer</title>
       <link>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/</link>
       <pubDate>Wed, 10 Dec 2025 20:41:27 -0600</pubDate>
       <guid>https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/</guid>

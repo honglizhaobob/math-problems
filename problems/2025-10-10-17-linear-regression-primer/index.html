@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Linear Regression Primer | Math &amp; Stats Lounge</title>
+<title>Linear regression primer | Math &amp; Stats Lounge</title>
 <meta name="keywords" content="">
 <meta name="description" content="In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
 $$
@@ -105,7 +105,7 @@ where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly 
 
 <meta property="og:url" content="https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/">
   <meta property="og:site_name" content="Math & Stats Lounge">
-  <meta property="og:title" content="Linear Regression Primer">
+  <meta property="og:title" content="Linear regression primer">
   <meta property="og:description" content="In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
 $$ \begin{aligned} &amp;\text{for each } i=1,\ldots,n,\ &amp;\qquad y_i = f(x_i) &#43; \epsilon_i, \end{aligned} $$
 where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.">
@@ -115,7 +115,7 @@ where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly 
     <meta property="article:published_time" content="2025-12-10T20:41:27-06:00">
     <meta property="article:modified_time" content="2025-12-10T20:41:27-06:00">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linear Regression Primer">
+<meta name="twitter:title" content="Linear regression primer">
 <meta name="twitter:description" content="In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that
 $$
 \begin{aligned}
@@ -140,7 +140,7 @@ where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Linear Regression Primer",
+      "name": "Linear regression primer",
       "item": "https://honglizhaobob.github.io/math-problems/problems/2025-10-10-17-linear-regression-primer/"
     }
   ]
@@ -150,14 +150,14 @@ where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly 
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Linear Regression Primer",
-  "name": "Linear Regression Primer",
+  "headline": "Linear regression primer",
+  "name": "Linear regression primer",
   "description": "In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that\n$$ \\begin{aligned} \u0026amp;\\text{for each } i=1,\\ldots,n,\\ \u0026amp;\\qquad y_i = f(x_i) + \\epsilon_i, \\end{aligned} $$\nwhere $\\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.\n",
   "keywords": [
     
   ],
-  "articleBody": "In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that\n$$ \\begin{aligned} \u0026\\text{for each } i=1,\\ldots,n,\\ \u0026\\qquad y_i = f(x_i) + \\epsilon_i, \\end{aligned} $$\nwhere $\\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.\nIn simple linear regression, we assume a linear form:\n$$ y_i = \\beta_0 + \\beta_1 x_i + \\epsilon_i. $$\nThus the regression function is a parametrized model $f(x; \\beta_0, \\beta_1)$.\nFor multiple predictors $x_{1i}, x_{2i}, \\ldots, x_{pi}$, the multiple linear regression model becomes\n$$ y_i = \\beta_0 + \\beta_1 x_{1i} + \\beta_2 x_{2i} + \\cdots + \\beta_p x_{pi} + \\epsilon_i. $$\nIn vector form:\n$$ y = X\\beta + \\epsilon, \\qquad \\epsilon \\sim \\mathcal{N}(0, \\sigma^2 I), $$\nwhere $y \\in \\mathbb{R}^n$, $X \\in \\mathbb{R}^{n \\times (p+1)}$, and $\\beta \\in \\mathbb{R}^{p+1}$.\nThe intercept $\\beta_0$ corresponds to the first column of ones:\n$$ X = \\begin{bmatrix} \\mathbf{1} \u0026 x_1 \u0026 \\cdots \u0026 x_p \\end{bmatrix}. $$\nSimple linear regression is a special case of this model.\nAssumptions of Linear Regression Question The true relationship between $y$ and $x$ is linear.\nRun linear regression and plot fitted values vs.\\ residuals. The residuals should be randomly scattered around $0$. A visible pattern indicates nonlinearity.\nQuestion Errors are independent: $\\epsilon_i$ independent of $\\epsilon_j$ for $i \\ne j$.\nCheck the correlation matrix of residuals or scatterplots of residual components.\nQuestion Homoscedasticity: constant variance of errors.\nPlot fitted values vs.\\ residuals. The spread should be roughly constant — the “tube shape” pattern.\nQuestion Errors are Gaussian: $\\epsilon_i \\sim \\mathcal{N}(0,\\sigma^2)$.\nCheck histograms or QQ-plots of residuals.\nQuestion Errors are independent of predictors (no endogeneity).\nPlot residuals or fitted values vs.\\ columns of $X$.\nQuestion No perfect collinearity among predictors.\nCheck condition numbers or variance inflation factors (VIF).\nThese assumptions are implicitly conditioned on $X$.\nWith this, we now discuss solutions of linear regression.\nOrdinary Least Squares Regression seeks the “best” linear fit, commonly interpreted as minimizing the residual sum of squares:\n$$ \\mathrm{RSS}(\\beta) = | y - X\\beta |^2. $$\nThis yields the ordinary least squares (OLS) estimator.\nQuestion Show that the OLS solution is $\\hat{\\beta} = (X^\\top X)^{-1} X^\\top y$. Solution We minimize\n$$ \\min_{\\beta} | y - X\\beta |^2. $$\nAssuming no perfect collinearity, $X^\\top X$ is positive definite. Compute the gradient:\n$$ \\nabla_\\beta |y - X\\beta|^2 = -2X^\\top(y - X\\beta). $$\nSetting to zero:\n$$ X^\\top X \\beta = X^\\top y, $$\nso the unique minimizer is\n$$ \\hat{\\beta} = (X^\\top X)^{-1} X^\\top y. $$\nThe minimal RSS is\n$$ | (I - X(X^\\top X)^{-1}X^\\top )y |^2. $$\nSolution of Simple Linear Regression In the simple linear case $X = [\\mathbf{1} \\;\\; x]$, we compute:\n$$ X^\\top X = \\begin{bmatrix} n \u0026 n\\bar{x} \\ n\\bar{x} \u0026 \\sum_{i} x_i^2 \\end{bmatrix}, $$\nand its inverse:\n$$ (X^\\top X)^{-1} = \\frac{1}{n \\sum_i x_i^2 - n^2 \\bar{x}^2} \\begin{bmatrix} \\sum_i x_i^2 \u0026 -n\\bar{x} \\ -n\\bar{x} \u0026 n \\end{bmatrix}. $$\nCompute $X^\\top y$:\n$$ X^\\top y = \\begin{bmatrix} \\sum_i y_i \\ \\sum_i x_i y_i \\end{bmatrix}. $$\nThus, we have $$ \\hat{\\beta}_1 = \\frac{n\\sum_i x_i y_i - (\\sum_i x_i)(\\sum_i y_i)}{n\\sum_i x_i^2 - (\\sum_i x_i)^2} = \\frac{s_{xy}}{s_x^2} $$\nand\n$$ \\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1 \\bar{x}. $$\nSimple Linear Regression: Mean Centering Mean-centering defines $x' = x - \\bar{x}$.\nCenter $x$ only: $\\hat{\\beta}_0 = \\bar{y}$. Center $y$ only: $\\hat{\\beta}_0 = -\\hat{\\beta}_1 \\bar{x}$. Center both: $\\hat{\\beta}_0 = 0$. Also,\n$$ \\mathrm{Cov}(\\hat{\\beta}_0, \\hat{\\beta}_1) = 0. $$\nInfinite Data Case Linear regression solves\n$$ \\min_{a,b} ; \\mathbb{E}[(Y - (aX + b))^2]. $$\nThe solution is\n$$ \\begin{bmatrix} a \\ b \\end{bmatrix} = \\begin{bmatrix} \\dfrac{\\mathrm{Cov}(X,Y)}{\\mathrm{Var}(X)} \\ \\mathbb{E}[Y] - a \\mathbb{E}[X] \\end{bmatrix}. $$\nThis matches the finite-sample formulas when sample moments converge to population moments.\n",
-  "wordCount" : "652",
+  "articleBody": "In this page, we discuss the details of linear regression. Simple linear regression is the most commonly used method to fit a linear relationship between an observed response $y$ and an independent variable $x$. Suppose we observe $n$ data points $(x_i, y_i)$. In general, regression seeks a hypothesis $f$ such that\n$$ \\begin{aligned} \u0026\\text{for each } i=1,\\ldots,n,\\ \u0026\\qquad y_i = f(x_i) + \\epsilon_i, \\end{aligned} $$\nwhere $\\epsilon_i$ is an irreducible random error with mean $0$. It is commonly assumed Gaussian due to the central limit theorem.\nIn simple linear regression, we assume a linear form:\n$$ y_i = \\beta_0 + \\beta_1 x_i + \\epsilon_i. $$\nThus the regression function is a parametrized model $f(x; \\beta_0, \\beta_1)$.\nFor multiple predictors $x_{1i}, x_{2i}, \\ldots, x_{pi}$, the multiple linear regression model becomes\n$$ y_i = \\beta_0 + \\beta_1 x_{1i} + \\beta_2 x_{2i} + \\cdots + \\beta_p x_{pi} + \\epsilon_i. $$\nIn vector form:\n$$ y = X\\beta + \\epsilon, \\qquad \\epsilon \\sim \\mathcal{N}(0, \\sigma^2 I), $$\nwhere $y \\in \\mathbb{R}^n$, $X \\in \\mathbb{R}^{n \\times (p+1)}$, and $\\beta \\in \\mathbb{R}^{p+1}$.\nThe intercept $\\beta_0$ corresponds to the first column of ones:\n$$ X = \\begin{bmatrix} \\mathbf{1} \u0026 x_1 \u0026 \\cdots \u0026 x_p \\end{bmatrix}. $$\nSimple linear regression is a special case of this model.\nAssumptions of Linear Regression Question The true relationship between $y$ and $x$ is linear.\nRun linear regression and plot fitted values vs.\\ residuals. The residuals should be randomly scattered around $0$. A visible pattern indicates nonlinearity.\nQuestion Errors are independent: $\\epsilon_i$ independent of $\\epsilon_j$ for $i \\ne j$.\nCheck the correlation matrix of residuals or scatterplots of residual components.\nQuestion Homoscedasticity: constant variance of errors.\nPlot fitted values vs.\\ residuals. The spread should be roughly constant — the “tube shape” pattern.\nQuestion Errors are Gaussian: $\\epsilon_i \\sim \\mathcal{N}(0,\\sigma^2)$.\nCheck histograms or QQ-plots of residuals.\nQuestion Errors are independent of predictors (no endogeneity).\nPlot residuals or fitted values vs.\\ columns of $X$.\nQuestion No perfect collinearity among predictors.\nCheck condition numbers or variance inflation factors (VIF).\nThese assumptions are implicitly conditioned on $X$.\nWith this, we now discuss solutions of linear regression.\nOrdinary Least Squares Regression seeks the “best” linear fit, commonly interpreted as minimizing the residual sum of squares:\n$$ \\mathrm{RSS}(\\beta) = | y - X\\beta |^2. $$\nThis yields the ordinary least squares (OLS) estimator.\nQuestion Show that the OLS solution is $\\hat{\\beta} = (X^\\top X)^{-1} X^\\top y$. Solution We minimize\n$$ \\min_{\\beta} | y - X\\beta |^2. $$\nAssuming no perfect collinearity, $X^\\top X$ is positive definite. Compute the gradient:\n$$ \\nabla_\\beta |y - X\\beta|^2 = -2X^\\top(y - X\\beta). $$\nSetting to zero:\n$$ X^\\top X \\beta = X^\\top y, $$\nso the unique minimizer is\n$$ \\hat{\\beta} = (X^\\top X)^{-1} X^\\top y. $$\nThe minimal RSS is\n$$ | (I - X(X^\\top X)^{-1}X^\\top )y |^2. $$\nSolution of Simple Linear Regression In the simple linear case $X = [\\mathbf{1} \\;\\; x]$, we compute:\n$$ X^\\top X = \\begin{bmatrix} n \u0026 n\\bar{x} \\ n\\bar{x} \u0026 \\sum_{i} x_i^2 \\end{bmatrix}, $$\nand its inverse:\n$$ (X^\\top X)^{-1} = \\frac{1}{n \\sum_i x_i^2 - n^2 \\bar{x}^2} \\begin{bmatrix} \\sum_i x_i^2 \u0026 -n\\bar{x} \\ -n\\bar{x} \u0026 n \\end{bmatrix}. $$\nCompute $X^\\top y$:\n$$ X^\\top y = \\begin{bmatrix} \\sum_i y_i \\ \\sum_i x_i y_i \\end{bmatrix}. $$\nThus, we have $$ \\hat{\\beta}_1 = \\frac{n\\sum_i x_i y_i - (\\sum_i x_i)(\\sum_i y_i)}{n\\sum_i x_i^2 - (\\sum_i x_i)^2} = \\frac{s_{xy}}{s_x^2} $$\nand\n$$ \\hat{\\beta}_0 = \\bar{y} - \\hat{\\beta}_1 \\bar{x}. $$\nSimple Linear Regression: Mean Centering Mean-centering defines $x' = x - \\bar{x}$.\nCenter $x$ only: $\\hat{\\beta}_0 = \\bar{y}$. Center $y$ only: $\\hat{\\beta}_0 = -\\hat{\\beta}_1 \\bar{x}$. Center both: $\\hat{\\beta}_0 = 0$. Also,\n$$ \\mathrm{Cov}(\\hat{\\beta}_0, \\hat{\\beta}_1) = 0. $$\nInfinite Data Case Linear regression solves\n$$ \\min_{a,b} \\; \\mathbb{E}[(Y - (aX + b))^2]. $$\nThe solution is\n$$ \\begin{bmatrix} a \\\\ b \\end{bmatrix} = \\begin{bmatrix} \\frac{\\mathrm{Cov}(X,Y)}{\\mathrm{Var}(X)} \\\\ \\mathbb{E}[Y] - a \\mathbb{E}[X] \\end{bmatrix}. $$\nThis corresponds to the finite-sample formulas when sample moments converge to population moments.\nMiscellaneous Question OLS minimizes the average squared vertical distance in the $y$-direction. In what situations would one want to replace this by the perpendicular distance, i.e. the geometric distance to the fitted line? Solution OLS theoretical basis: Geometrically, OLS means projecting $y$ onto the column space of $X$; the residual is orthogonal to the fitted subspace.\nUnder the standard assumptions $\\mathbb{E}[\\varepsilon \\mid X] = 0$ and $\\mathrm{Var}(\\varepsilon \\mid X)=\\sigma^2 I$, the Gauss–Markov theorem says that OLS is BLUE\nIf the noise is Gaussian, $\\varepsilon \\sim \\mathcal{N}(0,\\sigma^2 I)$, then OLS is also the maximum likelihood estimator. Minimizing squared vertical error is justified when the randomness is modeled as noise in $y$, while the predictors $x$ are treated as fixed or measured without error.\nWe should replace vertical distance by perpendicular distance when this modeling assumption is no longer appropriate. This happens when:\nboth $x$ and $y$ contain measurement error, no clear distinction between predictor and response, the goal is geometric line fitting rather than prediction of $y$ from $x$. In these cases, OLS fitting $y$ on $x$ is different from $x$ on $y$. Minimizing perpendicular distances gives a total least squares (TLS) formulation, which is symmetric in the variables.\nExample: fitting a physical law from noisy instrument measurements, where both coordinates are contaminated. In this case, minimizing vertical error can bias the slope, and perpendicular distance methods are more appropriate. If the noise levels in $x$ and $y$ are known but unequal, we can use Deming regression instead of TLS. Question Other possible regression methods on top of linear regression (OLS) Solution generalized linear models: Poisson regression, generalized additive models decision tree principal component regression group lasso Bayesian regression Question Linear regression coefficients are uncorrelated with variance estimator. Solution Consider the residual\n$$ y - \\hat{y} = (I-X(X^{\\top}X)^{-1}X^{\\top})y =: Qy $$\nwhere $Q$ is the projection matrix to $\\text{Null}(X^\\top) \\perp \\text{Range}(X)$. Then\n$$ Qy=Q(X\\beta+\\epsilon)=QX\\beta+Q\\epsilon=Q\\epsilon\\Rightarrow \\|y-\\hat{y}\\|^2=\\epsilon^TQ\\epsilon=s^2 $$\nCompute now\n$$ \\text{Cov}(\\hat{\\beta},y-\\hat{y})=\\text{Cov}((X^TX)^{-1}X^Ty, Q\\epsilon) $$\nWe recall that $\\text{Cov}(AX,BY)=A\\text{Cov}(X,Y)B^T$; we have\n$$ \\text{Cov}(\\hat{\\beta},y-\\hat{y})=(X^TX)^{-1}X^T\\text{Cov}(y, \\epsilon)Q^T=0 $$ because $Cov(y,\\epsilon) = \\sigma^2I$. And $Q$ is orthogonal to $\\text{Range}(X)$. Here uncorrelated implies independent since they are jointly normal. 1\nSince $\\hat{\\beta}$ is independent of the errors, it is independent of functions of the errors, including $RSS=\\epsilon^T\\epsilon$, and thus the variance estimator. 2\nThis follows from the fact that jointly Gaussian random variables are independent if they are uncorrelated. ↩︎\nClaim: If $X$ and $Y$ are independent, then $f(X)$, $g(Y)$ are independent for any Borel functions $f,g$. ↩︎\n",
+  "wordCount" : "1060",
   "inLanguage": "en",
   "datePublished": "2025-12-10T20:41:27-06:00",
   "dateModified": "2025-12-10T20:41:27-06:00",
@@ -229,9 +229,9 @@ where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly 
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://honglizhaobob.github.io/math-problems/">Home</a>&nbsp;»&nbsp;<a href="https://honglizhaobob.github.io/math-problems/problems/">Problems</a></div>
     <h1 class="post-title entry-hint-parent">
-      Linear Regression Primer
+      Linear regression primer
     </h1>
-    <div class="post-meta"><span title='2025-12-10 20:41:27 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>4 min</span>
+    <div class="post-meta"><span title='2025-12-10 20:41:27 -0600 CST'>December 10, 2025</span>&nbsp;·&nbsp;<span>5 min</span>
 
 </div>
   </header> <div class="toc">
@@ -250,7 +250,9 @@ where $\epsilon_i$ is an irreducible random error with mean $0$. It is commonly 
                 <li>
                     <a href="#simple-linear-regression-mean-centering" aria-label="Simple Linear Regression: Mean Centering">Simple Linear Regression: Mean Centering</a></li>
                 <li>
-                    <a href="#infinite-data-case" aria-label="Infinite Data Case">Infinite Data Case</a>
+                    <a href="#infinite-data-case" aria-label="Infinite Data Case">Infinite Data Case</a></li>
+                <li>
+                    <a href="#miscellaneous" aria-label="Miscellaneous">Miscellaneous</a>
                 </li>
             </ul>
         </div>
@@ -447,21 +449,127 @@ $$</p>
 <h1 id="infinite-data-case">Infinite Data Case<a hidden class="anchor" aria-hidden="true" href="#infinite-data-case">#</a></h1>
 <p>Linear regression solves</p>
 <p>$$
-\min_{a,b} ; \mathbb{E}[(Y - (aX + b))^2].
+\min_{a,b} \; \mathbb{E}[(Y - (aX + b))^2].
 $$</p>
 <p>The solution is</p>
 <p>$$
 \begin{bmatrix}
-a \
+a \\
 b
 \end{bmatrix}
 =
 \begin{bmatrix}
-\dfrac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)} \
+\frac{\mathrm{Cov}(X,Y)}{\mathrm{Var}(X)} \\
 \mathbb{E}[Y] - a \mathbb{E}[X]
 \end{bmatrix}.
 $$</p>
-<p>This matches the finite-sample formulas when sample moments converge to population moments.</p>
+<p>This corresponds to the finite-sample formulas when sample moments converge to population moments.</p>
+<h1 id="miscellaneous">Miscellaneous<a hidden class="anchor" aria-hidden="true" href="#miscellaneous">#</a></h1>
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    OLS minimizes the average squared vertical distance in the $y$-direction. In what situations would one want to replace this by the perpendicular distance, i.e. the geometric distance to the fitted line?
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <ul>
+<li>OLS theoretical basis:</li>
+</ul>
+<ol>
+<li>
+<p>Geometrically, OLS means projecting $y$ onto the column space of $X$; the residual is orthogonal to the fitted subspace.</p>
+</li>
+<li>
+<p>Under the standard assumptions $\mathbb{E}[\varepsilon \mid X] = 0$ and $\mathrm{Var}(\varepsilon \mid X)=\sigma^2 I$, the Gauss&ndash;Markov theorem says that OLS is BLUE</p>
+</li>
+<li>
+<p>If the noise is Gaussian, $\varepsilon \sim \mathcal{N}(0,\sigma^2 I)$, then OLS is also the maximum likelihood estimator. Minimizing squared vertical error is justified when the randomness is modeled as noise in $y$, while the predictors $x$ are treated as fixed or measured without error.</p>
+</li>
+</ol>
+<p>We should replace vertical distance by <strong>perpendicular distance</strong> when this modeling assumption is no longer appropriate. This happens when:</p>
+<ol>
+<li>both $x$ and $y$ contain measurement error,</li>
+<li>no clear distinction between predictor and response,</li>
+<li>the goal is geometric line fitting rather than prediction of $y$ from $x$.</li>
+</ol>
+<p>In these cases, OLS fitting $y$ on $x$ is different from $x$ on $y$. Minimizing perpendicular distances gives a <strong>total least squares</strong> (TLS) formulation, which is symmetric in the variables.</p>
+<ul>
+<li>Example: fitting a physical law from noisy instrument measurements, where both coordinates are contaminated. In this case, minimizing vertical error can bias the slope, and perpendicular distance methods are more appropriate. If the noise levels in $x$ and $y$ are known but unequal, we can use <strong>Deming regression</strong> instead of TLS.</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Other possible regression methods on top of linear regression (OLS)
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <ol>
+<li>generalized linear models: Poisson regression, generalized additive models</li>
+<li>decision tree</li>
+<li>principal component regression</li>
+<li>group lasso</li>
+<li>Bayesian regression</li>
+</ol>
+
+  </div>
+</div>
+
+<div class="problem-box problem-question">
+  <div class="problem-box-label">Question</div>
+  <div class="problem-box-body">
+    Linear regression coefficients are uncorrelated with variance estimator.
+  </div>
+</div>
+
+
+<div class="problem-box problem-solution">
+  <div class="problem-box-label">Solution</div>
+  <div class="problem-box-body">
+    <p>Consider the residual</p>
+<p>$$
+y - \hat{y} = (I-X(X^{\top}X)^{-1}X^{\top})y =: Qy
+$$</p>
+<p>where $Q$ is the projection matrix to $\text{Null}(X^\top) \perp \text{Range}(X)$. Then</p>
+<p>$$
+Qy=Q(X\beta+\epsilon)=QX\beta+Q\epsilon=Q\epsilon\Rightarrow \|y-\hat{y}\|^2=\epsilon^TQ\epsilon=s^2
+$$</p>
+<p>Compute now</p>
+<p>$$
+\text{Cov}(\hat{\beta},y-\hat{y})=\text{Cov}((X^TX)^{-1}X^Ty, Q\epsilon)
+$$</p>
+<p>We recall that $\text{Cov}(AX,BY)=A\text{Cov}(X,Y)B^T$; we have</p>
+<p>$$
+\text{Cov}(\hat{\beta},y-\hat{y})=(X^TX)^{-1}X^T\text{Cov}(y, \epsilon)Q^T=0
+$$ because $Cov(y,\epsilon) = \sigma^2I$. And $Q$ is orthogonal to $\text{Range}(X)$. Here uncorrelated implies independent since they are jointly normal. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Since $\hat{\beta}$ is independent of the errors, it is independent of functions of the errors, including $RSS=\epsilon^T\epsilon$, and thus the variance estimator. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>This follows from the fact that jointly Gaussian random variables are independent if they are uncorrelated.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Claim: If $X$ and $Y$ are independent, then $f(X)$, $g(Y)$
+are independent for any Borel functions $f,g$.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  </div>
+</div>
+
 
 
   </div>
